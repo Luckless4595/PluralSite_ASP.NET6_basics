@@ -10,4 +10,8 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 
+    <Target Name="PreRunScript" BeforeTargets="Run">
+    <Exec Command="cd '/Users/notAdmin/Dev/C/ASP.NET core pluralsite/CityInfo/CityInfo.API' &amp; dotnet run" />
+  </Target>
+
 </Project>
