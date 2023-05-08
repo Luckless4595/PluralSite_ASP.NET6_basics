@@ -1,4 +1,4 @@
-namespace CityInfo.API.Models{
+namespace CityInfo.API.Models.POI{
     public class PointOfInterestDto{
         public int Id {get; set;}
         public string Name{ get; set; }= string.Empty;

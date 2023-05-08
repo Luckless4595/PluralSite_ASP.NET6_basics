@@ -1,4 +1,4 @@
-using CityInfo.API.Models;
+using CityInfo.API.Models.POI;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CityInfo.API.Controllers
@@ -27,7 +27,7 @@ namespace CityInfo.API.Controllers
         }
 
         // GET /api/cities/{cityId}/poi/{poiId}
-        [HttpGet("{poiId}")]
+        [HttpGet("{poiId}", Name = "GetPOI")]
         public ActionResult<PointOfInterestDto> GetPOI(int cityId, int poiId)
         {
             // Find the city by ID
@@ -52,6 +52,58 @@ namespace CityInfo.API.Controllers
                 // Return the POI
                 return Ok(poi);
             }
+        }
+
+        [HttpPost]
+        public ActionResult<PointOfInterestDto> CreatePOI(int cityId, [FromBody] CreatePointOfInterestDto newPOI)
+        {
+            var city = CitiesDataStore.Current.Cities.FirstOrDefault(c => c.Id == cityId); 
+
+            // If the city is not found, return 404 Not Found
+            if (city == null)
+            {
+                return NotFound();
+            }
+
+            var newPOIId = CitiesDataStore.Current.Cities.SelectMany(c => c.POIs).Max(p => p.Id) + 1;
+
+            var processedPOI = new PointOfInterestDto()
+            {
+                Id = newPOIId,
+                Name = newPOI.Name,
+                Description = newPOI.Description
+            };
+
+            city.POIs.Add(processedPOI);
+            
+            return CreatedAtRoute("GetPOI", 
+            new { cityId = cityId, poiId = newPOIId }, processedPOI);
+        }
+
+        [HttpPut("{poiId}")]
+        public ActionResult UpdatePOI(int cityId, int poiId, UpdatePOIDto inputPOI){
+
+            // Find the city by ID
+            var city = CitiesDataStore.Current.Cities.FirstOrDefault(c => c.Id == cityId); 
+
+            // If the city is not found, return 404 Not Found
+            if (city == null)
+            {
+                return NotFound();
+            }
+                // Find the POI by ID in the city's list of POIs
+                var targetPOI= city.POIs.FirstOrDefault(p => p.Id == poiId);
+
+                // If the POI is not found, return 404 Not Found
+                if (targetPOI == null)
+                {
+                    return NotFound();
+                }
+            
+            targetPOI.Name = inputPOI.Name;
+            targetPOI.Description = inputPOI.Description;
+            
+            return Ok(targetPOI);
         }
     }
 }

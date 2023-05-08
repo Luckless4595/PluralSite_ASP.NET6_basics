@@ -1,4 +1,5 @@
-using CityInfo.API.Models;
+using CityInfo.API.Models.City;
+using CityInfo.API.Models.POI;
 
 namespace CityInfo.API{
     public class CitiesDataStore{

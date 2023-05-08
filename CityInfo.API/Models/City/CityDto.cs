@@ -1,4 +1,6 @@
-namespace CityInfo.API.Models{
+using CityInfo.API.Models.POI;
+
+namespace CityInfo.API.Models.City{
 
     public class CityDto{
 
