@@ -1,7 +1,11 @@
 namespace CityInfo.API.Services{
         public class CloudMailService : IMailService{
-        private string mailTo = "admin@company.com";
-        private string mailFrom = "noreply@company.com";
+        private readonly string mailTo ,mailFrom ;
+
+        public CloudMailService(IConfiguration config){
+            this.mailFrom = config["mailSettings:mailToAddress"];
+            this.mailTo = config["mailSettings:mailFromAddress"];
+        }
 
         public void Send(string subject, string message){
             //send mail to console
