@@ -62,6 +62,8 @@ namespace CityInfo.API.Controllers
         public ActionResult PartiallyUpdatePOI(int cityId, int poiId, JsonPatchDocument<UpdatePOIDto> poiPatch)
         {
             var city = CitiesDataStore.Current.Cities.FirstOrDefault(c => c.Id == cityId);
+            if (city == null) return NotFound();
+            
             var targetPOI = city?.POIs.FirstOrDefault(p => p.Id == poiId);
             if (targetPOI == null) return NotFound();
 
@@ -75,5 +77,20 @@ namespace CityInfo.API.Controllers
     
             return !TryValidateModel(patchedPOI) ? BadRequest(ModelState) : Ok(targetPOI);
         }
-    }
+
+        [HttpDelete]
+        public ActionResult DeletePOI(int cityId, int poiId)
+        {
+            var city = CitiesDataStore.Current.Cities.FirstOrDefault(c => c.Id == cityId);
+            if (city == null) return NotFound();
+
+            var targetPOI = city?.POIs.FirstOrDefault(p => p.Id == poiId);
+            if (targetPOI == null) return NotFound();
+
+            city.POIs.Remove(targetPOI);
+
+            return NoContent();
+        }
+
+    }   
 }
