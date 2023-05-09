@@ -2,10 +2,12 @@ namespace CityInfo.API.Services{
         public class CloudMailService : IMailService{
         private readonly string mailTo ,mailFrom ;
 
+        #pragma warning disable 
         public CloudMailService(IConfiguration config){
             this.mailFrom = config["mailSettings:mailToAddress"];
             this.mailTo = config["mailSettings:mailFromAddress"];
         }
+        #pragma warning restore
 
         public void Send(string subject, string message){
             //send mail to console
