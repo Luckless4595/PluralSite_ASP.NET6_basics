@@ -78,21 +78,21 @@ namespace CityInfo.API.Controllers
             return !TryValidateModel(patchedPOI) ? BadRequest(ModelState) : Ok(targetPOI);
         }
 
-        // [HttpDelete("{poiId}")]
-        // public ActionResult DeletePOI(int cityId, int poiId)
-        // {
-        //     var city = CitiesDataStore.Current.Cities.FirstOrDefault(c => c.Id == cityId);
-        //     if (city == null) return NotFound();
+        [HttpDelete("{poiId}")]
+        public ActionResult DeletePOI(int cityId, int poiId)
+        {
+            var city = CitiesDataStore.Current.Cities.FirstOrDefault(c => c.Id == cityId);
+            if (city == null) return NotFound();
 
-        //     var targetPOI = city?.POIs.FirstOrDefault(p => p.Id == poiId);
-        //     if (targetPOI == null) return NotFound();
+            var targetPOI = city?.POIs.FirstOrDefault(p => p.Id == poiId);
+            if (targetPOI == null) return NotFound();
 
-        //     #pragma warning disable CS8602
-        //     city.POIs.Remove(targetPOI);
-        //     #pragma warning restore CS8602
+            #pragma warning disable CS8602
+            city.POIs.Remove(targetPOI);
+            #pragma warning restore CS8602
 
-        //     return NoContent();
-        // }
+            return NoContent();
+        }
 
     }   
 }
