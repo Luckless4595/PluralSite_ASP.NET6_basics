@@ -1,6 +1,9 @@
 using CityInfo.API.Models.POI;
+using CityInfo.API.Services;
+
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.JsonPatch;
+
 
 #pragma warning disable CS8602
 namespace CityInfo.API.Controllers
@@ -10,10 +13,23 @@ namespace CityInfo.API.Controllers
     public class PointsOfInterestController : ControllerBase 
     {
         private readonly ILogger<PointsOfInterestController> logger;
+        private readonly IMailService mailService;
+        private readonly CitiesDataStore citiesDataStore;
 
-        public PointsOfInterestController(ILogger<PointsOfInterestController> loggerIn)
+        public PointsOfInterestController(
+            ILogger<PointsOfInterestController> loggerIn,
+            IMailService mailServiceIn,
+            CitiesDataStore citiesDataStoreIn)
         {
-            this.logger = loggerIn ?? throw new ArgumentNullException(nameof(loggerIn));
+            this.logger = loggerIn ?? 
+            throw new ArgumentNullException(nameof(loggerIn));
+            
+            this.mailService = mailServiceIn ?? 
+            throw new ArgumentNullException(nameof(mailServiceIn));
+
+            this.citiesDataStore = citiesDataStoreIn ?? 
+            throw new ArgumentNullException(nameof(citiesDataStoreIn));
+       
         }
 
         // GET /api/cities/{cityId}/poi
@@ -24,7 +40,7 @@ namespace CityInfo.API.Controllers
             try {
 
                 // throw new Exception("test");        
-                var city = CitiesDataStore.Current.Cities.FirstOrDefault(c => c.Id == cityId);
+                var city = this.citiesDataStore.Cities.FirstOrDefault(c => c.Id == cityId);
                 if (city == null)
                 {
                     this.logger.LogInformation($"City with ID {cityId} was not found");
@@ -46,7 +62,7 @@ namespace CityInfo.API.Controllers
         [HttpGet("{poiId}", Name = "GetPOI")]
         public ActionResult<PointOfInterestDto> GetPOI(int cityId, int poiId)
         {
-            var city = CitiesDataStore.Current.Cities.FirstOrDefault(c => c.Id == cityId);
+            var city = this.citiesDataStore.Cities.FirstOrDefault(c => c.Id == cityId);
             var targetPOI = city?.POIs.FirstOrDefault(p => p.Id == poiId);
 
             if (targetPOI == null)
@@ -64,14 +80,14 @@ namespace CityInfo.API.Controllers
         [HttpPost]
         public ActionResult<PointOfInterestDto> CreatePOI(int cityId, [FromBody] CreatePointOfInterestDto newPOI)
         {
-            var city = CitiesDataStore.Current.Cities.FirstOrDefault(c => c.Id == cityId);
+            var city = this.citiesDataStore.Cities.FirstOrDefault(c => c.Id == cityId);
             if (city == null)
             {
                 this.logger.LogInformation($"City with ID {cityId} was not found");
                 return NotFound();
             }
 
-            var newPOIId = CitiesDataStore.Current.Cities.SelectMany(c => c.POIs).Max(p => p.Id) + 1;
+            var newPOIId = this.citiesDataStore.Cities.SelectMany(c => c.POIs).Max(p => p.Id) + 1;
 
             var processedPOI = new PointOfInterestDto()
             {
@@ -90,7 +106,7 @@ namespace CityInfo.API.Controllers
         [HttpPut("{poiId}")]
         public ActionResult FullyUpdatePOI(int cityId, int poiId, UpdatePOIDto inputPOI)
         {
-            var city = CitiesDataStore.Current.Cities.FirstOrDefault(c => c.Id == cityId);
+            var city = this.citiesDataStore.Cities.FirstOrDefault(c => c.Id == cityId);
             var targetPOI = city?.POIs.FirstOrDefault(p => p.Id == poiId);
 
             if (targetPOI == null)
@@ -111,7 +127,7 @@ namespace CityInfo.API.Controllers
     [HttpPatch("{poiId}")]
     public ActionResult PartiallyUpdatePOI(int cityId, int poiId, JsonPatchDocument<UpdatePOIDto> poiPatch)
     {
-        var city = CitiesDataStore.Current.Cities.FirstOrDefault(c => c.Id == cityId);
+        var city = this.citiesDataStore.Cities.FirstOrDefault(c => c.Id == cityId);
         var targetPOI = city?.POIs.FirstOrDefault(p => p.Id == poiId);
 
         if (targetPOI == null)
@@ -145,7 +161,7 @@ namespace CityInfo.API.Controllers
     [HttpDelete("{poiId}")]
     public ActionResult DeletePOI(int cityId, int poiId)
     {
-        var city = CitiesDataStore.Current.Cities.FirstOrDefault(c => c.Id == cityId);
+        var city = this.citiesDataStore.Cities.FirstOrDefault(c => c.Id == cityId);
         var targetPOI = city?.POIs.FirstOrDefault(p => p.Id == poiId);
 
         if (targetPOI == null)
@@ -156,7 +172,8 @@ namespace CityInfo.API.Controllers
 
         city.POIs.Remove(targetPOI);
 
-        this.logger.LogInformation($"Deleted point of interest {targetPOI.Name} in city {city.Name}");
+        this.mailService.Send("A POI was deleted",
+        $"Deleted point of interest {targetPOI.Name} in city {city.Name}");
 
         return NoContent();
     }

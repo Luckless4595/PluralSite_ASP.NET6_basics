@@ -4,7 +4,7 @@ using CityInfo.API.Models.POI;
 namespace CityInfo.API{
     public class CitiesDataStore{
         public List<CityDto> Cities {get; set;}
-        public static CitiesDataStore Current {get;} = new CitiesDataStore();
+        // public static CitiesDataStore Current {get;} = new CitiesDataStore();
         public CitiesDataStore() {
             this.Cities = new List<CityDto>(){
                 new CityDto(){
