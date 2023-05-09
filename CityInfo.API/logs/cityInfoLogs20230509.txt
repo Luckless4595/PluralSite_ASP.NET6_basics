@@ -637,3 +637,28 @@ System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport
 2023-05-09 16:22:07.031 -04:00 [INF] Executed endpoint 'CityInfo.API.Controllers.PointsOfInterestController.DeletePOI (CityInfo.API)'
 2023-05-09 16:22:07.032 -04:00 [DBG] Connection id "0HMQGPA55SH7Q" completed keep alive response.
 2023-05-09 16:22:07.032 -04:00 [INF] Request finished HTTP/1.1 DELETE https://localhost:7054/api/cities/0/poi/2 - - - 204 - - 3.1969ms
+2023-05-09 16:24:17.801 -04:00 [DBG] Connection id "0HMQGPA55SH7Q" disconnecting.
+2023-05-09 16:24:17.801 -04:00 [DBG] Connection id "0HMQGPA55SH7Q" stopped.
+2023-05-09 16:24:17.801 -04:00 [DBG] Connection id "0HMQGPA55SH7Q" sending FIN because: "The Socket transport's send loop completed gracefully."
+2023-05-09 16:26:41.259 -04:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2023-05-09 16:26:41.345 -04:00 [DBG] Hosting starting
+2023-05-09 16:26:41.450 -04:00 [DBG] Using development certificate: CN=localhost (Thumbprint: F860A74BB1BE761503BDF28F8DDE049E984C398E)
+2023-05-09 16:26:41.461 -04:00 [INF] Now listening on: https://localhost:7054
+2023-05-09 16:26:41.461 -04:00 [INF] Now listening on: http://localhost:5256
+2023-05-09 16:26:41.461 -04:00 [DBG] Loaded hosting startup assembly CityInfo.API
+2023-05-09 16:26:41.461 -04:00 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2023-05-09 16:26:41.461 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-09 16:26:41.462 -04:00 [INF] Hosting environment: Development
+2023-05-09 16:26:41.462 -04:00 [INF] Content root path: /Users/notAdmin/Dev/C#/ASP.NET core pluralsite/CityInfo/CityInfo.API/
+2023-05-09 16:26:41.462 -04:00 [DBG] Hosting started
+2023-05-09 16:35:51.086 -04:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2023-05-09 16:35:51.159 -04:00 [DBG] Hosting starting
+2023-05-09 16:35:51.248 -04:00 [DBG] Using development certificate: CN=localhost (Thumbprint: F860A74BB1BE761503BDF28F8DDE049E984C398E)
+2023-05-09 16:35:51.258 -04:00 [INF] Now listening on: https://localhost:7054
+2023-05-09 16:35:51.258 -04:00 [INF] Now listening on: http://localhost:5256
+2023-05-09 16:35:51.258 -04:00 [DBG] Loaded hosting startup assembly CityInfo.API
+2023-05-09 16:35:51.258 -04:00 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2023-05-09 16:35:51.258 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-09 16:35:51.258 -04:00 [INF] Hosting environment: Development
+2023-05-09 16:35:51.258 -04:00 [INF] Content root path: /Users/notAdmin/Dev/C#/ASP.NET core pluralsite/CityInfo/CityInfo.API/
+2023-05-09 16:35:51.259 -04:00 [DBG] Hosting started
