@@ -1200,3 +1200,7 @@ System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport
 2023-05-10 14:16:37.565 -04:00 [DBG] Request did not match any endpoints
 2023-05-10 14:16:37.568 -04:00 [DBG] Connection id "0HMQHG9I7IO0L" completed keep alive response.
 2023-05-10 14:16:37.568 -04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7054/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 3.2720ms
+2023-05-10 14:18:33.224 -04:00 [DBG] Connection id "0HMQHG9I7IO0L" received FIN.
+2023-05-10 14:18:33.227 -04:00 [DBG] Connection id "0HMQHG9I7IO0L" sending FIN because: "The client closed the connection."
+2023-05-10 14:18:33.241 -04:00 [DBG] Connection id "0HMQHG9I7IO0L" disconnecting.
+2023-05-10 14:18:33.245 -04:00 [DBG] Connection id "0HMQHG9I7IO0L" stopped.
