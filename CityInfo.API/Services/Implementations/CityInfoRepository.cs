@@ -19,7 +19,7 @@ namespace CityInfo.API.Services.Implementations
         public async Task<IEnumerable<City>> GetCitiesAsync()
         {
             return await this.context.Cities.
-            OrderBy(c => c.Name).ToListAsync();
+            OrderBy(c => c.Id).ToListAsync();
         }
 
         public async Task<City?> GetCityAsync(int cityId, bool includePOI)

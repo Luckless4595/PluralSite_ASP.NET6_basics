@@ -1,4 +1,6 @@
 using CityInfo.API.Models.City;
+using CityInfo.API.Services.Interfaces;
+
 using Microsoft.AspNetCore.Mvc;
 
 namespace CityInfo.API.Controllers{
@@ -6,32 +8,52 @@ namespace CityInfo.API.Controllers{
     [Route("api/cities")]
     public class CitiesController : ControllerBase {
 
-       private readonly CitiesDataStore citiesDataStore;
-
-        public CitiesController(CitiesDataStore citiesDataStoreIn)
+        private readonly ICityInfoRepository cityInfoRepository;
+        public CitiesController(ICityInfoRepository citiesDataStoreIn)
         {
-            this.citiesDataStore = citiesDataStoreIn ?? 
+            this.cityInfoRepository = citiesDataStoreIn ?? 
             throw new ArgumentNullException(nameof(citiesDataStoreIn));
         }
 
 
         [HttpGet]
-        public ActionResult<IEnumerable<CityDto>> GetCities(){
+        public async Task<ActionResult<IEnumerable<CityWithoutPOIDto>>> GetCities(){
             
-            return Ok(this.citiesDataStore.Cities);
+            var cityEntities = await this.cityInfoRepository.GetCitiesAsync();
+            var output = new List<CityWithoutPOIDto>();
+
+            foreach (var cityEntity in cityEntities){
+                output.Add( 
+                    new CityWithoutPOIDto{
+                        Id = cityEntity.Id,
+                        Name = cityEntity.Name,
+                        Description = cityEntity.Description
+                    }
+                );
+            }
+
+            return Ok(output);
         }
 
-        [HttpGet("{id}")]
-        public ActionResult<CityDto> GetCity(int id){
+       [HttpGet("{id}")]
+        public async Task<ActionResult<CityWithoutPOIDto>> GetCity(int cityId)
+        {
+            var cityEntity = await this.cityInfoRepository.GetCityAsync(cityId, false);
 
-            var findCity = this.citiesDataStore.Cities.FirstOrDefault(c => c.Id ==id); 
-
-            if (findCity == null){
+            if (cityEntity == null)
+            {
                 return NotFound();
             }
-            else{
-                return Ok(findCity);
-            }
+
+            var output = new CityWithoutPOIDto
+            {
+                Id = cityEntity.Id,
+                Name = cityEntity.Name,
+                Description = cityEntity.Description
+            };
+
+            return Ok(output);
         }
+
     }
 }
