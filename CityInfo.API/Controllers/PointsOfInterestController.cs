@@ -3,6 +3,7 @@ using CityInfo.API.Services.Interfaces;
 
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.JsonPatch;
+using AutoMapper;
 
 
 #pragma warning disable CS8602
@@ -14,171 +15,167 @@ namespace CityInfo.API.Controllers
     {
         private readonly ILogger<PointsOfInterestController> logger;
         private readonly IMailService mailService;
-        private readonly CitiesDataStore citiesDataStore;
+        private readonly ICityInfoRepository cityInfoRepository;
+        private readonly IMapper mapper;
 
         public PointsOfInterestController(
             ILogger<PointsOfInterestController> loggerIn,
             IMailService mailServiceIn,
-            CitiesDataStore citiesDataStoreIn)
+            ICityInfoRepository cityInfoRepositoryIn,
+            IMapper mapperIn)
         {
             this.logger = loggerIn ?? 
-            throw new ArgumentNullException(nameof(loggerIn));
+                throw new ArgumentNullException(nameof(loggerIn));
             
             this.mailService = mailServiceIn ?? 
-            throw new ArgumentNullException(nameof(mailServiceIn));
+                throw new ArgumentNullException(nameof(mailServiceIn));
 
-            this.citiesDataStore = citiesDataStoreIn ?? 
-            throw new ArgumentNullException(nameof(citiesDataStoreIn));
-       
+            this.cityInfoRepository = cityInfoRepositoryIn ??
+                throw new ArgumentNullException(nameof(cityInfoRepositoryIn));
+
+            this.mapper = mapperIn ??
+            throw new ArgumentNullException (nameof(mapperIn));
         }
 
         // GET /api/cities/{cityId}/poi
         [HttpGet]
-        public ActionResult<IEnumerable<PointOfInterestDto>> GetPOIs(int cityId)
-        {
-            
+        public async Task<ActionResult<IEnumerable<PointOfInterestDto>>> GetPOIs(int cityId)
+        {            
             try {
 
-                // throw new Exception("test");        
-                var city = this.citiesDataStore.Cities.FirstOrDefault(c => c.Id == cityId);
-                if (city == null)
-                {
-                    this.logger.LogInformation($"City with ID {cityId} was not found");
+                if(! await this.cityInfoRepository.CheckCityExistsAsync(cityId)){
+                    this.logger.LogInformation($"City with Id {cityId} was not found");
                     return NotFound();
                 }
-                else
-                {
-                    this.logger.LogInformation($"Retrieved points of interest for city {city.Name}");
-                    return Ok(city.POIs);
-                }
-        
-             } catch (Exception e){
-                this.logger.LogCritical("Exception occured",e);
+
+                var poiEntitiesInCity = await this.cityInfoRepository.GetCityPOIsAsync(cityId);
+                var output = this.mapper.Map<IEnumerable<PointOfInterestDto>>(poiEntitiesInCity);
+
+                this.logger.LogInformation($"Retrieved points of interest for city with ID {cityId}");
+
+                return Ok(output);
+            }
+            catch (Exception e){
+                this.logger.LogCritical("Exception occurred", e);
                 return StatusCode(500, "An internal error occurred");
             }
         }
 
-        // GET /api/cities/{cityId}/poi/{poiId}
+            // GET /api/cities/{cityId}/poi/{poiId}
         [HttpGet("{poiId}", Name = "GetPOI")]
-        public ActionResult<PointOfInterestDto> GetPOI(int cityId, int poiId)
+        public async Task<ActionResult<PointOfInterestDto>> GetPOI(int cityId, int poiId)
         {
-            var city = this.citiesDataStore.Cities.FirstOrDefault(c => c.Id == cityId);
-            var targetPOI = city?.POIs.FirstOrDefault(p => p.Id == poiId);
+            try {
+                if(! await this.cityInfoRepository.CheckCityExistsAsync(cityId)){
+                    this.logger.LogInformation($"City with Id {cityId} was not found");
+                    return NotFound();
+                }
 
-            if (targetPOI == null)
-            {
-                this.logger.LogInformation($"Point of interest with ID {poiId} was not found in city {city.Name}");
-                return NotFound();
+                var poiEntity = await this.cityInfoRepository.GetPOIAsync(cityId, poiId);
+                if (poiEntity == null) return NotFound();
+
+                var output = this.mapper.Map<PointOfInterestDto>(poiEntity);
+
+                this.logger.LogInformation($"Retrieved point of interest with ID {poiId} for city with ID {cityId}");
+
+                return Ok(output);
             }
-            else
-            {
-                this.logger.LogInformation($"Retrieved point of interest {targetPOI.Name} in city {city.Name}");
-                return Ok(targetPOI);
+            catch (Exception e){
+                this.logger.LogCritical("Exception occurred", e);
+                return StatusCode(500, "An internal error occurred");
             }
         }
 
-        [HttpPost]
-        public ActionResult<PointOfInterestDto> CreatePOI(int cityId, [FromBody] CreatePointOfInterestDto newPOI)
-        {
-            var city = this.citiesDataStore.Cities.FirstOrDefault(c => c.Id == cityId);
-            if (city == null)
-            {
-                this.logger.LogInformation($"City with ID {cityId} was not found");
-                return NotFound();
-            }
 
-            var newPOIId = this.citiesDataStore.Cities.SelectMany(c => c.POIs).Max(p => p.Id) + 1;
+    //     [HttpPost]
+    //     public async Task<ActionResult<PointOfInterestDto>> CreatePOI(int cityId, [FromBody] CreatePointOfInterestDto newPOI)
+    //     {
+    //         try {
+    //             var poiEntity = this.mapper.Map<POI>(newPOI);
+    //             await this.cityInfoRepository.AddPOIAsync(cityId, poiEntity);
 
-            var processedPOI = new PointOfInterestDto()
-            {
-                Id = newPOIId,
-                Name = newPOI.Name,
-                Description = newPOI.Description
-            };
+    //             var output = this.mapper.Map<PointOfInterestDto>(poiEntity);
 
-            city.POIs.Add(processedPOI);
+    //             this.logger.LogInformation($"Added new point of interest {newPOI.Name} to city with ID {cityId}");
 
-            this.logger.LogInformation($"Added new point of interest {newPOI.Name} to city {city.Name}");
+    //             return CreatedAtRoute("GetPOI", new { cityId = cityId, poiId = poiEntity.Id }, output);
+    //         }
+    //         catch (Exception e){
+    //             this.logger.LogCritical("Exception occurred", e);
+    //             return StatusCode(500, "An internal error occurred");
+    //         }
+    //     }
 
-            return CreatedAtRoute("GetPOI", new { cityId = cityId, poiId = newPOIId }, processedPOI);
-        }
+    //     [HttpPut("{poiId}")]
+    //     public async Task<ActionResult> FullyUpdatePOI(int cityId, int poiId, UpdatePointOfInterestDto inputPOI)
+    //     {
+    //         try {
+    //             var poiEntity = await this.cityInfoRepository.GetPOIAsync(cityId,poiId);
+    //         if (poiEntity == null) return NotFound();
 
-        [HttpPut("{poiId}")]
-        public ActionResult FullyUpdatePOI(int cityId, int poiId, UpdatePOIDto inputPOI)
-        {
-            var city = this.citiesDataStore.Cities.FirstOrDefault(c => c.Id == cityId);
-            var targetPOI = city?.POIs.FirstOrDefault(p => p.Id == poiId);
+    //         this.mapper.Map(inputPOI, poiEntity);
 
-            if (targetPOI == null)
-            {
-                this.logger.LogInformation($"Point of interest with ID {poiId} was not found in city {city.Name}");
-                return NotFound();
-            }
+    //         await this.cityInfoRepository.UpdatePOIAsync(cityId, poiEntity);
 
-            targetPOI.Name = inputPOI.Name;
-            targetPOI.Description = inputPOI.Description;
+    //         this.logger.LogInformation($"Updated point of interest with ID {poiId} in city with ID {cityId}");
 
-            this.logger.LogInformation($"Updated point of interest {targetPOI.Name} in city {city.Name}");
+    //         return Ok();
+    //     }
+    //     catch (Exception e){
+    //         this.logger.LogCritical("Exception occurred", e);
+    //         return StatusCode(500, "An internal error occurred");
+    //     }
+    // }
 
+    // [HttpPatch("{poiId}")]
+    // public async Task<ActionResult> PartiallyUpdatePOI(int cityId, int poiId, JsonPatchDocument<UpdatePointOfInterestDto> poiPatch)
+    // {
+    //     try {
+    //         var poiEntity = await this.cityInfoRepository.GetPOIAsync(cityId, poiId);
+    //         if (poiEntity == null) return NotFound();
 
-        return Ok(targetPOI);
-    }
+    //         var inputPOI = this.mapper.Map<UpdatePointOfInterestDto>(poiEntity);
 
-    [HttpPatch("{poiId}")]
-    public ActionResult PartiallyUpdatePOI(int cityId, int poiId, JsonPatchDocument<UpdatePOIDto> poiPatch)
-    {
-        var city = this.citiesDataStore.Cities.FirstOrDefault(c => c.Id == cityId);
-        var targetPOI = city?.POIs.FirstOrDefault(p => p.Id == poiId);
+    //         poiPatch.ApplyTo(inputPOI, ModelState);
 
-        if (targetPOI == null)
-        {
-            this.logger.LogInformation($"Point of interest with ID {poiId} was not found in city {city.Name}");
-            return NotFound();
-        }
+    //         if (!TryValidateModel(inputPOI)) return BadRequest(ModelState);
 
-        var patchedPOI = new UpdatePOIDto()
-        {
-            Name = targetPOI.Name,
-            Description = targetPOI.Description
-        };
+    //         this.mapper.Map(inputPOI, poiEntity);
 
-        poiPatch.ApplyTo(patchedPOI);
+    //         await this.cityInfoRepository.UpdatePOIAsync(cityId, poiEntity);
 
-        if (!TryValidateModel(patchedPOI))
-        {
-            this.logger.LogInformation($"Failed to update point of interest {targetPOI.Name} in city {city.Name}");
-            return BadRequest(ModelState);
-        }
+    //         this.logger.LogInformation($"Partially updated point of interest with ID {poiId} in city with ID {cityId}");
 
-        targetPOI.Name = patchedPOI.Name;
-        targetPOI.Description = patchedPOI.Description;
+    //         return Ok();
+    //     }
+    //     catch (Exception e){
+    //         this.logger.LogCritical("Exception occurred", e);
+    //         return StatusCode(500, "An internal error occurred");
+    //     }
+    // }
 
-        this.logger.LogInformation($"Updated point of interest {targetPOI.Name} in city {city.Name}");
+    // [HttpDelete("{poiId}")]
+    // public async Task<ActionResult> DeletePOI(int cityId, int poiId)
+    // {
+    //     try {
+    //         var poiEntity = await this.cityInfoRepository.GetPOIAsync(cityId, poiId);
+    //         if (poiEntity == null) return NotFound();
 
-        return Ok(targetPOI);
-    }
+    //         await this.cityInfoRepository.DeletePOIAsync(poiEntity);
 
-    [HttpDelete("{poiId}")]
-    public ActionResult DeletePOI(int cityId, int poiId)
-    {
-        var city = this.citiesDataStore.Cities.FirstOrDefault(c => c.Id == cityId);
-        var targetPOI = city?.POIs.FirstOrDefault(p => p.Id == poiId);
+    //         this.mailService.Send("A POI was deleted",
+    //             $"Deleted point of interest {poiEntity.Name} in city with ID {cityId}");
 
-        if (targetPOI == null)
-        {
-            this.logger.LogInformation($"Point of interest with ID {poiId} was not found in city {city.Name}");
-            return NotFound();
-        }
+    //         this.logger.LogInformation($"Deleted point of interest with ID {poiId} in city with ID {cityId}");
 
-        city.POIs.Remove(targetPOI);
-
-        this.mailService.Send("A POI was deleted",
-        $"Deleted point of interest {targetPOI.Name} in city {city.Name}");
-
-        return NoContent();
-    }
-
-}   
+    //         return NoContent();
+    //     }
+    //     catch (Exception e){
+    //         this.logger.LogCritical("Exception occurred", e);
+    //         return StatusCode(500, "An internal error occurred");
+    //     }
+    // }
+}
 
 }
 #pragma warning restore CS8602

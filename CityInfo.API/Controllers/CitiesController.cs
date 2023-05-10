@@ -2,58 +2,45 @@ using CityInfo.API.Models.City;
 using CityInfo.API.Services.Interfaces;
 
 using Microsoft.AspNetCore.Mvc;
+using AutoMapper;
 
-namespace CityInfo.API.Controllers{
+namespace CityInfo.API.Controllers
+{
     [ApiController]
     [Route("api/cities")]
-    public class CitiesController : ControllerBase {
-
+    public class CitiesController : ControllerBase 
+    {
         private readonly ICityInfoRepository cityInfoRepository;
-        public CitiesController(ICityInfoRepository citiesDataStoreIn)
+        private readonly IMapper mapper;
+        
+        public CitiesController(ICityInfoRepository citiesDataStoreIn, IMapper mapperIn)
         {
             this.cityInfoRepository = citiesDataStoreIn ?? 
-            throw new ArgumentNullException(nameof(citiesDataStoreIn));
-        }
+                throw new ArgumentNullException(nameof(citiesDataStoreIn));
 
+            this.mapper = mapperIn ??
+                throw new ArgumentNullException(nameof(mapperIn));
+        }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<CityWithoutPOIDto>>> GetCities(){
-            
+        public async Task<ActionResult<IEnumerable<CityWithoutPOIDto>>> GetCities()
+        {            
             var cityEntities = await this.cityInfoRepository.GetCitiesAsync();
-            var output = new List<CityWithoutPOIDto>();
-
-            foreach (var cityEntity in cityEntities){
-                output.Add( 
-                    new CityWithoutPOIDto{
-                        Id = cityEntity.Id,
-                        Name = cityEntity.Name,
-                        Description = cityEntity.Description
-                    }
-                );
-            }
+            var output = this.mapper.Map<IEnumerable<CityWithoutPOIDto>>(cityEntities);
 
             return Ok(output);
         }
 
-       [HttpGet("{id}")]
-        public async Task<ActionResult<CityWithoutPOIDto>> GetCity(int cityId)
+        [HttpGet("{CityId}")]
+        public async Task<IActionResult> GetCity(int CityId, bool includePOI = false)
         {
-            var cityEntity = await this.cityInfoRepository.GetCityAsync(cityId, false);
+            var cityEntity = await this.cityInfoRepository.GetCityAsync(CityId, includePOI);
+            if (cityEntity == null) return NotFound();
 
-            if (cityEntity == null)
-            {
-                return NotFound();
-            }
+            if (includePOI)
+                return Ok( this.mapper.Map<CityDto>(cityEntity));
 
-            var output = new CityWithoutPOIDto
-            {
-                Id = cityEntity.Id,
-                Name = cityEntity.Name,
-                Description = cityEntity.Description
-            };
-
-            return Ok(output);
+            else return Ok( this.mapper.Map<CityWithoutPOIDto>(cityEntity));
         }
-
     }
 }

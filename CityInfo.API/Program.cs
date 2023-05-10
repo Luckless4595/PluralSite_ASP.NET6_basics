@@ -21,8 +21,9 @@ builder.Services.AddControllers(options =>
 {
     options.ReturnHttpNotAcceptable = true;
     
-}).AddXmlDataContractSerializerFormatters()
-.AddNewtonsoftJson();
+})
+.AddNewtonsoftJson()
+.AddXmlDataContractSerializerFormatters();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -38,6 +39,7 @@ builder.Services.AddDbContext<CityInfoContext>(
 );
 
 builder.Services.AddScoped<ICityInfoRepository, CityInfoRepository>();
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 #if DEBUG
 builder.Services.AddTransient<IMailService, LocalMailService>();

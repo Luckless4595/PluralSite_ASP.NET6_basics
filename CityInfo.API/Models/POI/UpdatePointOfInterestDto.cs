@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace CityInfo.API.Models.POI{
 
-    public class UpdatePOIDto{
+    public class UpdatePointOfInterestDto{
 
         [Required(ErrorMessage ="Name must be provided")]
         [MaxLength(50)]
