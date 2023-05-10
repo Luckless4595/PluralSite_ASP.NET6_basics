@@ -19,9 +19,8 @@ namespace CityInfo.API.Entities{
         public City? City {get; set;}
         public int CityId {get; set;}
 
-        public PointOfInterest(string name, string description){
+        public PointOfInterest(string name){
             this.Name = name;
-            this.Description = description;
         }
     }
 }

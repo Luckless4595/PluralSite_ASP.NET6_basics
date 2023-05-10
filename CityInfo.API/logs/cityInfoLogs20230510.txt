@@ -288,3 +288,228 @@ VALUES ('20230510123708_CityInfoDBInitialMigration', '7.0.5');
 2023-05-10 11:37:12.398 -04:00 [INF] Hosting environment: Development
 2023-05-10 11:37:12.398 -04:00 [INF] Content root path: /Users/notAdmin/Dev/C#/ASP.NET core pluralsite/CityInfo/CityInfo.API/
 2023-05-10 11:37:12.398 -04:00 [DBG] Hosting started
+2023-05-10 12:52:46.129 -04:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2023-05-10 12:52:46.734 -04:00 [DBG] Entity Framework Core 7.0.5 initialized 'CityInfoContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:7.0.5' with options: None
+2023-05-10 12:52:46.749 -04:00 [DBG] Creating DbConnection.
+2023-05-10 12:52:46.765 -04:00 [DBG] Created DbConnection. (13ms).
+2023-05-10 12:52:46.770 -04:00 [DBG] Migrating using database 'main' on server 'CityInfo.db'.
+2023-05-10 12:52:46.773 -04:00 [DBG] Creating DbConnection.
+2023-05-10 12:52:46.774 -04:00 [DBG] Created DbConnection. (0ms).
+2023-05-10 12:52:46.775 -04:00 [DBG] Opening connection to database 'main' on server 'CityInfo.db'.
+2023-05-10 12:52:46.784 -04:00 [DBG] Opened connection to database 'main' on server '/Users/notAdmin/Dev/C#/ASP.NET core pluralsite/CityInfo/CityInfo.API/CityInfo.db'.
+2023-05-10 12:52:46.787 -04:00 [DBG] Disposing connection to database 'main' on server 'CityInfo.db'.
+2023-05-10 12:52:46.792 -04:00 [DBG] Disposed connection to database 'main' on server 'CityInfo.db' (0ms).
+2023-05-10 12:52:46.802 -04:00 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2023-05-10 12:52:46.808 -04:00 [DBG] Created DbCommand for 'ExecuteScalar' (5ms).
+2023-05-10 12:52:46.809 -04:00 [DBG] Initialized DbCommand for 'ExecuteScalar' (9ms).
+2023-05-10 12:52:46.809 -04:00 [DBG] Opening connection to database 'main' on server 'CityInfo.db'.
+2023-05-10 12:52:46.812 -04:00 [DBG] Opened connection to database 'main' on server '/Users/notAdmin/Dev/C#/ASP.NET core pluralsite/CityInfo/CityInfo.API/CityInfo.db'.
+2023-05-10 12:52:46.817 -04:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2023-05-10 12:52:46.832 -04:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2023-05-10 12:52:46.833 -04:00 [DBG] Closing connection to database 'main' on server '/Users/notAdmin/Dev/C#/ASP.NET core pluralsite/CityInfo/CityInfo.API/CityInfo.db'.
+2023-05-10 12:52:46.836 -04:00 [DBG] Closed connection to database 'main' on server 'CityInfo.db' (2ms).
+2023-05-10 12:52:46.838 -04:00 [DBG] Creating DbConnection.
+2023-05-10 12:52:46.838 -04:00 [DBG] Created DbConnection. (0ms).
+2023-05-10 12:52:46.838 -04:00 [DBG] Opening connection to database 'main' on server 'CityInfo.db'.
+2023-05-10 12:52:46.838 -04:00 [DBG] Opened connection to database 'main' on server '/Users/notAdmin/Dev/C#/ASP.NET core pluralsite/CityInfo/CityInfo.API/CityInfo.db'.
+2023-05-10 12:52:46.839 -04:00 [DBG] Disposing connection to database 'main' on server 'CityInfo.db'.
+2023-05-10 12:52:46.839 -04:00 [DBG] Disposed connection to database 'main' on server 'CityInfo.db' (0ms).
+2023-05-10 12:52:46.840 -04:00 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2023-05-10 12:52:46.840 -04:00 [DBG] Created DbCommand for 'ExecuteScalar' (0ms).
+2023-05-10 12:52:46.840 -04:00 [DBG] Initialized DbCommand for 'ExecuteScalar' (0ms).
+2023-05-10 12:52:46.840 -04:00 [DBG] Opening connection to database 'main' on server 'CityInfo.db'.
+2023-05-10 12:52:46.841 -04:00 [DBG] Opened connection to database 'main' on server '/Users/notAdmin/Dev/C#/ASP.NET core pluralsite/CityInfo/CityInfo.API/CityInfo.db'.
+2023-05-10 12:52:46.841 -04:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2023-05-10 12:52:46.841 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2023-05-10 12:52:46.842 -04:00 [DBG] Closing connection to database 'main' on server '/Users/notAdmin/Dev/C#/ASP.NET core pluralsite/CityInfo/CityInfo.API/CityInfo.db'.
+2023-05-10 12:52:46.842 -04:00 [DBG] Closed connection to database 'main' on server 'CityInfo.db' (0ms).
+2023-05-10 12:52:46.855 -04:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-05-10 12:52:46.855 -04:00 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2023-05-10 12:52:46.855 -04:00 [DBG] Initialized DbCommand for 'ExecuteReader' (0ms).
+2023-05-10 12:52:46.856 -04:00 [DBG] Opening connection to database 'main' on server 'CityInfo.db'.
+2023-05-10 12:52:46.856 -04:00 [DBG] Opened connection to database 'main' on server '/Users/notAdmin/Dev/C#/ASP.NET core pluralsite/CityInfo/CityInfo.API/CityInfo.db'.
+2023-05-10 12:52:46.856 -04:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2023-05-10 12:52:46.857 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2023-05-10 12:52:46.860 -04:00 [DBG] Closing data reader to 'main' on server '/Users/notAdmin/Dev/C#/ASP.NET core pluralsite/CityInfo/CityInfo.API/CityInfo.db'.
+2023-05-10 12:52:46.861 -04:00 [DBG] A data reader for 'main' on server '/Users/notAdmin/Dev/C#/ASP.NET core pluralsite/CityInfo/CityInfo.API/CityInfo.db' is being disposed after spending 2ms reading results.
+2023-05-10 12:52:46.861 -04:00 [DBG] Closing connection to database 'main' on server '/Users/notAdmin/Dev/C#/ASP.NET core pluralsite/CityInfo/CityInfo.API/CityInfo.db'.
+2023-05-10 12:52:46.861 -04:00 [DBG] Closed connection to database 'main' on server 'CityInfo.db' (0ms).
+2023-05-10 12:52:46.872 -04:00 [INF] Applying migration '20230510153710_UpdatePOIWithDescription'.
+2023-05-10 12:52:46.905 -04:00 [DBG] Opening connection to database 'main' on server 'CityInfo.db'.
+2023-05-10 12:52:46.906 -04:00 [DBG] Opened connection to database 'main' on server '/Users/notAdmin/Dev/C#/ASP.NET core pluralsite/CityInfo/CityInfo.API/CityInfo.db'.
+2023-05-10 12:52:46.907 -04:00 [DBG] Beginning transaction with isolation level 'Unspecified'.
+2023-05-10 12:52:46.910 -04:00 [DBG] Began transaction with isolation level 'Serializable'.
+2023-05-10 12:52:46.911 -04:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2023-05-10 12:52:46.911 -04:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (0ms).
+2023-05-10 12:52:46.911 -04:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (0ms).
+2023-05-10 12:52:46.912 -04:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE "POIs" ADD "Description" TEXT NULL;
+2023-05-10 12:52:46.913 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE "POIs" ADD "Description" TEXT NULL;
+2023-05-10 12:52:46.913 -04:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2023-05-10 12:52:46.913 -04:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (0ms).
+2023-05-10 12:52:46.914 -04:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (0ms).
+2023-05-10 12:52:46.914 -04:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+VALUES ('20230510153710_UpdatePOIWithDescription', '7.0.5');
+2023-05-10 12:52:46.914 -04:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+VALUES ('20230510153710_UpdatePOIWithDescription', '7.0.5');
+2023-05-10 12:52:46.916 -04:00 [DBG] Committing transaction.
+2023-05-10 12:52:46.917 -04:00 [DBG] Committed transaction.
+2023-05-10 12:52:46.919 -04:00 [DBG] Disposing transaction.
+2023-05-10 12:52:46.919 -04:00 [DBG] Closing connection to database 'main' on server '/Users/notAdmin/Dev/C#/ASP.NET core pluralsite/CityInfo/CityInfo.API/CityInfo.db'.
+2023-05-10 12:52:46.919 -04:00 [DBG] Closed connection to database 'main' on server 'CityInfo.db' (0ms).
+2023-05-10 12:52:46.921 -04:00 [DBG] 'CityInfoContext' disposed.
+2023-05-10 12:52:46.921 -04:00 [DBG] Disposing connection to database 'main' on server 'CityInfo.db'.
+2023-05-10 12:52:46.922 -04:00 [DBG] Disposed connection to database 'main' on server 'CityInfo.db' (0ms).
+2023-05-10 13:14:33.032 -04:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2023-05-10 13:17:14.500 -04:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2023-05-10 13:17:15.123 -04:00 [DBG] Entity Framework Core 7.0.5 initialized 'CityInfoContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:7.0.5' with options: None
+2023-05-10 13:17:15.306 -04:00 [DBG] 'CityInfoContext' disposed.
+2023-05-10 13:17:26.518 -04:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2023-05-10 13:17:27.140 -04:00 [DBG] Entity Framework Core 7.0.5 initialized 'CityInfoContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:7.0.5' with options: None
+2023-05-10 13:17:27.154 -04:00 [DBG] Creating DbConnection.
+2023-05-10 13:17:27.170 -04:00 [DBG] Created DbConnection. (12ms).
+2023-05-10 13:17:27.175 -04:00 [DBG] Migrating using database 'main' on server 'CityInfo.db'.
+2023-05-10 13:17:27.177 -04:00 [DBG] Creating DbConnection.
+2023-05-10 13:17:27.178 -04:00 [DBG] Created DbConnection. (0ms).
+2023-05-10 13:17:27.179 -04:00 [DBG] Opening connection to database 'main' on server 'CityInfo.db'.
+2023-05-10 13:17:27.189 -04:00 [DBG] Opened connection to database 'main' on server '/Users/notAdmin/Dev/C#/ASP.NET core pluralsite/CityInfo/CityInfo.API/CityInfo.db'.
+2023-05-10 13:17:27.192 -04:00 [DBG] Disposing connection to database 'main' on server 'CityInfo.db'.
+2023-05-10 13:17:27.197 -04:00 [DBG] Disposed connection to database 'main' on server 'CityInfo.db' (0ms).
+2023-05-10 13:17:27.207 -04:00 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2023-05-10 13:17:27.212 -04:00 [DBG] Created DbCommand for 'ExecuteScalar' (5ms).
+2023-05-10 13:17:27.213 -04:00 [DBG] Initialized DbCommand for 'ExecuteScalar' (9ms).
+2023-05-10 13:17:27.214 -04:00 [DBG] Opening connection to database 'main' on server 'CityInfo.db'.
+2023-05-10 13:17:27.216 -04:00 [DBG] Opened connection to database 'main' on server '/Users/notAdmin/Dev/C#/ASP.NET core pluralsite/CityInfo/CityInfo.API/CityInfo.db'.
+2023-05-10 13:17:27.222 -04:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2023-05-10 13:17:27.237 -04:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2023-05-10 13:17:27.239 -04:00 [DBG] Closing connection to database 'main' on server '/Users/notAdmin/Dev/C#/ASP.NET core pluralsite/CityInfo/CityInfo.API/CityInfo.db'.
+2023-05-10 13:17:27.242 -04:00 [DBG] Closed connection to database 'main' on server 'CityInfo.db' (2ms).
+2023-05-10 13:17:27.243 -04:00 [DBG] Creating DbConnection.
+2023-05-10 13:17:27.243 -04:00 [DBG] Created DbConnection. (0ms).
+2023-05-10 13:17:27.243 -04:00 [DBG] Opening connection to database 'main' on server 'CityInfo.db'.
+2023-05-10 13:17:27.244 -04:00 [DBG] Opened connection to database 'main' on server '/Users/notAdmin/Dev/C#/ASP.NET core pluralsite/CityInfo/CityInfo.API/CityInfo.db'.
+2023-05-10 13:17:27.244 -04:00 [DBG] Disposing connection to database 'main' on server 'CityInfo.db'.
+2023-05-10 13:17:27.244 -04:00 [DBG] Disposed connection to database 'main' on server 'CityInfo.db' (0ms).
+2023-05-10 13:17:27.245 -04:00 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2023-05-10 13:17:27.245 -04:00 [DBG] Created DbCommand for 'ExecuteScalar' (0ms).
+2023-05-10 13:17:27.245 -04:00 [DBG] Initialized DbCommand for 'ExecuteScalar' (0ms).
+2023-05-10 13:17:27.245 -04:00 [DBG] Opening connection to database 'main' on server 'CityInfo.db'.
+2023-05-10 13:17:27.246 -04:00 [DBG] Opened connection to database 'main' on server '/Users/notAdmin/Dev/C#/ASP.NET core pluralsite/CityInfo/CityInfo.API/CityInfo.db'.
+2023-05-10 13:17:27.246 -04:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2023-05-10 13:17:27.247 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2023-05-10 13:17:27.247 -04:00 [DBG] Closing connection to database 'main' on server '/Users/notAdmin/Dev/C#/ASP.NET core pluralsite/CityInfo/CityInfo.API/CityInfo.db'.
+2023-05-10 13:17:27.247 -04:00 [DBG] Closed connection to database 'main' on server 'CityInfo.db' (0ms).
+2023-05-10 13:17:27.258 -04:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-05-10 13:17:27.258 -04:00 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2023-05-10 13:17:27.259 -04:00 [DBG] Initialized DbCommand for 'ExecuteReader' (0ms).
+2023-05-10 13:17:27.259 -04:00 [DBG] Opening connection to database 'main' on server 'CityInfo.db'.
+2023-05-10 13:17:27.259 -04:00 [DBG] Opened connection to database 'main' on server '/Users/notAdmin/Dev/C#/ASP.NET core pluralsite/CityInfo/CityInfo.API/CityInfo.db'.
+2023-05-10 13:17:27.260 -04:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2023-05-10 13:17:27.260 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2023-05-10 13:17:27.262 -04:00 [DBG] Closing data reader to 'main' on server '/Users/notAdmin/Dev/C#/ASP.NET core pluralsite/CityInfo/CityInfo.API/CityInfo.db'.
+2023-05-10 13:17:27.263 -04:00 [DBG] A data reader for 'main' on server '/Users/notAdmin/Dev/C#/ASP.NET core pluralsite/CityInfo/CityInfo.API/CityInfo.db' is being disposed after spending 1ms reading results.
+2023-05-10 13:17:27.263 -04:00 [DBG] Closing connection to database 'main' on server '/Users/notAdmin/Dev/C#/ASP.NET core pluralsite/CityInfo/CityInfo.API/CityInfo.db'.
+2023-05-10 13:17:27.264 -04:00 [DBG] Closed connection to database 'main' on server 'CityInfo.db' (0ms).
+2023-05-10 13:17:27.273 -04:00 [INF] Applying migration '20230510171715_InitialDataSeed'.
+2023-05-10 13:17:27.306 -04:00 [DBG] Opening connection to database 'main' on server 'CityInfo.db'.
+2023-05-10 13:17:27.307 -04:00 [DBG] Opened connection to database 'main' on server '/Users/notAdmin/Dev/C#/ASP.NET core pluralsite/CityInfo/CityInfo.API/CityInfo.db'.
+2023-05-10 13:17:27.308 -04:00 [DBG] Beginning transaction with isolation level 'Unspecified'.
+2023-05-10 13:17:27.310 -04:00 [DBG] Began transaction with isolation level 'Serializable'.
+2023-05-10 13:17:27.311 -04:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2023-05-10 13:17:27.311 -04:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (0ms).
+2023-05-10 13:17:27.311 -04:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (0ms).
+2023-05-10 13:17:27.312 -04:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Cities" ("Id", "Description", "Name")
+VALUES (1, 'The largest city in the United States, famous for its iconic landmarks, world-class museums, and diverse neighborhoods.', 'New York');
+INSERT INTO "Cities" ("Id", "Description", "Name")
+VALUES (2, 'The second-most populous city in the United States, known for its sunny weather, entertainment industry, and cultural diversity.', 'Los Angeles');
+INSERT INTO "Cities" ("Id", "Description", "Name")
+VALUES (3, 'The capital of France and one of the most beautiful cities in the world, renowned for its art, architecture, and cuisine.', 'Paris');
+2023-05-10 13:17:27.313 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Cities" ("Id", "Description", "Name")
+VALUES (1, 'The largest city in the United States, famous for its iconic landmarks, world-class museums, and diverse neighborhoods.', 'New York');
+INSERT INTO "Cities" ("Id", "Description", "Name")
+VALUES (2, 'The second-most populous city in the United States, known for its sunny weather, entertainment industry, and cultural diversity.', 'Los Angeles');
+INSERT INTO "Cities" ("Id", "Description", "Name")
+VALUES (3, 'The capital of France and one of the most beautiful cities in the world, renowned for its art, architecture, and cuisine.', 'Paris');
+2023-05-10 13:17:27.313 -04:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2023-05-10 13:17:27.313 -04:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (0ms).
+2023-05-10 13:17:27.314 -04:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (0ms).
+2023-05-10 13:17:27.314 -04:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "POIs" ("Id", "CityId", "Description", "Name")
+VALUES (1, 1, 'A copper statue gifted to the US by France, representing liberty and freedom.', 'Statue of Liberty');
+INSERT INTO "POIs" ("Id", "CityId", "Description", "Name")
+VALUES (2, 1, 'A 102-story skyscraper located in Midtown Manhattan, built in 1931.', 'Empire State Building');
+INSERT INTO "POIs" ("Id", "CityId", "Description", "Name")
+VALUES (3, 1, 'A large urban park located in the center of Manhattan, featuring lakes, lawns, and walking paths.', 'Central Park');
+INSERT INTO "POIs" ("Id", "CityId", "Description", "Name")
+VALUES (4, 2, 'A world-famous landmark that overlooks the city of Los Angeles, erected in 1923.', 'Hollywood Sign');
+INSERT INTO "POIs" ("Id", "CityId", "Description", "Name")
+VALUES (5, 2, 'A public observatory and planetarium located on the south-facing slope of Mount Hollywood.', 'Griffith Observatory');
+INSERT INTO "POIs" ("Id", "CityId", "Description", "Name")
+VALUES (6, 2, 'A large pier featuring an amusement park, an aquarium, restaurants, and shops.', 'Santa Monica Pier');
+INSERT INTO "POIs" ("Id", "CityId", "Description", "Name")
+VALUES (7, 3, 'A wrought-iron lattice tower located on the Champ de Mars in Paris, built in 1889.', 'Eiffel Tower');
+INSERT INTO "POIs" ("Id", "CityId", "Description", "Name")
+VALUES (8, 3, 'The world''s largest art museum, featuring over 380,000 objects and 35,000 works of art.', 'The Louvre');
+INSERT INTO "POIs" ("Id", "CityId", "Description", "Name")
+VALUES (9, 3, 'A medieval Catholic cathedral located on the Île de la Cité in the center of Paris.', 'Cathédrale Notre-Dame de Paris');
+2023-05-10 13:17:27.315 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "POIs" ("Id", "CityId", "Description", "Name")
+VALUES (1, 1, 'A copper statue gifted to the US by France, representing liberty and freedom.', 'Statue of Liberty');
+INSERT INTO "POIs" ("Id", "CityId", "Description", "Name")
+VALUES (2, 1, 'A 102-story skyscraper located in Midtown Manhattan, built in 1931.', 'Empire State Building');
+INSERT INTO "POIs" ("Id", "CityId", "Description", "Name")
+VALUES (3, 1, 'A large urban park located in the center of Manhattan, featuring lakes, lawns, and walking paths.', 'Central Park');
+INSERT INTO "POIs" ("Id", "CityId", "Description", "Name")
+VALUES (4, 2, 'A world-famous landmark that overlooks the city of Los Angeles, erected in 1923.', 'Hollywood Sign');
+INSERT INTO "POIs" ("Id", "CityId", "Description", "Name")
+VALUES (5, 2, 'A public observatory and planetarium located on the south-facing slope of Mount Hollywood.', 'Griffith Observatory');
+INSERT INTO "POIs" ("Id", "CityId", "Description", "Name")
+VALUES (6, 2, 'A large pier featuring an amusement park, an aquarium, restaurants, and shops.', 'Santa Monica Pier');
+INSERT INTO "POIs" ("Id", "CityId", "Description", "Name")
+VALUES (7, 3, 'A wrought-iron lattice tower located on the Champ de Mars in Paris, built in 1889.', 'Eiffel Tower');
+INSERT INTO "POIs" ("Id", "CityId", "Description", "Name")
+VALUES (8, 3, 'The world''s largest art museum, featuring over 380,000 objects and 35,000 works of art.', 'The Louvre');
+INSERT INTO "POIs" ("Id", "CityId", "Description", "Name")
+VALUES (9, 3, 'A medieval Catholic cathedral located on the Île de la Cité in the center of Paris.', 'Cathédrale Notre-Dame de Paris');
+2023-05-10 13:17:27.315 -04:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2023-05-10 13:17:27.315 -04:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (0ms).
+2023-05-10 13:17:27.315 -04:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (0ms).
+2023-05-10 13:17:27.316 -04:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+VALUES ('20230510171715_InitialDataSeed', '7.0.5');
+2023-05-10 13:17:27.316 -04:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+VALUES ('20230510171715_InitialDataSeed', '7.0.5');
+2023-05-10 13:17:27.317 -04:00 [DBG] Committing transaction.
+2023-05-10 13:17:27.319 -04:00 [DBG] Committed transaction.
+2023-05-10 13:17:27.320 -04:00 [DBG] Disposing transaction.
+2023-05-10 13:17:27.320 -04:00 [DBG] Closing connection to database 'main' on server '/Users/notAdmin/Dev/C#/ASP.NET core pluralsite/CityInfo/CityInfo.API/CityInfo.db'.
+2023-05-10 13:17:27.321 -04:00 [DBG] Closed connection to database 'main' on server 'CityInfo.db' (0ms).
+2023-05-10 13:17:27.322 -04:00 [DBG] 'CityInfoContext' disposed.
+2023-05-10 13:17:27.322 -04:00 [DBG] Disposing connection to database 'main' on server 'CityInfo.db'.
+2023-05-10 13:17:27.323 -04:00 [DBG] Disposed connection to database 'main' on server 'CityInfo.db' (0ms).
