@@ -1,0 +1,143 @@
+2023-05-10 08:37:07.280 -04:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2023-05-10 08:37:08.175 -04:00 [DBG] Entity Framework Core 7.0.5 initialized 'CityInfoContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:7.0.5' with options: None
+2023-05-10 08:37:08.321 -04:00 [DBG] 'CityInfoContext' disposed.
+2023-05-10 08:47:35.885 -04:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2023-05-10 08:47:36.359 -04:00 [DBG] Entity Framework Core 7.0.5 initialized 'CityInfoContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:7.0.5' with options: None
+2023-05-10 08:47:36.376 -04:00 [DBG] Creating DbConnection.
+2023-05-10 08:47:36.395 -04:00 [DBG] Created DbConnection. (15ms).
+2023-05-10 08:47:36.400 -04:00 [DBG] Migrating using database 'main' on server 'CityInfo.db'.
+2023-05-10 08:47:36.403 -04:00 [DBG] Creating DbConnection.
+2023-05-10 08:47:36.403 -04:00 [DBG] Created DbConnection. (0ms).
+2023-05-10 08:47:36.404 -04:00 [DBG] Opening connection to database 'main' on server 'CityInfo.db'.
+2023-05-10 08:47:36.412 -04:00 [DBG] An error occurred using the connection to database 'main' on server 'CityInfo.db'.
+2023-05-10 08:47:36.414 -04:00 [DBG] Disposing connection to database 'main' on server 'CityInfo.db'.
+2023-05-10 08:47:36.419 -04:00 [DBG] Disposed connection to database 'main' on server 'CityInfo.db' (0ms).
+2023-05-10 08:47:36.419 -04:00 [DBG] Creating DbConnection.
+2023-05-10 08:47:36.419 -04:00 [DBG] Created DbConnection. (0ms).
+2023-05-10 08:47:36.419 -04:00 [DBG] Opening connection to database 'main' on server 'CityInfo.db'.
+2023-05-10 08:47:36.420 -04:00 [DBG] An error occurred using the connection to database 'main' on server 'CityInfo.db'.
+2023-05-10 08:47:36.420 -04:00 [DBG] Disposing connection to database 'main' on server 'CityInfo.db'.
+2023-05-10 08:47:36.420 -04:00 [DBG] Disposed connection to database 'main' on server 'CityInfo.db' (0ms).
+2023-05-10 08:47:36.420 -04:00 [DBG] Opening connection to database 'main' on server 'CityInfo.db'.
+2023-05-10 08:47:36.427 -04:00 [DBG] Opened connection to database 'main' on server 'C:\Workspaces\onboarding\aspnetcoreAPI\CityInfo.API\CityInfo.db'.
+2023-05-10 08:47:36.435 -04:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2023-05-10 08:47:36.440 -04:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (5ms).
+2023-05-10 08:47:36.441 -04:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (9ms).
+2023-05-10 08:47:36.447 -04:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+PRAGMA journal_mode = 'wal';
+2023-05-10 08:47:36.466 -04:00 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+PRAGMA journal_mode = 'wal';
+2023-05-10 08:47:36.467 -04:00 [DBG] Closing connection to database 'main' on server 'C:\Workspaces\onboarding\aspnetcoreAPI\CityInfo.API\CityInfo.db'.
+2023-05-10 08:47:36.469 -04:00 [DBG] Closed connection to database 'main' on server 'CityInfo.db' (2ms).
+2023-05-10 08:47:36.543 -04:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2023-05-10 08:47:36.543 -04:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (0ms).
+2023-05-10 08:47:36.543 -04:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (0ms).
+2023-05-10 08:47:36.543 -04:00 [DBG] Opening connection to database 'main' on server 'CityInfo.db'.
+2023-05-10 08:47:36.543 -04:00 [DBG] Opened connection to database 'main' on server 'C:\Workspaces\onboarding\aspnetcoreAPI\CityInfo.API\CityInfo.db'.
+2023-05-10 08:47:36.543 -04:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "__EFMigrationsHistory" (
+    "MigrationId" TEXT NOT NULL CONSTRAINT "PK___EFMigrationsHistory" PRIMARY KEY,
+    "ProductVersion" TEXT NOT NULL
+);
+2023-05-10 08:47:36.550 -04:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "__EFMigrationsHistory" (
+    "MigrationId" TEXT NOT NULL CONSTRAINT "PK___EFMigrationsHistory" PRIMARY KEY,
+    "ProductVersion" TEXT NOT NULL
+);
+2023-05-10 08:47:36.550 -04:00 [DBG] Closing connection to database 'main' on server 'C:\Workspaces\onboarding\aspnetcoreAPI\CityInfo.API\CityInfo.db'.
+2023-05-10 08:47:36.550 -04:00 [DBG] Closed connection to database 'main' on server 'CityInfo.db' (0ms).
+2023-05-10 08:47:36.551 -04:00 [DBG] Creating DbConnection.
+2023-05-10 08:47:36.551 -04:00 [DBG] Created DbConnection. (0ms).
+2023-05-10 08:47:36.551 -04:00 [DBG] Opening connection to database 'main' on server 'CityInfo.db'.
+2023-05-10 08:47:36.552 -04:00 [DBG] Opened connection to database 'main' on server 'C:\Workspaces\onboarding\aspnetcoreAPI\CityInfo.API\CityInfo.db'.
+2023-05-10 08:47:36.553 -04:00 [DBG] Disposing connection to database 'main' on server 'CityInfo.db'.
+2023-05-10 08:47:36.553 -04:00 [DBG] Disposed connection to database 'main' on server 'CityInfo.db' (0ms).
+2023-05-10 08:47:36.557 -04:00 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2023-05-10 08:47:36.557 -04:00 [DBG] Created DbCommand for 'ExecuteScalar' (0ms).
+2023-05-10 08:47:36.557 -04:00 [DBG] Initialized DbCommand for 'ExecuteScalar' (0ms).
+2023-05-10 08:47:36.557 -04:00 [DBG] Opening connection to database 'main' on server 'CityInfo.db'.
+2023-05-10 08:47:36.557 -04:00 [DBG] Opened connection to database 'main' on server 'C:\Workspaces\onboarding\aspnetcoreAPI\CityInfo.API\CityInfo.db'.
+2023-05-10 08:47:36.557 -04:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2023-05-10 08:47:36.559 -04:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2023-05-10 08:47:36.559 -04:00 [DBG] Closing connection to database 'main' on server 'C:\Workspaces\onboarding\aspnetcoreAPI\CityInfo.API\CityInfo.db'.
+2023-05-10 08:47:36.559 -04:00 [DBG] Closed connection to database 'main' on server 'CityInfo.db' (0ms).
+2023-05-10 08:47:36.560 -04:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-05-10 08:47:36.560 -04:00 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2023-05-10 08:47:36.560 -04:00 [DBG] Initialized DbCommand for 'ExecuteReader' (0ms).
+2023-05-10 08:47:36.582 -04:00 [DBG] Opening connection to database 'main' on server 'CityInfo.db'.
+2023-05-10 08:47:36.582 -04:00 [DBG] Opened connection to database 'main' on server 'C:\Workspaces\onboarding\aspnetcoreAPI\CityInfo.API\CityInfo.db'.
+2023-05-10 08:47:36.583 -04:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2023-05-10 08:47:36.583 -04:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2023-05-10 08:47:36.584 -04:00 [DBG] Closing data reader to 'main' on server 'C:\Workspaces\onboarding\aspnetcoreAPI\CityInfo.API\CityInfo.db'.
+2023-05-10 08:47:36.585 -04:00 [DBG] A data reader for 'main' on server 'C:\Workspaces\onboarding\aspnetcoreAPI\CityInfo.API\CityInfo.db' is being disposed after spending 0ms reading results.
+2023-05-10 08:47:36.585 -04:00 [DBG] Closing connection to database 'main' on server 'C:\Workspaces\onboarding\aspnetcoreAPI\CityInfo.API\CityInfo.db'.
+2023-05-10 08:47:36.585 -04:00 [DBG] Closed connection to database 'main' on server 'CityInfo.db' (0ms).
+2023-05-10 08:47:36.592 -04:00 [INF] Applying migration '20230510123708_CityInfoDBInitialMigration'.
+2023-05-10 08:47:36.606 -04:00 [DBG] Opening connection to database 'main' on server 'CityInfo.db'.
+2023-05-10 08:47:36.606 -04:00 [DBG] Opened connection to database 'main' on server 'C:\Workspaces\onboarding\aspnetcoreAPI\CityInfo.API\CityInfo.db'.
+2023-05-10 08:47:36.607 -04:00 [DBG] Beginning transaction with isolation level 'Unspecified'.
+2023-05-10 08:47:36.609 -04:00 [DBG] Began transaction with isolation level 'Serializable'.
+2023-05-10 08:47:36.609 -04:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2023-05-10 08:47:36.609 -04:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (0ms).
+2023-05-10 08:47:36.609 -04:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (0ms).
+2023-05-10 08:47:36.609 -04:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Cities" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Cities" PRIMARY KEY AUTOINCREMENT,
+    "Name" TEXT NOT NULL,
+    "Description" TEXT NULL
+);
+2023-05-10 08:47:36.610 -04:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Cities" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Cities" PRIMARY KEY AUTOINCREMENT,
+    "Name" TEXT NOT NULL,
+    "Description" TEXT NULL
+);
+2023-05-10 08:47:36.610 -04:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2023-05-10 08:47:36.610 -04:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (0ms).
+2023-05-10 08:47:36.610 -04:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (0ms).
+2023-05-10 08:47:36.610 -04:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "POIs" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_POIs" PRIMARY KEY AUTOINCREMENT,
+    "Name" TEXT NOT NULL,
+    "CityId" INTEGER NOT NULL,
+    CONSTRAINT "FK_POIs_Cities_CityId" FOREIGN KEY ("CityId") REFERENCES "Cities" ("Id") ON DELETE CASCADE
+);
+2023-05-10 08:47:36.610 -04:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "POIs" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_POIs" PRIMARY KEY AUTOINCREMENT,
+    "Name" TEXT NOT NULL,
+    "CityId" INTEGER NOT NULL,
+    CONSTRAINT "FK_POIs_Cities_CityId" FOREIGN KEY ("CityId") REFERENCES "Cities" ("Id") ON DELETE CASCADE
+);
+2023-05-10 08:47:36.610 -04:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2023-05-10 08:47:36.610 -04:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (0ms).
+2023-05-10 08:47:36.610 -04:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (0ms).
+2023-05-10 08:47:36.610 -04:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_POIs_CityId" ON "POIs" ("CityId");
+2023-05-10 08:47:36.610 -04:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_POIs_CityId" ON "POIs" ("CityId");
+2023-05-10 08:47:36.610 -04:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2023-05-10 08:47:36.610 -04:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (0ms).
+2023-05-10 08:47:36.610 -04:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (0ms).
+2023-05-10 08:47:36.610 -04:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+VALUES ('20230510123708_CityInfoDBInitialMigration', '7.0.5');
+2023-05-10 08:47:38.220 -04:00 [INF] Executed DbCommand (1,609ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+VALUES ('20230510123708_CityInfoDBInitialMigration', '7.0.5');
+2023-05-10 08:47:38.221 -04:00 [DBG] Committing transaction.
+2023-05-10 08:47:38.225 -04:00 [DBG] Committed transaction.
+2023-05-10 08:47:38.226 -04:00 [DBG] Disposing transaction.
+2023-05-10 08:47:38.226 -04:00 [DBG] Closing connection to database 'main' on server 'C:\Workspaces\onboarding\aspnetcoreAPI\CityInfo.API\CityInfo.db'.
+2023-05-10 08:47:38.227 -04:00 [DBG] Closed connection to database 'main' on server 'CityInfo.db' (0ms).
+2023-05-10 08:47:38.228 -04:00 [DBG] 'CityInfoContext' disposed.
+2023-05-10 08:47:38.228 -04:00 [DBG] Disposing connection to database 'main' on server 'CityInfo.db'.
+2023-05-10 08:47:38.228 -04:00 [DBG] Disposed connection to database 'main' on server 'CityInfo.db' (0ms).
