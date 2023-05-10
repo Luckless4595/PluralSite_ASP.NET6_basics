@@ -1,5 +1,5 @@
 using CityInfo.API.Models.POI;
-using CityInfo.API.Services;
+using CityInfo.API.Services.Interfaces;
 
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.JsonPatch;

@@ -1,4 +1,5 @@
-namespace CityInfo.API.Services{
+using CityInfo.API.Services.Interfaces;
+namespace CityInfo.API.Services.Implementations{
         public class LocalMailService : IMailService{
         private readonly string mailTo ,mailFrom ;
 

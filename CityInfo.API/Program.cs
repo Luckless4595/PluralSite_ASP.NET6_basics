@@ -3,7 +3,8 @@ using Microsoft.EntityFrameworkCore;
 using Serilog;
 
 using CityInfo.API;
-using CityInfo.API.Services;
+using CityInfo.API.Services.Implementations;
+using CityInfo.API.Services.Interfaces;
 using CityInfo.API.DbContexts;
 
 Log.Logger = new LoggerConfiguration()
@@ -28,9 +29,14 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<FileExtensionContentTypeProvider>();
 
 builder.Services.AddSingleton<CitiesDataStore>();
+
 builder.Services.AddDbContext<CityInfoContext>(
-    DbContextOptions => DbContextOptions.UseSqlite("Data Source = CityInfo.db")
+    DbContextOptions => DbContextOptions.UseSqlite(
+        builder.Configuration["ConnectionStrings:CityInfoDBConnectionString"]
+    )
 );
+
+builder.Services.AddScoped<ICityInfoRepository, CityInfoRepository>();
 
 #if DEBUG
 builder.Services.AddTransient<IMailService, LocalMailService>();
