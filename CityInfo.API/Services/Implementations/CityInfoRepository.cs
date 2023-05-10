@@ -14,6 +14,11 @@ namespace CityInfo.API.Services.Implementations
             _context = context ?? throw new ArgumentNullException(nameof(context));
         }
 
+        // GET
+        public async Task<bool> SaveChangesAsync(){
+            return (await _context.SaveChangesAsync() >=0);
+        }
+
         public async Task<bool> CheckCityExistsAsync(int cityId){
             return await _context.Cities.AnyAsync(c => c.Id == cityId);
         }
@@ -53,5 +58,13 @@ namespace CityInfo.API.Services.Implementations
             return await _context.POIs
                 .FirstOrDefaultAsync(p => p.CityId == cityId && p.Id == id);
         }
+
+        //Manipulations
+        public async Task AddPointOfInterestForCityAsync(int cityId, PointOfInterest newPOI){
+
+            var city = await GetCityAsync(cityId, false);
+            if (city != null) city.POIs.Add(newPOI);
+        }
+
     }
 }

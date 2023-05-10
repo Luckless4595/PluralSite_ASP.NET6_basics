@@ -1,5 +1,6 @@
 using CityInfo.API.Models.POI;
 using CityInfo.API.Services.Interfaces;
+using CityInfo.API.Entities;
 
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.JsonPatch;
@@ -87,24 +88,26 @@ namespace CityInfo.API.Controllers
         }
 
 
-    //     [HttpPost]
-    //     public async Task<ActionResult<PointOfInterestDto>> CreatePOI(int cityId, [FromBody] CreatePointOfInterestDto newPOI)
-    //     {
-    //         try {
-    //             var poiEntity = this.mapper.Map<POI>(newPOI);
-    //             await this.cityInfoRepository.AddPOIAsync(cityId, poiEntity);
+        [HttpPost]
+        public async Task<ActionResult<PointOfInterestDto>> CreatePOI(int cityId, CreatePointOfInterestDto newPOI)
+        {
+            try {
+                var poiToEnterInDB = this.mapper.Map<PointOfInterest>(newPOI);
+                Console.WriteLine($"Poi Received Name: {poiToEnterInDB.Name}");
+                await this.cityInfoRepository.AddPointOfInterestForCityAsync(cityId, poiToEnterInDB);
 
-    //             var output = this.mapper.Map<PointOfInterestDto>(poiEntity);
 
-    //             this.logger.LogInformation($"Added new point of interest {newPOI.Name} to city with ID {cityId}");
+                await this.cityInfoRepository.SaveChangesAsync();  
+                var poiEnteredInDB = this.mapper.Map<PointOfInterestDto>(poiToEnterInDB);
 
-    //             return CreatedAtRoute("GetPOI", new { cityId = cityId, poiId = poiEntity.Id }, output);
-    //         }
-    //         catch (Exception e){
-    //             this.logger.LogCritical("Exception occurred", e);
-    //             return StatusCode(500, "An internal error occurred");
-    //         }
-    //     }
+                this.logger.LogInformation($"Added new point of interest {poiEnteredInDB.Name} to city with ID {cityId}");
+                return CreatedAtRoute("GetPOI", new { cityId = cityId, poiId = poiEnteredInDB.Id }, poiEnteredInDB);
+            }
+            catch (Exception e){
+                this.logger.LogCritical("Exception occurred", e);
+                return StatusCode(500, "An internal error occurred");
+            }
+        }
 
     //     [HttpPut("{poiId}")]
     //     public async Task<ActionResult> FullyUpdatePOI(int cityId, int poiId, UpdatePointOfInterestDto inputPOI)
