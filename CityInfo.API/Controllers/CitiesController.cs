@@ -2,6 +2,7 @@ using CityInfo.API.Models.City;
 using CityInfo.API.Services.Interfaces;
 
 using Microsoft.AspNetCore.Mvc;
+using System.Text.Json;
 using AutoMapper;
 
 namespace CityInfo.API.Controllers
@@ -32,8 +33,10 @@ namespace CityInfo.API.Controllers
             if (pageSize>maxCitiesPageSize)
                  pageSize = maxCitiesPageSize;
         //    note: this is not vulnerable to sql injections because EFCore sanitizes for you         
-            var cityEntities = await this.cityInfoRepository.GetCitiesAsync(
+            var (cityEntities, pagingMetadata) = await this.cityInfoRepository.GetCitiesAsync(
                 cityNameFilter, searchByCityName, pageNumber, pageSize);
+
+            Response.Headers.Add("X-Pagination", JsonSerializer.Serialize(pagingMetadata));
             var output = this.mapper.Map<IEnumerable<CityWithoutPOIDto>>(cityEntities);
 
             return Ok(output);

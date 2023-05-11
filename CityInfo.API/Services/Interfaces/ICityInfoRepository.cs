@@ -1,12 +1,13 @@
 using CityInfo.API.Entities;
 
+using CityInfo.API.Services.Implementations;
 namespace CityInfo.API.Services.Interfaces{
     public interface ICityInfoRepository{
 
         //GET
         Task<bool> SaveChangesAsync();
         Task<bool> CheckCityExistsAsync(int cityId);
-        Task<IEnumerable<City>> GetCitiesAsync(
+        Task<(IEnumerable<City>,PagingMetadata)> GetCitiesAsync(
             string? cityNameFilter, string? searchByCityName, int pageNumber, int pageSize);
         Task<City?> GetCityAsync(int CityId, bool includePOI);
         Task<IEnumerable<PointOfInterest>> GetCityPOIsAsync(int CityId);

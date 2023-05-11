@@ -24,7 +24,7 @@ namespace CityInfo.API.Services.Implementations
         }
         //overload
         #pragma warning disable CS8602
-        public async Task<IEnumerable<City>> GetCitiesAsync(
+        public async Task<(IEnumerable<City>, PagingMetadata)> GetCitiesAsync(
             string? cityNameFilter, string? searchByCityName, int pageNumber, int pageSize)
         {
             bool noFilter = string.IsNullOrWhiteSpace(cityNameFilter);
@@ -51,11 +51,16 @@ namespace CityInfo.API.Services.Implementations
             // the Iqueryable contains all commads we passed and executes only when 
             // we iterate (in this case at Tolistasync()). So performance = GOOD
             
-            return await citiesCollection
+            var totalItemCount = await citiesCollection.CountAsync();
+            var metadata = new PagingMetadata(totalItemCount, pageSize, pageNumber);
+            
+            var output = await citiesCollection
                         .OrderBy(c => c.Id)
                         .Skip(pageSize*(pageNumber - 1))
                         .Take(pageSize)
                         .ToListAsync();
+            
+            return (output, metadata);
         }
         #pragma warning restore CS8602
 
