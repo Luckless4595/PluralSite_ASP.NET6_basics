@@ -9272,3 +9272,6 @@ LIMIT 1
 2023-05-10 19:00:55.002 -04:00 [DBG] Disposing connection to database 'main' on server 'CityInfo.db'.
 2023-05-10 19:00:55.002 -04:00 [DBG] Disposed connection to database 'main' on server 'CityInfo.db' (0ms).
 2023-05-10 19:00:55.002 -04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7054/api/cities/1/poi/10 - - - 200 58 application/json;+charset=utf-8 53.0442ms
+2023-05-10 19:03:05.419 -04:00 [DBG] Connection id "0HMQHL7CVO4D7" disconnecting.
+2023-05-10 19:03:05.421 -04:00 [DBG] Connection id "0HMQHL7CVO4D7" stopped.
+2023-05-10 19:03:05.421 -04:00 [DBG] Connection id "0HMQHL7CVO4D7" sending FIN because: "The Socket transport's send loop completed gracefully."
