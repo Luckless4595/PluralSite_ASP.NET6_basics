@@ -12,7 +12,8 @@ namespace CityInfo.API.Controllers
     {
         private readonly ICityInfoRepository cityInfoRepository;
         private readonly IMapper mapper;
-        
+        const int maxCitiesPageSize = 20;
+
         public CitiesController(ICityInfoRepository citiesDataStoreIn, IMapper mapperIn)
         {
             this.cityInfoRepository = citiesDataStoreIn ?? 
@@ -23,9 +24,16 @@ namespace CityInfo.API.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<CityWithoutPOIDto>>> GetCities()
-        {            
-            var cityEntities = await this.cityInfoRepository.GetCitiesAsync();
+        public async Task<ActionResult<IEnumerable<CityWithoutPOIDto>>> GetCities(
+            [FromQuery] string? cityNameFilter, // apply filter 
+            [FromQuery] string? searchByCityName,
+            int pageNumber = 1 , int pageSize = 10
+        ){
+            if (pageSize>maxCitiesPageSize)
+                 pageSize = maxCitiesPageSize;
+        //    note: this is not vulnerable to sql injections because EFCore sanitizes for you         
+            var cityEntities = await this.cityInfoRepository.GetCitiesAsync(
+                cityNameFilter, searchByCityName, pageNumber, pageSize);
             var output = this.mapper.Map<IEnumerable<CityWithoutPOIDto>>(cityEntities);
 
             return Ok(output);

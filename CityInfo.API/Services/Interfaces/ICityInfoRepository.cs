@@ -6,7 +6,8 @@ namespace CityInfo.API.Services.Interfaces{
         //GET
         Task<bool> SaveChangesAsync();
         Task<bool> CheckCityExistsAsync(int cityId);
-        Task<IEnumerable<City>> GetCitiesAsync();
+        Task<IEnumerable<City>> GetCitiesAsync(
+            string? cityNameFilter, string? searchByCityName, int pageNumber, int pageSize);
         Task<City?> GetCityAsync(int CityId, bool includePOI);
         Task<IEnumerable<PointOfInterest>> GetCityPOIsAsync(int CityId);
         Task<PointOfInterest?> GetPOIAsync(int CityId, int Id);

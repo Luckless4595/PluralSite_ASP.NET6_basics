@@ -22,13 +22,42 @@ namespace CityInfo.API.Services.Implementations
         public async Task<bool> CheckCityExistsAsync(int cityId){
             return await _context.Cities.AnyAsync(c => c.Id == cityId);
         }
-
-        public async Task<IEnumerable<City>> GetCitiesAsync()
+        //overload
+        #pragma warning disable CS8602
+        public async Task<IEnumerable<City>> GetCitiesAsync(
+            string? cityNameFilter, string? searchByCityName, int pageNumber, int pageSize)
         {
-            return await _context.Cities
-                .OrderBy(c => c.Id)
-                .ToListAsync();
+            bool noFilter = string.IsNullOrWhiteSpace(cityNameFilter);
+            bool noQuery = string.IsNullOrWhiteSpace (searchByCityName);
+
+            var citiesCollection = _context.Cities as IQueryable<City>;    
+
+            if (!noFilter){
+                cityNameFilter = cityNameFilter.Replace(" ","").ToLower();
+                citiesCollection = citiesCollection.Where
+                (c => c.Name.ToLower().Replace(" ","") == cityNameFilter);
+                    }
+
+            if (! noQuery ){
+                searchByCityName = searchByCityName.Replace(" ","").ToLower();
+                citiesCollection = citiesCollection.Where
+                (c => c.Name.Replace(" ","").ToLower().Contains(searchByCityName));
+            }
+
+            // note: if both params are entered, you may think that returning the filtered
+            // collection first then searching that collection would be a good idea
+            // it is not. becuase that search means putting stuff in memory that you might
+            // not be able to handle. Just keep it like this so the commands apply in DB
+            // the Iqueryable contains all commads we passed and executes only when 
+            // we iterate (in this case at Tolistasync()). So performance = GOOD
+            
+            return await citiesCollection
+                        .OrderBy(c => c.Id)
+                        .Skip(pageSize*(pageNumber - 1))
+                        .Take(pageSize)
+                        .ToListAsync();
         }
+        #pragma warning restore CS8602
 
         public async Task<City?> GetCityAsync(int cityId, bool includePOI)
         {
