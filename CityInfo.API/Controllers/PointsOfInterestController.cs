@@ -62,7 +62,7 @@ namespace CityInfo.API.Controllers
             }
         }
 
-            // GET /api/cities/{cityId}/poi/{poiId}
+        // GET /api/cities/{cityId}/poi/{poiId}
         [HttpGet("{poiId}", Name = "GetPOI")]
         public async Task<ActionResult<PointOfInterestDto>> GetPOI(int cityId, int poiId)
         {
@@ -94,8 +94,21 @@ namespace CityInfo.API.Controllers
             try {
                 var poiToEnterInDB = this.mapper.Map<PointOfInterest>(newPOI);
                 Console.WriteLine($"Poi Received Name: {poiToEnterInDB.Name}");
-                await this.cityInfoRepository.AddPointOfInterestForCityAsync(cityId, poiToEnterInDB);
 
+                // check that no duplicate name poi
+                var poisInCityResult = await GetPOIs(cityId);
+                if (poisInCityResult.Result is OkObjectResult okResult)
+                {
+                    var poisInCity = okResult.Value as IEnumerable<PointOfInterestDto>;
+                    if (poisInCity != null && poisInCity.Any(p => p.Name == poiToEnterInDB.Name))
+                        return BadRequest($"A point of interest with the name {poiToEnterInDB.Name} already exists in this city.");
+                }
+                else
+                {
+                    return BadRequest("Failed to retrieve points of interest for the specified city.");
+                }
+
+                await this.cityInfoRepository.AddPointOfInterestForCityAsync(cityId, poiToEnterInDB);
 
                 await this.cityInfoRepository.SaveChangesAsync();  
                 var poiEnteredInDB = this.mapper.Map<PointOfInterestDto>(poiToEnterInDB);
@@ -108,6 +121,7 @@ namespace CityInfo.API.Controllers
                 return StatusCode(500, "An internal error occurred");
             }
         }
+
 
         [HttpPut("{poiId}")]
         public async Task<ActionResult> FullyUpdatePOI(
@@ -172,27 +186,34 @@ namespace CityInfo.API.Controllers
         }
     }
 
-    // [HttpDelete("{poiId}")]
-    // public async Task<ActionResult> DeletePOI(int cityId, int poiId)
-    // {
-    //     try {
-    //         var poiEntity = await this.cityInfoRepository.GetPOIAsync(cityId, poiId);
-    //         if (poiEntity == null) return NotFound();
+    [HttpDelete("{poiId}")]
+    public async Task<ActionResult> DeletePOI(int cityId, int poiId)
+    {
+        try {
 
-    //         await this.cityInfoRepository.DeletePOIAsync(poiEntity);
+            if(! await this.cityInfoRepository.CheckCityExistsAsync(cityId)){
+                this.logger.LogInformation($"City with Id {cityId} was not found");
+                return NotFound();
+            }
 
-    //         this.mailService.Send("A POI was deleted",
-    //             $"Deleted point of interest {poiEntity.Name} in city with ID {cityId}");
+            var poiEntity = await this.cityInfoRepository.GetPOIAsync(cityId, poiId);
+            if (poiEntity == null) return NotFound();
 
-    //         this.logger.LogInformation($"Deleted point of interest with ID {poiId} in city with ID {cityId}");
+            this.cityInfoRepository.DeletePointOfInterestAsync(poiEntity);
+            await this.cityInfoRepository.SaveChangesAsync();
 
-    //         return NoContent();
-    //     }
-    //     catch (Exception e){
-    //         this.logger.LogCritical("Exception occurred", e);
-    //         return StatusCode(500, "An internal error occurred");
-    //     }
-    // }
+            this.mailService.Send("A POI was deleted",
+                $"Deleted point of interest {poiEntity.Name} in city with ID {cityId}");
+
+            this.logger.LogInformation($"Deleted point of interest with ID {poiId} in city with ID {cityId}");
+
+            return NoContent();
+        }
+        catch (Exception e){
+            this.logger.LogCritical("Exception occurred", e);
+            return StatusCode(500, "An internal error occurred");
+        }
+    }
 }
 
 }

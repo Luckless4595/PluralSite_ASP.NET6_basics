@@ -12,6 +12,10 @@ namespace CityInfo.API.Services.Interfaces{
         Task<PointOfInterest?> GetPOIAsync(int CityId, int Id);
 
         //Manipulations
+        // Note actually only i/o operations (get) need to be async, delete and add are in memory
+        // so not async, we only made add async here because we wrote it to get POI in the method
+        // if we wrote get outside then passed it to add, we would not need add to be async
         Task AddPointOfInterestForCityAsync(int cityId, PointOfInterest newPOI);
+        void DeletePointOfInterestAsync(PointOfInterest poi);
     }
 }

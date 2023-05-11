@@ -66,5 +66,9 @@ namespace CityInfo.API.Services.Implementations
             if (city != null) city.POIs.Add(newPOI);
         }
 
+        public void DeletePointOfInterestAsync(PointOfInterest poi){
+            _context.POIs.Remove(poi);
+        }
+
     }
 }
