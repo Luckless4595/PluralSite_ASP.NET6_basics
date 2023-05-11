@@ -10,7 +10,8 @@ namespace CityInfo.API.Services.Interfaces{
         Task<(IEnumerable<City>,PagingMetadata)> GetCitiesAsync(
             string? cityNameFilter, string? searchByCityName, int pageNumber, int pageSize);
         Task<City?> GetCityAsync(int CityId, bool includePOI);
-        Task<IEnumerable<PointOfInterest>> GetCityPOIsAsync(int CityId);
+        Task<(IEnumerable<PointOfInterest>, PagingMetadata)> GetCityPOIsAsync(
+            int cityId, int pageNumber, int pageSize);
         Task<PointOfInterest?> GetPOIAsync(int CityId, int Id);
 
         //Manipulations

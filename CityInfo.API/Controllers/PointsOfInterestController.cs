@@ -4,6 +4,7 @@ using CityInfo.API.Entities;
 
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.JsonPatch;
+using System.Text.Json;
 using AutoMapper;
 
 
@@ -18,6 +19,7 @@ namespace CityInfo.API.Controllers
         private readonly IMailService mailService;
         private readonly ICityInfoRepository cityInfoRepository;
         private readonly IMapper mapper;
+        const int maxPOIPageSize = 20;
 
         public PointsOfInterestController(
             ILogger<PointsOfInterestController> loggerIn,
@@ -38,25 +40,31 @@ namespace CityInfo.API.Controllers
             throw new ArgumentNullException (nameof(mapperIn));
         }
 
-        // GET /api/cities/{cityId}/poi
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<PointOfInterestDto>>> GetPOIs(int cityId)
-        {            
-            try {
+        public async Task<ActionResult<IEnumerable<PointOfInterestDto>>> GetPOIs(
+            int cityId, int pageNumber = 1, int pageSize = 10)
+        {
+            try
+            {
+                if (pageSize > maxPOIPageSize)
+                    pageSize = maxPOIPageSize;
 
-                if(! await this.cityInfoRepository.CheckCityExistsAsync(cityId)){
+                if (!await this.cityInfoRepository.CheckCityExistsAsync(cityId))
+                {
                     this.logger.LogInformation($"City with Id {cityId} was not found");
                     return NotFound();
                 }
 
-                var poiEntitiesInCity = await this.cityInfoRepository.GetCityPOIsAsync(cityId);
-                var output = this.mapper.Map<IEnumerable<PointOfInterestDto>>(poiEntitiesInCity);
+                var (poiEntitiesInCity, pagingMetadata) = await this.cityInfoRepository.GetCityPOIsAsync(cityId, pageNumber, pageSize);
+                Response.Headers.Add("X-Pagination", JsonSerializer.Serialize(pagingMetadata));
 
+                var output = this.mapper.Map<IEnumerable<PointOfInterestDto>>(poiEntitiesInCity);
                 this.logger.LogInformation($"Retrieved points of interest for city with ID {cityId}");
 
                 return Ok(output);
             }
-            catch (Exception e){
+            catch (Exception e)
+            {
                 this.logger.LogCritical("Exception occurred", e);
                 return StatusCode(500, "An internal error occurred");
             }

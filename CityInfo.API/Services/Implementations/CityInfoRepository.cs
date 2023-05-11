@@ -79,13 +79,21 @@ namespace CityInfo.API.Services.Implementations
                   .FirstOrDefaultAsync();
         }
 
-        public async Task<IEnumerable<PointOfInterest>> GetCityPOIsAsync(int cityId)
+        public async Task<(IEnumerable<PointOfInterest>, PagingMetadata)> GetCityPOIsAsync(int cityId, int pageNumber, int pageSize)
         {
-            return await _context.POIs
-                .Where(p => p.CityId == cityId)
+            var poisCollection = _context.POIs.Where(p => p.CityId == cityId);
+            var totalItemCount = await poisCollection.CountAsync();
+            var metadata = new PagingMetadata(totalItemCount, pageSize, pageNumber);
+
+            var output = await poisCollection
                 .OrderBy(p => p.Id)
+                .Skip(pageSize * (pageNumber - 1))
+                .Take(pageSize)
                 .ToListAsync();
+
+            return (output, metadata);
         }
+
 
         public async Task<PointOfInterest?> GetPOIAsync(int cityId, int id)
         {
