@@ -109,53 +109,68 @@ namespace CityInfo.API.Controllers
             }
         }
 
-    //     [HttpPut("{poiId}")]
-    //     public async Task<ActionResult> FullyUpdatePOI(int cityId, int poiId, UpdatePointOfInterestDto inputPOI)
-    //     {
-    //         try {
-    //             var poiEntity = await this.cityInfoRepository.GetPOIAsync(cityId,poiId);
-    //         if (poiEntity == null) return NotFound();
+        [HttpPut("{poiId}")]
+        public async Task<ActionResult> FullyUpdatePOI(
+            int cityId, int poiId, UpdatePointOfInterestDto inputPOI)
+        {
+            try {
 
-    //         this.mapper.Map(inputPOI, poiEntity);
+            if(! await this.cityInfoRepository.CheckCityExistsAsync(cityId)){
+                this.logger.LogInformation($"City with Id {cityId} was not found");
+                return NotFound();
+            }
 
-    //         await this.cityInfoRepository.UpdatePOIAsync(cityId, poiEntity);
+            var poiEntity = await this.cityInfoRepository.GetPOIAsync(cityId,poiId);
+            if (poiEntity == null) return NotFound();
 
-    //         this.logger.LogInformation($"Updated point of interest with ID {poiId} in city with ID {cityId}");
+            // special exception, when calling map like this, the values from
+            // the input are automatically written to entity 
+            this.mapper.Map(inputPOI, poiEntity);
+            await this.cityInfoRepository.SaveChangesAsync();
 
-    //         return Ok();
-    //     }
-    //     catch (Exception e){
-    //         this.logger.LogCritical("Exception occurred", e);
-    //         return StatusCode(500, "An internal error occurred");
-    //     }
-    // }
+            this.logger.LogInformation($"Updated point of interest with ID {poiId} in city with ID {cityId}");
 
-    // [HttpPatch("{poiId}")]
-    // public async Task<ActionResult> PartiallyUpdatePOI(int cityId, int poiId, JsonPatchDocument<UpdatePointOfInterestDto> poiPatch)
-    // {
-    //     try {
-    //         var poiEntity = await this.cityInfoRepository.GetPOIAsync(cityId, poiId);
-    //         if (poiEntity == null) return NotFound();
+            var updatedPOI = this.mapper.Map<PointOfInterestDto>(poiEntity);
+            return Ok(updatedPOI);
+        }
+        catch (Exception e){
+            this.logger.LogCritical("Exception occurred", e);
+            return StatusCode(500, "An internal error occurred");
+        }
+    }
 
-    //         var inputPOI = this.mapper.Map<UpdatePointOfInterestDto>(poiEntity);
+    [HttpPatch("{poiId}")]
+    public async Task<ActionResult> PartiallyUpdatePOI(
+        int cityId, int poiId, JsonPatchDocument<UpdatePointOfInterestDto> poiPatchDocument)
+    {
+        try {
 
-    //         poiPatch.ApplyTo(inputPOI, ModelState);
+            if(! await this.cityInfoRepository.CheckCityExistsAsync(cityId)){
+                this.logger.LogInformation($"City with Id {cityId} was not found");
+                return NotFound();
+            }
 
-    //         if (!TryValidateModel(inputPOI)) return BadRequest(ModelState);
+            var poiEntityToPatch = await this.cityInfoRepository.GetPOIAsync(cityId, poiId);
+            if (poiEntityToPatch == null) return NotFound();
 
-    //         this.mapper.Map(inputPOI, poiEntity);
+            var poiDtoToPatch = this.mapper.Map<UpdatePointOfInterestDto>(poiEntityToPatch);
+            poiPatchDocument.ApplyTo(poiDtoToPatch, ModelState);
 
-    //         await this.cityInfoRepository.UpdatePOIAsync(cityId, poiEntity);
+            if (!TryValidateModel(poiDtoToPatch)) return BadRequest(ModelState);
 
-    //         this.logger.LogInformation($"Partially updated point of interest with ID {poiId} in city with ID {cityId}");
+            // again special mapping case that updates the values of the 2nd object from the 1st
+            this.mapper.Map(poiDtoToPatch, poiEntityToPatch);
+            await this.cityInfoRepository.SaveChangesAsync();
+            this.logger.LogInformation($"Partially updated point of interest with ID {poiId} in city with ID {cityId}");
 
-    //         return Ok();
-    //     }
-    //     catch (Exception e){
-    //         this.logger.LogCritical("Exception occurred", e);
-    //         return StatusCode(500, "An internal error occurred");
-    //     }
-    // }
+            var patchedPOI = this.mapper.Map<PointOfInterestDto>(poiEntityToPatch);
+            return Ok(patchedPOI);
+        }
+        catch (Exception e){
+            this.logger.LogCritical("Exception occurred", e);
+            return StatusCode(500, "An internal error occurred");
+        }
+    }
 
     // [HttpDelete("{poiId}")]
     // public async Task<ActionResult> DeletePOI(int cityId, int poiId)

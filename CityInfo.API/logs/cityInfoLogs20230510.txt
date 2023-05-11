@@ -9275,3 +9275,87 @@ LIMIT 1
 2023-05-10 19:03:05.419 -04:00 [DBG] Connection id "0HMQHL7CVO4D7" disconnecting.
 2023-05-10 19:03:05.421 -04:00 [DBG] Connection id "0HMQHL7CVO4D7" stopped.
 2023-05-10 19:03:05.421 -04:00 [DBG] Connection id "0HMQHL7CVO4D7" sending FIN because: "The Socket transport's send loop completed gracefully."
+2023-05-10 23:03:12.966 -04:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2023-05-10 23:03:13.033 -04:00 [DBG] Hosting starting
+2023-05-10 23:03:13.256 -04:00 [DBG] Using development certificate: CN=localhost (Thumbprint: F860A74BB1BE761503BDF28F8DDE049E984C398E)
+2023-05-10 23:03:13.265 -04:00 [INF] Now listening on: https://localhost:7054
+2023-05-10 23:03:13.265 -04:00 [INF] Now listening on: http://localhost:5256
+2023-05-10 23:03:13.265 -04:00 [DBG] Loaded hosting startup assembly CityInfo.API
+2023-05-10 23:03:13.265 -04:00 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2023-05-10 23:03:13.265 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-10 23:03:13.266 -04:00 [INF] Hosting environment: Development
+2023-05-10 23:03:13.266 -04:00 [INF] Content root path: /Users/notAdmin/Dev/C#/ASP.NET core pluralsite/CityInfo/CityInfo.API/
+2023-05-10 23:03:13.266 -04:00 [DBG] Hosting started
+2023-05-10 23:03:13.814 -04:00 [DBG] Connection id "0HMQHPH1BN9MD" accepted.
+2023-05-10 23:03:13.815 -04:00 [DBG] Connection id "0HMQHPH1BN9MD" started.
+2023-05-10 23:03:13.907 -04:00 [DBG] Connection 0HMQHPH1BN9MD established using the following protocol: "Tls12"
+2023-05-10 23:03:13.975 -04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7054/swagger - -
+2023-05-10 23:03:13.993 -04:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2023-05-10 23:03:14.021 -04:00 [DBG] No candidates found for the request path '/swagger'
+2023-05-10 23:03:14.022 -04:00 [DBG] Request did not match any endpoints
+2023-05-10 23:03:14.068 -04:00 [DBG] Connection id "0HMQHPH1BN9MD" completed keep alive response.
+2023-05-10 23:03:14.070 -04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7054/swagger - - - 301 0 - 103.1795ms
+2023-05-10 23:03:14.087 -04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7054/swagger/index.html - -
+2023-05-10 23:03:14.087 -04:00 [DBG] No candidates found for the request path '/swagger/index.html'
+2023-05-10 23:03:14.087 -04:00 [DBG] Request did not match any endpoints
+2023-05-10 23:03:14.215 -04:00 [DBG] Response markup is scheduled to include browser refresh script injection.
+2023-05-10 23:03:14.218 -04:00 [DBG] Response markup was updated to include browser refresh script injection.
+2023-05-10 23:03:14.218 -04:00 [DBG] Connection id "0HMQHPH1BN9MD" completed keep alive response.
+2023-05-10 23:03:14.218 -04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7054/swagger/index.html - - - 200 - text/html;charset=utf-8 131.7670ms
+2023-05-10 23:03:14.246 -04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7054/swagger/swagger-ui.css - -
+2023-05-10 23:03:14.246 -04:00 [DBG] No candidates found for the request path '/swagger/swagger-ui.css'
+2023-05-10 23:03:14.246 -04:00 [DBG] Request did not match any endpoints
+2023-05-10 23:03:14.252 -04:00 [DBG] Connection id "0HMQHPH1BN9ME" accepted.
+2023-05-10 23:03:14.252 -04:00 [DBG] Connection id "0HMQHPH1BN9MF" accepted.
+2023-05-10 23:03:14.252 -04:00 [DBG] Connection id "0HMQHPH1BN9MG" accepted.
+2023-05-10 23:03:14.253 -04:00 [DBG] Connection id "0HMQHPH1BN9ME" started.
+2023-05-10 23:03:14.253 -04:00 [DBG] Connection id "0HMQHPH1BN9MF" started.
+2023-05-10 23:03:14.253 -04:00 [DBG] Connection id "0HMQHPH1BN9MG" started.
+2023-05-10 23:03:14.271 -04:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2023-05-10 23:03:14.272 -04:00 [DBG] Connection id "0HMQHPH1BN9MD" completed keep alive response.
+2023-05-10 23:03:14.273 -04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7054/swagger/swagger-ui.css - - - 200 144929 text/css 27.0122ms
+2023-05-10 23:03:14.298 -04:00 [DBG] Connection 0HMQHPH1BN9MF established using the following protocol: "Tls12"
+2023-05-10 23:03:14.301 -04:00 [DBG] Connection 0HMQHPH1BN9ME established using the following protocol: "Tls12"
+2023-05-10 23:03:14.302 -04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7054/swagger/swagger-ui-standalone-preset.js - -
+2023-05-10 23:03:14.302 -04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7054/swagger/swagger-ui-bundle.js - -
+2023-05-10 23:03:14.302 -04:00 [DBG] No candidates found for the request path '/swagger/swagger-ui-standalone-preset.js'
+2023-05-10 23:03:14.302 -04:00 [DBG] No candidates found for the request path '/swagger/swagger-ui-bundle.js'
+2023-05-10 23:03:14.302 -04:00 [DBG] Request did not match any endpoints
+2023-05-10 23:03:14.302 -04:00 [DBG] Request did not match any endpoints
+2023-05-10 23:03:14.310 -04:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2023-05-10 23:03:14.310 -04:00 [DBG] Connection id "0HMQHPH1BN9MF" completed keep alive response.
+2023-05-10 23:03:14.310 -04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7054/swagger/swagger-ui-standalone-preset.js - - - 200 312163 application/javascript 8.4084ms
+2023-05-10 23:03:14.320 -04:00 [DBG] Connection 0HMQHPH1BN9MG established using the following protocol: "Tls12"
+2023-05-10 23:03:14.323 -04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7054/_framework/aspnetcore-browser-refresh.js - -
+2023-05-10 23:03:14.324 -04:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2023-05-10 23:03:14.324 -04:00 [DBG] Connection id "0HMQHPH1BN9ME" completed keep alive response.
+2023-05-10 23:03:14.324 -04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7054/swagger/swagger-ui-bundle.js - - - 200 1061536 application/javascript 21.8645ms
+2023-05-10 23:03:14.325 -04:00 [DBG] Connection id "0HMQHPH1BN9MG" completed keep alive response.
+2023-05-10 23:03:14.325 -04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7054/_framework/aspnetcore-browser-refresh.js - - - 200 11966 application/javascript;+charset=utf-8 2.9237ms
+2023-05-10 23:03:14.430 -04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7054/swagger/favicon-32x32.png - -
+2023-05-10 23:03:14.430 -04:00 [DBG] No candidates found for the request path '/swagger/favicon-32x32.png'
+2023-05-10 23:03:14.430 -04:00 [DBG] Request did not match any endpoints
+2023-05-10 23:03:14.431 -04:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2023-05-10 23:03:14.431 -04:00 [DBG] Connection id "0HMQHPH1BN9ME" completed keep alive response.
+2023-05-10 23:03:14.431 -04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7054/swagger/favicon-32x32.png - - - 200 628 image/png 0.5706ms
+2023-05-10 23:03:14.470 -04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7054/swagger/v1/swagger.json - -
+2023-05-10 23:03:14.470 -04:00 [DBG] No candidates found for the request path '/swagger/v1/swagger.json'
+2023-05-10 23:03:14.470 -04:00 [DBG] Request did not match any endpoints
+2023-05-10 23:03:14.557 -04:00 [DBG] Connection id "0HMQHPH1BN9ME" completed keep alive response.
+2023-05-10 23:03:14.557 -04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7054/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 87.4092ms
+2023-05-10 23:05:09.427 -04:00 [DBG] Connection id "0HMQHPH1BN9MD" received FIN.
+2023-05-10 23:05:09.427 -04:00 [DBG] Connection id "0HMQHPH1BN9MF" received FIN.
+2023-05-10 23:05:09.427 -04:00 [DBG] Connection id "0HMQHPH1BN9MG" received FIN.
+2023-05-10 23:05:09.428 -04:00 [DBG] Connection id "0HMQHPH1BN9MD" sending FIN because: "The client closed the connection."
+2023-05-10 23:05:09.428 -04:00 [DBG] Connection id "0HMQHPH1BN9MF" sending FIN because: "The client closed the connection."
+2023-05-10 23:05:09.428 -04:00 [DBG] Connection id "0HMQHPH1BN9MG" sending FIN because: "The client closed the connection."
+2023-05-10 23:05:09.438 -04:00 [DBG] Connection id "0HMQHPH1BN9MD" disconnecting.
+2023-05-10 23:05:09.438 -04:00 [DBG] Connection id "0HMQHPH1BN9MF" disconnecting.
+2023-05-10 23:05:09.438 -04:00 [DBG] Connection id "0HMQHPH1BN9MG" disconnecting.
+2023-05-10 23:05:09.441 -04:00 [DBG] Connection id "0HMQHPH1BN9MD" stopped.
+2023-05-10 23:05:09.441 -04:00 [DBG] Connection id "0HMQHPH1BN9MF" stopped.
+2023-05-10 23:05:09.441 -04:00 [DBG] Connection id "0HMQHPH1BN9MG" stopped.
+2023-05-10 23:05:10.427 -04:00 [DBG] Connection id "0HMQHPH1BN9ME" received FIN.
+2023-05-10 23:05:10.427 -04:00 [DBG] Connection id "0HMQHPH1BN9ME" disconnecting.
+2023-05-10 23:05:10.427 -04:00 [DBG] Connection id "0HMQHPH1BN9ME" sending FIN because: "The client closed the connection."
+2023-05-10 23:05:10.428 -04:00 [DBG] Connection id "0HMQHPH1BN9ME" stopped.
