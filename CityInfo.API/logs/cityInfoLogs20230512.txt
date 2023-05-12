@@ -2405,3 +2405,6 @@ LIMIT @__p_1 OFFSET @__p_0
 2023-05-12 14:47:41.054 -04:00 [DBG] Connection id "0HMQJ341I2ERP" sending FIN because: "The client closed the connection."
 2023-05-12 14:47:41.057 -04:00 [DBG] Connection id "0HMQJ341I2ERP" disconnecting.
 2023-05-12 14:47:41.059 -04:00 [DBG] Connection id "0HMQJ341I2ERP" stopped.
+2023-05-12 14:49:24.916 -04:00 [DBG] Connection id "0HMQJ341I2ERR" disconnecting.
+2023-05-12 14:49:24.917 -04:00 [DBG] Connection id "0HMQJ341I2ERR" stopped.
+2023-05-12 14:49:24.918 -04:00 [DBG] Connection id "0HMQJ341I2ERR" sending FIN because: "The Socket transport's send loop completed gracefully."
