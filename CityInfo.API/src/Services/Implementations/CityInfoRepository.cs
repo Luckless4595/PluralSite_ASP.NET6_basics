@@ -22,6 +22,17 @@ namespace CityInfo.API.src.Services.Implementations
         public async Task<bool> CheckCityExistsAsync(int cityId){
             return await _context.Cities.AnyAsync(c => c.Id == cityId);
         }
+
+        public async Task<bool> CheckCityNameMatchesCityId (
+            string? cityName, int cityId){
+
+                cityName = cityName?.Replace(" ","").ToLower();
+
+                return await _context.Cities.AnyAsync(
+                    c => c.Id == cityId && c.Name.Replace(" ","").ToLower() == cityName);
+        }
+        
+
         //overload
         #pragma warning disable CS8602
         public async Task<(IEnumerable<City>, PagingMetadata)> GetCitiesAsync(

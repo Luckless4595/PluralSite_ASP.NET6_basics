@@ -45,13 +45,21 @@ namespace CityInfo.API.src.Controllers
         }
 
         [HttpGet("{CityId}")]
-        public async Task<IActionResult> GetCity(int CityId, bool includePOI = false)
-        {
-            var cityEntity = await this.cityInfoRepository.GetCityAsync(CityId, includePOI);
+        public async Task<IActionResult> GetCity(int cityId, bool includePOI = false)
+        {   
+
+            var cityEntity = await this.cityInfoRepository.GetCityAsync(cityId, includePOI);
             if (cityEntity == null) return NotFound();
 
-            if (includePOI)
-                return Ok( this.mapper.Map<CityDto>(cityEntity));
+            if (includePOI){
+                // use the data in claims to check if the user tries to access pois outside their assigned city 
+                var cityName = User.Claims.FirstOrDefault(
+                    c => c.Type == "city")?.Value;
+
+                if (!await this.cityInfoRepository.CheckCityNameMatchesCityId(cityName, cityId))
+                    return Forbid();
+
+                return Ok( this.mapper.Map<CityDto>(cityEntity));}
 
             else return Ok( this.mapper.Map<CityWithoutPOIDto>(cityEntity));
         }

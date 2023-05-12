@@ -48,6 +48,17 @@ namespace CityInfo.API.src.Controllers
         {
             try
             {
+                // use the data in claims to check if the user tries to access pois outside their assigned city 
+                var cityName = User.Claims.FirstOrDefault(
+                    c => c.Type == "city")?.Value;
+
+                // throw new Exception(cityName);
+                if (!await this.cityInfoRepository.CheckCityNameMatchesCityId(cityName, cityId))
+                {
+                    this.logger.LogInformation($"User tried to access POI outside of their city");
+                    return Forbid();
+                }
+
                 if (pageSize > maxPOIPageSize)
                     pageSize = maxPOIPageSize;
 
@@ -77,6 +88,16 @@ namespace CityInfo.API.src.Controllers
         public async Task<ActionResult<PointOfInterestDto>> GetPOI(int cityId, int poiId)
         {
             try {
+                // use the data in claims to check if the user tries to access pois outside their assigned city 
+                var cityName = User.Claims.FirstOrDefault(
+                    c => c.Type == "city")?.Value;
+
+                if (!await this.cityInfoRepository.CheckCityNameMatchesCityId(cityName, cityId))
+                {
+                    this.logger.LogInformation($"User tried to access POI outside of their city");
+                    return Forbid();
+                }
+                
                 if(! await this.cityInfoRepository.CheckCityExistsAsync(cityId)){
                     this.logger.LogInformation($"City with Id {cityId} was not found");
                     return NotFound();

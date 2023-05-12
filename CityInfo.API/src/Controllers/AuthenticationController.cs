@@ -102,7 +102,12 @@ namespace CityInfo.API.Controllers
         // of an in-memory object. Also, we'll just assume the credentials are valid.
         private CityInfoAPIUser ValidateCredentials(string userName, string password)
         {
-            return new CityInfoAPIUser(1, userName ?? "");
+            return new CityInfoAPIUser(
+                1,
+                userName ?? "",
+                "Place", 
+                "Holder",
+                "New York");
         }
     }
 }

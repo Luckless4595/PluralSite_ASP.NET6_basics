@@ -4,9 +4,12 @@ using CityInfo.API.src.Services.Implementations;
 namespace CityInfo.API.src.Services.Interfaces{
     public interface ICityInfoRepository{
 
-        //GET
+        //CHECKS
         Task<bool> SaveChangesAsync();
         Task<bool> CheckCityExistsAsync(int cityId);
+        Task<bool> CheckCityNameMatchesCityId (string? cityName, int cityId);
+        
+        //GET
         Task<(IEnumerable<City>,PagingMetadata)> GetCitiesAsync(
             string? cityNameFilter, string? searchByCityName, int pageNumber, int pageSize);
         Task<City?> GetCityAsync(int CityId, bool includePOI);
