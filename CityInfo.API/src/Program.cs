@@ -1,23 +1,37 @@
 ﻿using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using Serilog;
 using Microsoft.IdentityModel.Tokens;
+using System;
+using System.IO;
 using System.Text;
 using Microsoft.AspNetCore.Authorization;
-
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
 using CityInfo.API.src.Services.Implementations;
 using CityInfo.API.src.Services.Interfaces;
 using CityInfo.API.src.DbContexts;
 
-Log.Logger = new LoggerConfiguration()
-    .MinimumLevel.Verbose()  // Change from Debug to Verbose
-    .WriteTo.Console()
-    .WriteTo.File("./logs/cityInfoLogs.txt", rollingInterval: RollingInterval.Day)
-    .CreateLogger();
+var builder = WebApplication.CreateBuilder(args);
 
 // Logging
-var builder = WebApplication.CreateBuilder(args);
-builder.Host.UseSerilog();
+var useSerilog = true;
+
+if (useSerilog)
+{
+    Log.Logger = new LoggerConfiguration()
+        .MinimumLevel.Verbose()
+        .WriteTo.Console()
+        .WriteTo.File("./logs/cityInfoLogs.txt", rollingInterval: RollingInterval.Day)
+        .CreateLogger();
+    
+    builder.Host.UseSerilog();
+} else{
+    builder.Logging.AddConsole();
+    builder.Logging.AddDebug();
+}
+
 // Redirect standard output stream back to the console
 Console.SetOut(new StreamWriter(Console.OpenStandardOutput()) { AutoFlush = true });
 

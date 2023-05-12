@@ -39,12 +39,12 @@ namespace CityInfo.API.src.Controllers
             this.mapper = mapperIn ??
             throw new ArgumentNullException(nameof(mapperIn));
 
-            _logger = logger 
+            this._logger = logger 
             ?? throw new ArgumentException (nameof(logger));
         }
 
         [HttpGet]
-        [Authorize(Policy = "CanOnlyRequestPOIofHomeCity")]
+        // [Authorize(Policy = "CanOnlyRequestPOIofHomeCity")]
         public async Task<ActionResult<IEnumerable<PointOfInterestDto>>> GetPOIs(
             int cityId, int pageNumber = 1, int pageSize = 10)
         {
@@ -74,7 +74,7 @@ namespace CityInfo.API.src.Controllers
         }
 
         [HttpGet("{poiId}", Name = "GetPOI")]
-        [Authorize(Policy = "CanOnlyRequestPOIofHomeCity")]
+        // [Authorize(Policy = "CanOnlyRequestPOIofHomeCity")]
         public async Task<ActionResult<PointOfInterestDto>> GetPOI(int cityId, int poiId)
         {
             try {
