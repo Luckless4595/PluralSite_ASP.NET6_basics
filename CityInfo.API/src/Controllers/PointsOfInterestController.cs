@@ -3,6 +3,7 @@ using CityInfo.API.src.Services.Interfaces;
 using CityInfo.API.src.Entities;
 
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.JsonPatch;
 using System.Text.Json;
 using AutoMapper;
@@ -12,6 +13,7 @@ using AutoMapper;
 namespace CityInfo.API.src.Controllers
 {
     [ApiController]
+    [Authorize]
     [Route("api/cities/{cityId}/poi")]
     public class PointsOfInterestController : ControllerBase 
     {

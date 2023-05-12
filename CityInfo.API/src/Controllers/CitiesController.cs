@@ -4,10 +4,12 @@ using CityInfo.API.src.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System.Text.Json;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CityInfo.API.src.Controllers
 {
     [ApiController]
+    [Authorize]
     [Route("api/cities")]
     public class CitiesController : ControllerBase 
     {

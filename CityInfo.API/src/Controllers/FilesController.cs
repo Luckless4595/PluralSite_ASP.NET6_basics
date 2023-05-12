@@ -1,10 +1,11 @@
 using Microsoft.AspNetCore.StaticFiles;
-using CityInfo.API.src.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CityInfo.API.src.Controllers
 {
     [ApiController]
+    [Authorize]
     [Route("api/files")]
     public class FilesController : ControllerBase 
     {

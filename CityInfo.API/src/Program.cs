@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 using CityInfo.API;
 using CityInfo.API.src.Services.Implementations;
@@ -41,6 +43,21 @@ builder.Services.AddDbContext<CityInfoContext>(
 builder.Services.AddScoped<ICityInfoRepository, CityInfoRepository>();
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
+builder.Services.AddAuthentication("Bearer").AddJwtBearer(options =>
+    {   
+        options.TokenValidationParameters = new() 
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateIssuerSigningKey = true,
+            ValidIssuer = builder.Configuration["Authentication:Issuer"],
+            ValidAudience = builder.Configuration["Authentication:Audience"],
+            IssuerSigningKey = new SymmetricSecurityKey(
+                Encoding.ASCII.GetBytes(builder.Configuration["Authentication:KeygenSecret"]))
+            
+        };
+    });
+
 #if DEBUG
 builder.Services.AddTransient<IMailService, LocalMailService>();
 #else
@@ -50,15 +67,19 @@ builder.Services.AddTransient<IMailService, CloudMailService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
+// order matters when working with middleware
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
 app.UseHttpsRedirection();
+app.UseRouting();
+app.UseAuthentication();
 app.UseAuthorization();
-app.MapControllers();
-
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllers();
+});
 app.Run();
 
