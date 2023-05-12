@@ -2,16 +2,19 @@ using CityInfo.API.src.Entities;
 using CityInfo.API.src.DbContexts;
 using CityInfo.API.src.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 
 namespace CityInfo.API.src.Services.Implementations
 {
     public class CityInfoRepository : ICityInfoRepository
-    {   
+    {
+        private readonly ILogger<CityInfoRepository> _logger;
         private readonly CityInfoContext _context;
 
-        public CityInfoRepository(CityInfoContext context)
+        public CityInfoRepository(CityInfoContext context, ILogger<CityInfoRepository> logger)
         {
             _context = context ?? throw new ArgumentNullException(nameof(context));
+            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
 
         // GET
@@ -28,8 +31,11 @@ namespace CityInfo.API.src.Services.Implementations
 
                 cityName = cityName?.Replace(" ","").ToLower();
 
-                return await _context.Cities.AnyAsync(
+                bool output = await _context.Cities.AnyAsync(
                     c => c.Id == cityId && c.Name.Replace(" ","").ToLower() == cityName);
+                
+                _logger.LogInformation($"Result of CheckCityNameMatchesCityId: {output}");
+                return output;
         }
         
 

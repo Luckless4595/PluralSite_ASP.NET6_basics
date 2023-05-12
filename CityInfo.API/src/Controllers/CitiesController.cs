@@ -56,8 +56,11 @@ namespace CityInfo.API.src.Controllers
                 var cityName = User.Claims.FirstOrDefault(
                     c => c.Type == "city")?.Value;
 
+                // throw new Exception(cityName);
                 if (!await this.cityInfoRepository.CheckCityNameMatchesCityId(cityName, cityId))
+                {
                     return Forbid();
+                }
 
                 return Ok( this.mapper.Map<CityDto>(cityEntity));}
 

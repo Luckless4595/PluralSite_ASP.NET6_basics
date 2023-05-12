@@ -5,7 +5,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
-namespace CityInfo.API.Controllers
+namespace CityInfo.API.src.Controllers
 {
     [Route("api/authentication")]
     public class AuthenticationController : ControllerBase
@@ -43,12 +43,13 @@ namespace CityInfo.API.Controllers
             }
         }
 
+        private readonly ILogger<AuthenticationController> _logger;
         private readonly IConfiguration config;
 
-        public AuthenticationController(IConfiguration config)
+        public AuthenticationController(IConfiguration config, ILogger<AuthenticationController> logger)
         {
-            this.config = config 
-            ?? throw new ArgumentNullException(nameof(config));
+            this.config = config ?? throw new ArgumentNullException(nameof(config));
+            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
 
         [HttpPost("authenticate")]
@@ -90,9 +91,10 @@ namespace CityInfo.API.Controllers
                 // Token generation is successful, return the token
                 return Ok(tokenOut);
             }
+            #pragma warning disable
             catch (Exception? ex)
+            #pragma warning restore
             {
-                Console.WriteLine(ex);
                 // Log the exception and return an appropriate error response
                 return StatusCode(500, "Could not generate token due to an internal server error.");
             }
