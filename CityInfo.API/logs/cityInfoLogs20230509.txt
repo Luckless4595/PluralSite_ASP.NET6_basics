@@ -25,18 +25,18 @@ System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport
 2023-05-09 11:30:17.499 -04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7054/api/cities/0/poi - -
 2023-05-09 11:30:17.504 -04:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
 2023-05-09 11:30:17.521 -04:00 [DBG] 1 candidate(s) found for the request path '/api/cities/0/poi'
-2023-05-09 11:30:17.524 -04:00 [DBG] Endpoint 'CityInfo.API.Controllers.PointsOfInterestController.GetPOIs (CityInfo.API)' with route pattern 'api/cities/{cityId}/poi' is valid for the request path '/api/cities/0/poi'
-2023-05-09 11:30:17.525 -04:00 [DBG] Request matched endpoint 'CityInfo.API.Controllers.PointsOfInterestController.GetPOIs (CityInfo.API)'
+2023-05-09 11:30:17.524 -04:00 [DBG] Endpoint 'CityInfo.API.src.Controllers.PointsOfInterestController.GetPOIs (CityInfo.API)' with route pattern 'api/cities/{cityId}/poi' is valid for the request path '/api/cities/0/poi'
+2023-05-09 11:30:17.525 -04:00 [DBG] Request matched endpoint 'CityInfo.API.src.Controllers.PointsOfInterestController.GetPOIs (CityInfo.API)'
 2023-05-09 11:30:17.551 -04:00 [DBG] Static files was skipped as the request already matched an endpoint.
-2023-05-09 11:30:17.552 -04:00 [INF] Executing endpoint 'CityInfo.API.Controllers.PointsOfInterestController.GetPOIs (CityInfo.API)'
-2023-05-09 11:30:17.566 -04:00 [INF] Route matched with {action = "GetPOIs", controller = "PointsOfInterest"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[CityInfo.API.Models.POI.PointOfInterestDto]] GetPOIs(Int32) on controller CityInfo.API.Controllers.PointsOfInterestController (CityInfo.API).
+2023-05-09 11:30:17.552 -04:00 [INF] Executing endpoint 'CityInfo.API.src.Controllers.PointsOfInterestController.GetPOIs (CityInfo.API)'
+2023-05-09 11:30:17.566 -04:00 [INF] Route matched with {action = "GetPOIs", controller = "PointsOfInterest"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[CityInfo.API.src.Models.POI.PointOfInterestDto]] GetPOIs(Int32) on controller CityInfo.API.src.Controllers.PointsOfInterestController (CityInfo.API).
 2023-05-09 11:30:17.566 -04:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
 2023-05-09 11:30:17.566 -04:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
 2023-05-09 11:30:17.566 -04:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
 2023-05-09 11:30:17.566 -04:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
 2023-05-09 11:30:17.566 -04:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
-2023-05-09 11:30:17.567 -04:00 [DBG] Executing controller factory for controller CityInfo.API.Controllers.PointsOfInterestController (CityInfo.API)
-2023-05-09 11:30:17.567 -04:00 [DBG] Executed controller factory for controller CityInfo.API.Controllers.PointsOfInterestController (CityInfo.API)
+2023-05-09 11:30:17.567 -04:00 [DBG] Executing controller factory for controller CityInfo.API.src.Controllers.PointsOfInterestController (CityInfo.API)
+2023-05-09 11:30:17.567 -04:00 [DBG] Executed controller factory for controller CityInfo.API.src.Controllers.PointsOfInterestController (CityInfo.API)
 2023-05-09 11:30:17.569 -04:00 [DBG] Attempting to bind parameter 'cityId' of type 'System.Int32' ...
 2023-05-09 11:30:17.570 -04:00 [DBG] Attempting to bind parameter 'cityId' of type 'System.Int32' using the name 'cityId' in request data ...
 2023-05-09 11:30:17.570 -04:00 [DBG] Done attempting to bind parameter 'cityId' of type 'System.Int32'.
@@ -49,9 +49,9 @@ System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport
 2023-05-09 11:30:17.575 -04:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
 2023-05-09 11:30:17.575 -04:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
 2023-05-09 11:30:17.579 -04:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.XmlDataContractSerializerOutputFormatter' and content type 'application/xml' to write the response.
-2023-05-09 11:30:17.579 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[CityInfo.API.Models.POI.PointOfInterestDto, CityInfo.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
-2023-05-09 11:30:17.591 -04:00 [INF] Executed action CityInfo.API.Controllers.PointsOfInterestController.GetPOIs (CityInfo.API) in 20.4834ms
-2023-05-09 11:30:17.591 -04:00 [INF] Executed endpoint 'CityInfo.API.Controllers.PointsOfInterestController.GetPOIs (CityInfo.API)'
+2023-05-09 11:30:17.579 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[CityInfo.API.src.Models.POI.PointOfInterestDto, CityInfo.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-05-09 11:30:17.591 -04:00 [INF] Executed action CityInfo.API.src.Controllers.PointsOfInterestController.GetPOIs (CityInfo.API) in 20.4834ms
+2023-05-09 11:30:17.591 -04:00 [INF] Executed endpoint 'CityInfo.API.src.Controllers.PointsOfInterestController.GetPOIs (CityInfo.API)'
 2023-05-09 11:30:17.592 -04:00 [DBG] Connection id "0HMQGK95DV2VI" completed keep alive response.
 2023-05-09 11:30:17.592 -04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7054/api/cities/0/poi - - - 200 503 application/xml;+charset=utf-8 96.4317ms
 2023-05-09 11:32:28.408 -04:00 [DBG] Connection id "0HMQGK95DV2VI" disconnecting.
@@ -84,13 +84,13 @@ System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport
 2023-05-09 14:31:30.602 -04:00 [INF] Request starting HTTP/1.1 POST https://localhost:7054/api/cities/0/poi application/json 69
 2023-05-09 14:31:30.606 -04:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
 2023-05-09 14:31:30.621 -04:00 [DBG] 1 candidate(s) found for the request path '/api/cities/0/poi'
-2023-05-09 14:31:30.624 -04:00 [DBG] Endpoint 'CityInfo.API.Controllers.PointsOfInterestController.CreatePOI (CityInfo.API)' with route pattern 'api/cities/{cityId}/poi' is valid for the request path '/api/cities/0/poi'
-2023-05-09 14:31:30.624 -04:00 [DBG] Request matched endpoint 'CityInfo.API.Controllers.PointsOfInterestController.CreatePOI (CityInfo.API)'
+2023-05-09 14:31:30.624 -04:00 [DBG] Endpoint 'CityInfo.API.src.Controllers.PointsOfInterestController.CreatePOI (CityInfo.API)' with route pattern 'api/cities/{cityId}/poi' is valid for the request path '/api/cities/0/poi'
+2023-05-09 14:31:30.624 -04:00 [DBG] Request matched endpoint 'CityInfo.API.src.Controllers.PointsOfInterestController.CreatePOI (CityInfo.API)'
 2023-05-09 14:31:30.634 -04:00 [DBG] Static files was skipped as the request already matched an endpoint.
-2023-05-09 14:31:30.635 -04:00 [INF] Executing endpoint 'CityInfo.API.Controllers.PointsOfInterestController.CreatePOI (CityInfo.API)'
-2023-05-09 14:31:30.637 -04:00 [INF] Executed endpoint 'CityInfo.API.Controllers.PointsOfInterestController.CreatePOI (CityInfo.API)'
+2023-05-09 14:31:30.635 -04:00 [INF] Executing endpoint 'CityInfo.API.src.Controllers.PointsOfInterestController.CreatePOI (CityInfo.API)'
+2023-05-09 14:31:30.637 -04:00 [INF] Executed endpoint 'CityInfo.API.src.Controllers.PointsOfInterestController.CreatePOI (CityInfo.API)'
 2023-05-09 14:31:30.637 -04:00 [ERR] An unhandled exception has occurred while executing the request.
-System.InvalidOperationException: Multiple constructors accepting all given argument types have been found in type 'CityInfo.API.Controllers.PointsOfInterestController'. There should only be one applicable constructor.
+System.InvalidOperationException: Multiple constructors accepting all given argument types have been found in type 'CityInfo.API.src.Controllers.PointsOfInterestController'. There should only be one applicable constructor.
    at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.TryFindMatchingConstructor(Type instanceType, Type[] argumentTypes, ConstructorInfo& matchingConstructor, Nullable`1[]& parameterMap)
    at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.FindApplicableConstructor(Type instanceType, Type[] argumentTypes, ConstructorInfo& matchingConstructor, Nullable`1[]& matchingParameterMap)
    at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.CreateFactory(Type instanceType, Type[] argumentTypes)
@@ -135,63 +135,63 @@ System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport
 2023-05-09 14:31:49.192 -04:00 [INF] Request starting HTTP/1.1 POST https://localhost:7054/api/cities/0/poi application/json 69
 2023-05-09 14:31:49.197 -04:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
 2023-05-09 14:31:49.214 -04:00 [DBG] 1 candidate(s) found for the request path '/api/cities/0/poi'
-2023-05-09 14:31:49.217 -04:00 [DBG] Endpoint 'CityInfo.API.Controllers.PointsOfInterestController.CreatePOI (CityInfo.API)' with route pattern 'api/cities/{cityId}/poi' is valid for the request path '/api/cities/0/poi'
-2023-05-09 14:31:49.217 -04:00 [DBG] Request matched endpoint 'CityInfo.API.Controllers.PointsOfInterestController.CreatePOI (CityInfo.API)'
+2023-05-09 14:31:49.217 -04:00 [DBG] Endpoint 'CityInfo.API.src.Controllers.PointsOfInterestController.CreatePOI (CityInfo.API)' with route pattern 'api/cities/{cityId}/poi' is valid for the request path '/api/cities/0/poi'
+2023-05-09 14:31:49.217 -04:00 [DBG] Request matched endpoint 'CityInfo.API.src.Controllers.PointsOfInterestController.CreatePOI (CityInfo.API)'
 2023-05-09 14:31:49.228 -04:00 [DBG] Static files was skipped as the request already matched an endpoint.
-2023-05-09 14:31:49.229 -04:00 [INF] Executing endpoint 'CityInfo.API.Controllers.PointsOfInterestController.CreatePOI (CityInfo.API)'
-2023-05-09 14:31:49.242 -04:00 [INF] Route matched with {action = "CreatePOI", controller = "PointsOfInterest"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[CityInfo.API.Models.POI.PointOfInterestDto] CreatePOI(Int32, CityInfo.API.Models.POI.CreatePointOfInterestDto) on controller CityInfo.API.Controllers.PointsOfInterestController (CityInfo.API).
+2023-05-09 14:31:49.229 -04:00 [INF] Executing endpoint 'CityInfo.API.src.Controllers.PointsOfInterestController.CreatePOI (CityInfo.API)'
+2023-05-09 14:31:49.242 -04:00 [INF] Route matched with {action = "CreatePOI", controller = "PointsOfInterest"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[CityInfo.API.src.Models.POI.PointOfInterestDto] CreatePOI(Int32, CityInfo.API.src.Models.POI.CreatePointOfInterestDto) on controller CityInfo.API.src.Controllers.PointsOfInterestController (CityInfo.API).
 2023-05-09 14:31:49.243 -04:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
 2023-05-09 14:31:49.243 -04:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
 2023-05-09 14:31:49.243 -04:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
 2023-05-09 14:31:49.243 -04:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
 2023-05-09 14:31:49.243 -04:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
-2023-05-09 14:31:49.243 -04:00 [DBG] Executing controller factory for controller CityInfo.API.Controllers.PointsOfInterestController (CityInfo.API)
-2023-05-09 14:31:49.244 -04:00 [DBG] Executed controller factory for controller CityInfo.API.Controllers.PointsOfInterestController (CityInfo.API)
+2023-05-09 14:31:49.243 -04:00 [DBG] Executing controller factory for controller CityInfo.API.src.Controllers.PointsOfInterestController (CityInfo.API)
+2023-05-09 14:31:49.244 -04:00 [DBG] Executed controller factory for controller CityInfo.API.src.Controllers.PointsOfInterestController (CityInfo.API)
 2023-05-09 14:31:49.246 -04:00 [DBG] Attempting to bind parameter 'cityId' of type 'System.Int32' ...
 2023-05-09 14:31:49.247 -04:00 [DBG] Attempting to bind parameter 'cityId' of type 'System.Int32' using the name 'cityId' in request data ...
 2023-05-09 14:31:49.247 -04:00 [DBG] Done attempting to bind parameter 'cityId' of type 'System.Int32'.
 2023-05-09 14:31:49.247 -04:00 [DBG] Done attempting to bind parameter 'cityId' of type 'System.Int32'.
 2023-05-09 14:31:49.247 -04:00 [DBG] Attempting to validate the bound parameter 'cityId' of type 'System.Int32' ...
 2023-05-09 14:31:49.248 -04:00 [DBG] Done attempting to validate the bound parameter 'cityId' of type 'System.Int32'.
-2023-05-09 14:31:49.248 -04:00 [DBG] Attempting to bind parameter 'newPOI' of type 'CityInfo.API.Models.POI.CreatePointOfInterestDto' ...
-2023-05-09 14:31:49.249 -04:00 [DBG] Attempting to bind parameter 'newPOI' of type 'CityInfo.API.Models.POI.CreatePointOfInterestDto' using the name '' in request data ...
+2023-05-09 14:31:49.248 -04:00 [DBG] Attempting to bind parameter 'newPOI' of type 'CityInfo.API.src.Models.POI.CreatePointOfInterestDto' ...
+2023-05-09 14:31:49.249 -04:00 [DBG] Attempting to bind parameter 'newPOI' of type 'CityInfo.API.src.Models.POI.CreatePointOfInterestDto' using the name '' in request data ...
 2023-05-09 14:31:49.249 -04:00 [DBG] Rejected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.XmlDataContractSerializerInputFormatter' for content type 'application/json'.
 2023-05-09 14:31:49.249 -04:00 [DBG] Rejected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonPatchInputFormatter' for content type 'application/json'.
 2023-05-09 14:31:49.250 -04:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonInputFormatter' for content type 'application/json'.
 2023-05-09 14:31:49.252 -04:00 [DBG] Connection id "0HMQGNEJD8QD0", Request id "0HMQGNEJD8QD0:00000002": started reading request body.
 2023-05-09 14:31:49.252 -04:00 [DBG] Connection id "0HMQGNEJD8QD0", Request id "0HMQGNEJD8QD0:00000002": done reading request body.
-2023-05-09 14:31:49.343 -04:00 [DBG] Done attempting to bind parameter 'newPOI' of type 'CityInfo.API.Models.POI.CreatePointOfInterestDto'.
-2023-05-09 14:31:49.343 -04:00 [DBG] Done attempting to bind parameter 'newPOI' of type 'CityInfo.API.Models.POI.CreatePointOfInterestDto'.
-2023-05-09 14:31:49.343 -04:00 [DBG] Attempting to validate the bound parameter 'newPOI' of type 'CityInfo.API.Models.POI.CreatePointOfInterestDto' ...
-2023-05-09 14:31:49.348 -04:00 [DBG] Done attempting to validate the bound parameter 'newPOI' of type 'CityInfo.API.Models.POI.CreatePointOfInterestDto'.
+2023-05-09 14:31:49.343 -04:00 [DBG] Done attempting to bind parameter 'newPOI' of type 'CityInfo.API.src.Models.POI.CreatePointOfInterestDto'.
+2023-05-09 14:31:49.343 -04:00 [DBG] Done attempting to bind parameter 'newPOI' of type 'CityInfo.API.src.Models.POI.CreatePointOfInterestDto'.
+2023-05-09 14:31:49.343 -04:00 [DBG] Attempting to validate the bound parameter 'newPOI' of type 'CityInfo.API.src.Models.POI.CreatePointOfInterestDto' ...
+2023-05-09 14:31:49.348 -04:00 [DBG] Done attempting to validate the bound parameter 'newPOI' of type 'CityInfo.API.src.Models.POI.CreatePointOfInterestDto'.
 2023-05-09 14:31:49.349 -04:00 [INF] Added new point of interest Central Park to city NY
 2023-05-09 14:31:49.350 -04:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.XmlDataContractSerializerOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter"]
 2023-05-09 14:31:49.351 -04:00 [DBG] No information found on request to perform content negotiation.
 2023-05-09 14:31:49.351 -04:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
 2023-05-09 14:31:49.351 -04:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
 2023-05-09 14:31:49.354 -04:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.XmlDataContractSerializerOutputFormatter' and content type 'application/xml' to write the response.
-2023-05-09 14:31:49.355 -04:00 [INF] Executing CreatedAtRouteResult, writing value of type 'CityInfo.API.Models.POI.PointOfInterestDto'.
-2023-05-09 14:31:49.367 -04:00 [DBG] Found the endpoints ["CityInfo.API.Controllers.PointsOfInterestController.GetPOI (CityInfo.API)"] for address Microsoft.AspNetCore.Routing.RouteValuesAddress
-2023-05-09 14:31:49.371 -04:00 [DBG] Successfully processed template api/cities/{cityId}/poi/{poiId} for CityInfo.API.Controllers.PointsOfInterestController.GetPOI (CityInfo.API) resulting in /api/cities/0/poi/2 and 
-2023-05-09 14:31:49.371 -04:00 [DBG] Link generation succeeded for endpoints ["CityInfo.API.Controllers.PointsOfInterestController.GetPOI (CityInfo.API)"] with result /api/cities/0/poi/2
-2023-05-09 14:31:49.380 -04:00 [INF] Executed action CityInfo.API.Controllers.PointsOfInterestController.CreatePOI (CityInfo.API) in 133.616ms
-2023-05-09 14:31:49.380 -04:00 [INF] Executed endpoint 'CityInfo.API.Controllers.PointsOfInterestController.CreatePOI (CityInfo.API)'
+2023-05-09 14:31:49.355 -04:00 [INF] Executing CreatedAtRouteResult, writing value of type 'CityInfo.API.src.Models.POI.PointOfInterestDto'.
+2023-05-09 14:31:49.367 -04:00 [DBG] Found the endpoints ["CityInfo.API.src.Controllers.PointsOfInterestController.GetPOI (CityInfo.API)"] for address Microsoft.AspNetCore.Routing.RouteValuesAddress
+2023-05-09 14:31:49.371 -04:00 [DBG] Successfully processed template api/cities/{cityId}/poi/{poiId} for CityInfo.API.src.Controllers.PointsOfInterestController.GetPOI (CityInfo.API) resulting in /api/cities/0/poi/2 and 
+2023-05-09 14:31:49.371 -04:00 [DBG] Link generation succeeded for endpoints ["CityInfo.API.src.Controllers.PointsOfInterestController.GetPOI (CityInfo.API)"] with result /api/cities/0/poi/2
+2023-05-09 14:31:49.380 -04:00 [INF] Executed action CityInfo.API.src.Controllers.PointsOfInterestController.CreatePOI (CityInfo.API) in 133.616ms
+2023-05-09 14:31:49.380 -04:00 [INF] Executed endpoint 'CityInfo.API.src.Controllers.PointsOfInterestController.CreatePOI (CityInfo.API)'
 2023-05-09 14:31:49.380 -04:00 [DBG] Connection id "0HMQGNEJD8QD0" completed keep alive response.
 2023-05-09 14:31:49.381 -04:00 [INF] Request finished HTTP/1.1 POST https://localhost:7054/api/cities/0/poi application/json 69 - 201 245 application/xml;+charset=utf-8 191.8710ms
 2023-05-09 14:32:02.921 -04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7054/api/cities/0/poi - -
 2023-05-09 14:32:02.922 -04:00 [DBG] 1 candidate(s) found for the request path '/api/cities/0/poi'
-2023-05-09 14:32:02.923 -04:00 [DBG] Endpoint 'CityInfo.API.Controllers.PointsOfInterestController.GetPOIs (CityInfo.API)' with route pattern 'api/cities/{cityId}/poi' is valid for the request path '/api/cities/0/poi'
-2023-05-09 14:32:02.923 -04:00 [DBG] Request matched endpoint 'CityInfo.API.Controllers.PointsOfInterestController.GetPOIs (CityInfo.API)'
+2023-05-09 14:32:02.923 -04:00 [DBG] Endpoint 'CityInfo.API.src.Controllers.PointsOfInterestController.GetPOIs (CityInfo.API)' with route pattern 'api/cities/{cityId}/poi' is valid for the request path '/api/cities/0/poi'
+2023-05-09 14:32:02.923 -04:00 [DBG] Request matched endpoint 'CityInfo.API.src.Controllers.PointsOfInterestController.GetPOIs (CityInfo.API)'
 2023-05-09 14:32:02.937 -04:00 [DBG] Static files was skipped as the request already matched an endpoint.
-2023-05-09 14:32:02.937 -04:00 [INF] Executing endpoint 'CityInfo.API.Controllers.PointsOfInterestController.GetPOIs (CityInfo.API)'
-2023-05-09 14:32:02.938 -04:00 [INF] Route matched with {action = "GetPOIs", controller = "PointsOfInterest"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[CityInfo.API.Models.POI.PointOfInterestDto]] GetPOIs(Int32) on controller CityInfo.API.Controllers.PointsOfInterestController (CityInfo.API).
+2023-05-09 14:32:02.937 -04:00 [INF] Executing endpoint 'CityInfo.API.src.Controllers.PointsOfInterestController.GetPOIs (CityInfo.API)'
+2023-05-09 14:32:02.938 -04:00 [INF] Route matched with {action = "GetPOIs", controller = "PointsOfInterest"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[CityInfo.API.src.Models.POI.PointOfInterestDto]] GetPOIs(Int32) on controller CityInfo.API.src.Controllers.PointsOfInterestController (CityInfo.API).
 2023-05-09 14:32:02.938 -04:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
 2023-05-09 14:32:02.938 -04:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
 2023-05-09 14:32:02.938 -04:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
 2023-05-09 14:32:02.939 -04:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
 2023-05-09 14:32:02.939 -04:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
-2023-05-09 14:32:02.939 -04:00 [DBG] Executing controller factory for controller CityInfo.API.Controllers.PointsOfInterestController (CityInfo.API)
-2023-05-09 14:32:02.939 -04:00 [DBG] Executed controller factory for controller CityInfo.API.Controllers.PointsOfInterestController (CityInfo.API)
+2023-05-09 14:32:02.939 -04:00 [DBG] Executing controller factory for controller CityInfo.API.src.Controllers.PointsOfInterestController (CityInfo.API)
+2023-05-09 14:32:02.939 -04:00 [DBG] Executed controller factory for controller CityInfo.API.src.Controllers.PointsOfInterestController (CityInfo.API)
 2023-05-09 14:32:02.939 -04:00 [DBG] Attempting to bind parameter 'cityId' of type 'System.Int32' ...
 2023-05-09 14:32:02.939 -04:00 [DBG] Attempting to bind parameter 'cityId' of type 'System.Int32' using the name 'cityId' in request data ...
 2023-05-09 14:32:02.939 -04:00 [DBG] Done attempting to bind parameter 'cityId' of type 'System.Int32'.
@@ -204,25 +204,25 @@ System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport
 2023-05-09 14:32:02.940 -04:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
 2023-05-09 14:32:02.940 -04:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
 2023-05-09 14:32:02.940 -04:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.XmlDataContractSerializerOutputFormatter' and content type 'application/xml' to write the response.
-2023-05-09 14:32:02.940 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[CityInfo.API.Models.POI.PointOfInterestDto, CityInfo.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
-2023-05-09 14:32:02.942 -04:00 [INF] Executed action CityInfo.API.Controllers.PointsOfInterestController.GetPOIs (CityInfo.API) in 3.5672ms
-2023-05-09 14:32:02.942 -04:00 [INF] Executed endpoint 'CityInfo.API.Controllers.PointsOfInterestController.GetPOIs (CityInfo.API)'
+2023-05-09 14:32:02.940 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[CityInfo.API.src.Models.POI.PointOfInterestDto, CityInfo.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-05-09 14:32:02.942 -04:00 [INF] Executed action CityInfo.API.src.Controllers.PointsOfInterestController.GetPOIs (CityInfo.API) in 3.5672ms
+2023-05-09 14:32:02.942 -04:00 [INF] Executed endpoint 'CityInfo.API.src.Controllers.PointsOfInterestController.GetPOIs (CityInfo.API)'
 2023-05-09 14:32:02.942 -04:00 [DBG] Connection id "0HMQGNEJD8QD0" completed keep alive response.
 2023-05-09 14:32:02.942 -04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7054/api/cities/0/poi - - - 200 624 application/xml;+charset=utf-8 21.2386ms
 2023-05-09 14:32:35.669 -04:00 [INF] Request starting HTTP/1.1 DELETE https://localhost:7054/api/cities/0/poi/2 - -
 2023-05-09 14:32:35.669 -04:00 [DBG] 1 candidate(s) found for the request path '/api/cities/0/poi/2'
-2023-05-09 14:32:35.669 -04:00 [DBG] Endpoint 'CityInfo.API.Controllers.PointsOfInterestController.DeletePOI (CityInfo.API)' with route pattern 'api/cities/{cityId}/poi/{poiId}' is valid for the request path '/api/cities/0/poi/2'
-2023-05-09 14:32:35.669 -04:00 [DBG] Request matched endpoint 'CityInfo.API.Controllers.PointsOfInterestController.DeletePOI (CityInfo.API)'
+2023-05-09 14:32:35.669 -04:00 [DBG] Endpoint 'CityInfo.API.src.Controllers.PointsOfInterestController.DeletePOI (CityInfo.API)' with route pattern 'api/cities/{cityId}/poi/{poiId}' is valid for the request path '/api/cities/0/poi/2'
+2023-05-09 14:32:35.669 -04:00 [DBG] Request matched endpoint 'CityInfo.API.src.Controllers.PointsOfInterestController.DeletePOI (CityInfo.API)'
 2023-05-09 14:32:35.670 -04:00 [DBG] Static files was skipped as the request already matched an endpoint.
-2023-05-09 14:32:35.670 -04:00 [INF] Executing endpoint 'CityInfo.API.Controllers.PointsOfInterestController.DeletePOI (CityInfo.API)'
-2023-05-09 14:32:35.671 -04:00 [INF] Route matched with {action = "DeletePOI", controller = "PointsOfInterest"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult DeletePOI(Int32, Int32) on controller CityInfo.API.Controllers.PointsOfInterestController (CityInfo.API).
+2023-05-09 14:32:35.670 -04:00 [INF] Executing endpoint 'CityInfo.API.src.Controllers.PointsOfInterestController.DeletePOI (CityInfo.API)'
+2023-05-09 14:32:35.671 -04:00 [INF] Route matched with {action = "DeletePOI", controller = "PointsOfInterest"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult DeletePOI(Int32, Int32) on controller CityInfo.API.src.Controllers.PointsOfInterestController (CityInfo.API).
 2023-05-09 14:32:35.672 -04:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
 2023-05-09 14:32:35.672 -04:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
 2023-05-09 14:32:35.672 -04:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
 2023-05-09 14:32:35.672 -04:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
 2023-05-09 14:32:35.672 -04:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
-2023-05-09 14:32:35.672 -04:00 [DBG] Executing controller factory for controller CityInfo.API.Controllers.PointsOfInterestController (CityInfo.API)
-2023-05-09 14:32:35.672 -04:00 [DBG] Executed controller factory for controller CityInfo.API.Controllers.PointsOfInterestController (CityInfo.API)
+2023-05-09 14:32:35.672 -04:00 [DBG] Executing controller factory for controller CityInfo.API.src.Controllers.PointsOfInterestController (CityInfo.API)
+2023-05-09 14:32:35.672 -04:00 [DBG] Executed controller factory for controller CityInfo.API.src.Controllers.PointsOfInterestController (CityInfo.API)
 2023-05-09 14:32:35.672 -04:00 [DBG] Attempting to bind parameter 'cityId' of type 'System.Int32' ...
 2023-05-09 14:32:35.673 -04:00 [DBG] Attempting to bind parameter 'cityId' of type 'System.Int32' using the name 'cityId' in request data ...
 2023-05-09 14:32:35.673 -04:00 [DBG] Done attempting to bind parameter 'cityId' of type 'System.Int32'.
@@ -236,24 +236,24 @@ System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport
 2023-05-09 14:32:35.674 -04:00 [DBG] Attempting to validate the bound parameter 'poiId' of type 'System.Int32' ...
 2023-05-09 14:32:35.674 -04:00 [DBG] Done attempting to validate the bound parameter 'poiId' of type 'System.Int32'.
 2023-05-09 14:32:35.683 -04:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
-2023-05-09 14:32:35.683 -04:00 [INF] Executed action CityInfo.API.Controllers.PointsOfInterestController.DeletePOI (CityInfo.API) in 11.4913ms
-2023-05-09 14:32:35.684 -04:00 [INF] Executed endpoint 'CityInfo.API.Controllers.PointsOfInterestController.DeletePOI (CityInfo.API)'
+2023-05-09 14:32:35.683 -04:00 [INF] Executed action CityInfo.API.src.Controllers.PointsOfInterestController.DeletePOI (CityInfo.API) in 11.4913ms
+2023-05-09 14:32:35.684 -04:00 [INF] Executed endpoint 'CityInfo.API.src.Controllers.PointsOfInterestController.DeletePOI (CityInfo.API)'
 2023-05-09 14:32:35.684 -04:00 [DBG] Connection id "0HMQGNEJD8QD0" completed keep alive response.
 2023-05-09 14:32:35.684 -04:00 [INF] Request finished HTTP/1.1 DELETE https://localhost:7054/api/cities/0/poi/2 - - - 204 - - 15.2393ms
 2023-05-09 14:33:25.415 -04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7054/api/cities/0/poi - -
 2023-05-09 14:33:25.416 -04:00 [DBG] 1 candidate(s) found for the request path '/api/cities/0/poi'
-2023-05-09 14:33:25.417 -04:00 [DBG] Endpoint 'CityInfo.API.Controllers.PointsOfInterestController.GetPOIs (CityInfo.API)' with route pattern 'api/cities/{cityId}/poi' is valid for the request path '/api/cities/0/poi'
-2023-05-09 14:33:25.417 -04:00 [DBG] Request matched endpoint 'CityInfo.API.Controllers.PointsOfInterestController.GetPOIs (CityInfo.API)'
+2023-05-09 14:33:25.417 -04:00 [DBG] Endpoint 'CityInfo.API.src.Controllers.PointsOfInterestController.GetPOIs (CityInfo.API)' with route pattern 'api/cities/{cityId}/poi' is valid for the request path '/api/cities/0/poi'
+2023-05-09 14:33:25.417 -04:00 [DBG] Request matched endpoint 'CityInfo.API.src.Controllers.PointsOfInterestController.GetPOIs (CityInfo.API)'
 2023-05-09 14:33:25.417 -04:00 [DBG] Static files was skipped as the request already matched an endpoint.
-2023-05-09 14:33:25.417 -04:00 [INF] Executing endpoint 'CityInfo.API.Controllers.PointsOfInterestController.GetPOIs (CityInfo.API)'
-2023-05-09 14:33:25.417 -04:00 [INF] Route matched with {action = "GetPOIs", controller = "PointsOfInterest"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[CityInfo.API.Models.POI.PointOfInterestDto]] GetPOIs(Int32) on controller CityInfo.API.Controllers.PointsOfInterestController (CityInfo.API).
+2023-05-09 14:33:25.417 -04:00 [INF] Executing endpoint 'CityInfo.API.src.Controllers.PointsOfInterestController.GetPOIs (CityInfo.API)'
+2023-05-09 14:33:25.417 -04:00 [INF] Route matched with {action = "GetPOIs", controller = "PointsOfInterest"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[CityInfo.API.src.Models.POI.PointOfInterestDto]] GetPOIs(Int32) on controller CityInfo.API.src.Controllers.PointsOfInterestController (CityInfo.API).
 2023-05-09 14:33:25.417 -04:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
 2023-05-09 14:33:25.418 -04:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
 2023-05-09 14:33:25.418 -04:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
 2023-05-09 14:33:25.418 -04:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
 2023-05-09 14:33:25.418 -04:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
-2023-05-09 14:33:25.418 -04:00 [DBG] Executing controller factory for controller CityInfo.API.Controllers.PointsOfInterestController (CityInfo.API)
-2023-05-09 14:33:25.418 -04:00 [DBG] Executed controller factory for controller CityInfo.API.Controllers.PointsOfInterestController (CityInfo.API)
+2023-05-09 14:33:25.418 -04:00 [DBG] Executing controller factory for controller CityInfo.API.src.Controllers.PointsOfInterestController (CityInfo.API)
+2023-05-09 14:33:25.418 -04:00 [DBG] Executed controller factory for controller CityInfo.API.src.Controllers.PointsOfInterestController (CityInfo.API)
 2023-05-09 14:33:25.418 -04:00 [DBG] Attempting to bind parameter 'cityId' of type 'System.Int32' ...
 2023-05-09 14:33:25.418 -04:00 [DBG] Attempting to bind parameter 'cityId' of type 'System.Int32' using the name 'cityId' in request data ...
 2023-05-09 14:33:25.418 -04:00 [DBG] Done attempting to bind parameter 'cityId' of type 'System.Int32'.
@@ -266,9 +266,9 @@ System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport
 2023-05-09 14:33:25.419 -04:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
 2023-05-09 14:33:25.419 -04:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
 2023-05-09 14:33:25.419 -04:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.XmlDataContractSerializerOutputFormatter' and content type 'application/xml' to write the response.
-2023-05-09 14:33:25.419 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[CityInfo.API.Models.POI.PointOfInterestDto, CityInfo.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
-2023-05-09 14:33:25.420 -04:00 [INF] Executed action CityInfo.API.Controllers.PointsOfInterestController.GetPOIs (CityInfo.API) in 2.0459ms
-2023-05-09 14:33:25.420 -04:00 [INF] Executed endpoint 'CityInfo.API.Controllers.PointsOfInterestController.GetPOIs (CityInfo.API)'
+2023-05-09 14:33:25.419 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[CityInfo.API.src.Models.POI.PointOfInterestDto, CityInfo.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-05-09 14:33:25.420 -04:00 [INF] Executed action CityInfo.API.src.Controllers.PointsOfInterestController.GetPOIs (CityInfo.API) in 2.0459ms
+2023-05-09 14:33:25.420 -04:00 [INF] Executed endpoint 'CityInfo.API.src.Controllers.PointsOfInterestController.GetPOIs (CityInfo.API)'
 2023-05-09 14:33:25.420 -04:00 [DBG] Connection id "0HMQGNEJD8QD0" completed keep alive response.
 2023-05-09 14:33:25.420 -04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7054/api/cities/0/poi - - - 200 503 application/xml;+charset=utf-8 4.7797ms
 2023-05-09 14:38:38.824 -04:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
@@ -320,13 +320,13 @@ System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport
 2023-05-09 14:50:52.930 -04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7054/api/cities - -
 2023-05-09 14:50:52.934 -04:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
 2023-05-09 14:50:52.952 -04:00 [DBG] 1 candidate(s) found for the request path '/api/cities'
-2023-05-09 14:50:52.955 -04:00 [DBG] Endpoint 'CityInfo.API.Controllers.CitiesController.GetCities (CityInfo.API)' with route pattern 'api/cities' is valid for the request path '/api/cities'
-2023-05-09 14:50:52.956 -04:00 [DBG] Request matched endpoint 'CityInfo.API.Controllers.CitiesController.GetCities (CityInfo.API)'
+2023-05-09 14:50:52.955 -04:00 [DBG] Endpoint 'CityInfo.API.src.Controllers.CitiesController.GetCities (CityInfo.API)' with route pattern 'api/cities' is valid for the request path '/api/cities'
+2023-05-09 14:50:52.956 -04:00 [DBG] Request matched endpoint 'CityInfo.API.src.Controllers.CitiesController.GetCities (CityInfo.API)'
 2023-05-09 14:50:52.984 -04:00 [DBG] Static files was skipped as the request already matched an endpoint.
-2023-05-09 14:50:52.985 -04:00 [INF] Executing endpoint 'CityInfo.API.Controllers.CitiesController.GetCities (CityInfo.API)'
-2023-05-09 14:50:52.987 -04:00 [INF] Executed endpoint 'CityInfo.API.Controllers.CitiesController.GetCities (CityInfo.API)'
+2023-05-09 14:50:52.985 -04:00 [INF] Executing endpoint 'CityInfo.API.src.Controllers.CitiesController.GetCities (CityInfo.API)'
+2023-05-09 14:50:52.987 -04:00 [INF] Executed endpoint 'CityInfo.API.src.Controllers.CitiesController.GetCities (CityInfo.API)'
 2023-05-09 14:50:52.987 -04:00 [ERR] An unhandled exception has occurred while executing the request.
-System.InvalidOperationException: Multiple constructors accepting all given argument types have been found in type 'CityInfo.API.Controllers.CitiesController'. There should only be one applicable constructor.
+System.InvalidOperationException: Multiple constructors accepting all given argument types have been found in type 'CityInfo.API.src.Controllers.CitiesController'. There should only be one applicable constructor.
    at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.TryFindMatchingConstructor(Type instanceType, Type[] argumentTypes, ConstructorInfo& matchingConstructor, Nullable`1[]& parameterMap)
    at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.FindApplicableConstructor(Type instanceType, Type[] argumentTypes, ConstructorInfo& matchingConstructor, Nullable`1[]& matchingParameterMap)
    at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.CreateFactory(Type instanceType, Type[] argumentTypes)
@@ -369,26 +369,26 @@ System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport
 2023-05-09 14:51:03.097 -04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7054/api/cities - -
 2023-05-09 14:51:03.102 -04:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
 2023-05-09 14:51:03.120 -04:00 [DBG] 1 candidate(s) found for the request path '/api/cities'
-2023-05-09 14:51:03.123 -04:00 [DBG] Endpoint 'CityInfo.API.Controllers.CitiesController.GetCities (CityInfo.API)' with route pattern 'api/cities' is valid for the request path '/api/cities'
-2023-05-09 14:51:03.123 -04:00 [DBG] Request matched endpoint 'CityInfo.API.Controllers.CitiesController.GetCities (CityInfo.API)'
+2023-05-09 14:51:03.123 -04:00 [DBG] Endpoint 'CityInfo.API.src.Controllers.CitiesController.GetCities (CityInfo.API)' with route pattern 'api/cities' is valid for the request path '/api/cities'
+2023-05-09 14:51:03.123 -04:00 [DBG] Request matched endpoint 'CityInfo.API.src.Controllers.CitiesController.GetCities (CityInfo.API)'
 2023-05-09 14:51:03.149 -04:00 [DBG] Static files was skipped as the request already matched an endpoint.
-2023-05-09 14:51:03.150 -04:00 [INF] Executing endpoint 'CityInfo.API.Controllers.CitiesController.GetCities (CityInfo.API)'
-2023-05-09 14:51:03.156 -04:00 [INF] Route matched with {action = "GetCities", controller = "Cities"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[CityInfo.API.Models.City.CityDto]] GetCities() on controller CityInfo.API.Controllers.CitiesController (CityInfo.API).
+2023-05-09 14:51:03.150 -04:00 [INF] Executing endpoint 'CityInfo.API.src.Controllers.CitiesController.GetCities (CityInfo.API)'
+2023-05-09 14:51:03.156 -04:00 [INF] Route matched with {action = "GetCities", controller = "Cities"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[CityInfo.API.src.Models.City.CityDto]] GetCities() on controller CityInfo.API.src.Controllers.CitiesController (CityInfo.API).
 2023-05-09 14:51:03.156 -04:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
 2023-05-09 14:51:03.156 -04:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
 2023-05-09 14:51:03.157 -04:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
 2023-05-09 14:51:03.157 -04:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
 2023-05-09 14:51:03.157 -04:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
-2023-05-09 14:51:03.157 -04:00 [DBG] Executing controller factory for controller CityInfo.API.Controllers.CitiesController (CityInfo.API)
-2023-05-09 14:51:03.158 -04:00 [DBG] Executed controller factory for controller CityInfo.API.Controllers.CitiesController (CityInfo.API)
+2023-05-09 14:51:03.157 -04:00 [DBG] Executing controller factory for controller CityInfo.API.src.Controllers.CitiesController (CityInfo.API)
+2023-05-09 14:51:03.158 -04:00 [DBG] Executed controller factory for controller CityInfo.API.src.Controllers.CitiesController (CityInfo.API)
 2023-05-09 14:51:03.159 -04:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.XmlDataContractSerializerOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter"]
 2023-05-09 14:51:03.160 -04:00 [DBG] No information found on request to perform content negotiation.
 2023-05-09 14:51:03.160 -04:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
 2023-05-09 14:51:03.160 -04:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
 2023-05-09 14:51:03.163 -04:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.XmlDataContractSerializerOutputFormatter' and content type 'application/xml' to write the response.
-2023-05-09 14:51:03.164 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[CityInfo.API.Models.City.CityDto, CityInfo.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
-2023-05-09 14:51:03.178 -04:00 [INF] Executed action CityInfo.API.Controllers.CitiesController.GetCities (CityInfo.API) in 17.823ms
-2023-05-09 14:51:03.178 -04:00 [INF] Executed endpoint 'CityInfo.API.Controllers.CitiesController.GetCities (CityInfo.API)'
+2023-05-09 14:51:03.164 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[CityInfo.API.src.Models.City.CityDto, CityInfo.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-05-09 14:51:03.178 -04:00 [INF] Executed action CityInfo.API.src.Controllers.CitiesController.GetCities (CityInfo.API) in 17.823ms
+2023-05-09 14:51:03.178 -04:00 [INF] Executed endpoint 'CityInfo.API.src.Controllers.CitiesController.GetCities (CityInfo.API)'
 2023-05-09 14:51:03.178 -04:00 [DBG] Connection id "0HMQGNPB9N1C8" completed keep alive response.
 2023-05-09 14:51:03.179 -04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7054/api/cities - - - 200 934 application/xml;+charset=utf-8 84.6171ms
 2023-05-09 14:53:14.030 -04:00 [DBG] Connection id "0HMQGNPB9N1C8" disconnecting.
@@ -436,63 +436,63 @@ System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport
 2023-05-09 16:18:23.890 -04:00 [INF] Request starting HTTP/1.1 POST https://localhost:7054/api/cities/0/poi application/json 69
 2023-05-09 16:18:23.895 -04:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
 2023-05-09 16:18:23.911 -04:00 [DBG] 1 candidate(s) found for the request path '/api/cities/0/poi'
-2023-05-09 16:18:23.913 -04:00 [DBG] Endpoint 'CityInfo.API.Controllers.PointsOfInterestController.CreatePOI (CityInfo.API)' with route pattern 'api/cities/{cityId}/poi' is valid for the request path '/api/cities/0/poi'
-2023-05-09 16:18:23.914 -04:00 [DBG] Request matched endpoint 'CityInfo.API.Controllers.PointsOfInterestController.CreatePOI (CityInfo.API)'
+2023-05-09 16:18:23.913 -04:00 [DBG] Endpoint 'CityInfo.API.src.Controllers.PointsOfInterestController.CreatePOI (CityInfo.API)' with route pattern 'api/cities/{cityId}/poi' is valid for the request path '/api/cities/0/poi'
+2023-05-09 16:18:23.914 -04:00 [DBG] Request matched endpoint 'CityInfo.API.src.Controllers.PointsOfInterestController.CreatePOI (CityInfo.API)'
 2023-05-09 16:18:23.923 -04:00 [DBG] Static files was skipped as the request already matched an endpoint.
-2023-05-09 16:18:23.924 -04:00 [INF] Executing endpoint 'CityInfo.API.Controllers.PointsOfInterestController.CreatePOI (CityInfo.API)'
-2023-05-09 16:18:23.937 -04:00 [INF] Route matched with {action = "CreatePOI", controller = "PointsOfInterest"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[CityInfo.API.Models.POI.PointOfInterestDto] CreatePOI(Int32, CityInfo.API.Models.POI.CreatePointOfInterestDto) on controller CityInfo.API.Controllers.PointsOfInterestController (CityInfo.API).
+2023-05-09 16:18:23.924 -04:00 [INF] Executing endpoint 'CityInfo.API.src.Controllers.PointsOfInterestController.CreatePOI (CityInfo.API)'
+2023-05-09 16:18:23.937 -04:00 [INF] Route matched with {action = "CreatePOI", controller = "PointsOfInterest"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[CityInfo.API.src.Models.POI.PointOfInterestDto] CreatePOI(Int32, CityInfo.API.src.Models.POI.CreatePointOfInterestDto) on controller CityInfo.API.src.Controllers.PointsOfInterestController (CityInfo.API).
 2023-05-09 16:18:23.937 -04:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
 2023-05-09 16:18:23.937 -04:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
 2023-05-09 16:18:23.937 -04:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
 2023-05-09 16:18:23.937 -04:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
 2023-05-09 16:18:23.937 -04:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
-2023-05-09 16:18:23.938 -04:00 [DBG] Executing controller factory for controller CityInfo.API.Controllers.PointsOfInterestController (CityInfo.API)
-2023-05-09 16:18:23.938 -04:00 [DBG] Executed controller factory for controller CityInfo.API.Controllers.PointsOfInterestController (CityInfo.API)
+2023-05-09 16:18:23.938 -04:00 [DBG] Executing controller factory for controller CityInfo.API.src.Controllers.PointsOfInterestController (CityInfo.API)
+2023-05-09 16:18:23.938 -04:00 [DBG] Executed controller factory for controller CityInfo.API.src.Controllers.PointsOfInterestController (CityInfo.API)
 2023-05-09 16:18:23.940 -04:00 [DBG] Attempting to bind parameter 'cityId' of type 'System.Int32' ...
 2023-05-09 16:18:23.940 -04:00 [DBG] Attempting to bind parameter 'cityId' of type 'System.Int32' using the name 'cityId' in request data ...
 2023-05-09 16:18:23.940 -04:00 [DBG] Done attempting to bind parameter 'cityId' of type 'System.Int32'.
 2023-05-09 16:18:23.940 -04:00 [DBG] Done attempting to bind parameter 'cityId' of type 'System.Int32'.
 2023-05-09 16:18:23.940 -04:00 [DBG] Attempting to validate the bound parameter 'cityId' of type 'System.Int32' ...
 2023-05-09 16:18:23.941 -04:00 [DBG] Done attempting to validate the bound parameter 'cityId' of type 'System.Int32'.
-2023-05-09 16:18:23.942 -04:00 [DBG] Attempting to bind parameter 'newPOI' of type 'CityInfo.API.Models.POI.CreatePointOfInterestDto' ...
-2023-05-09 16:18:23.942 -04:00 [DBG] Attempting to bind parameter 'newPOI' of type 'CityInfo.API.Models.POI.CreatePointOfInterestDto' using the name '' in request data ...
+2023-05-09 16:18:23.942 -04:00 [DBG] Attempting to bind parameter 'newPOI' of type 'CityInfo.API.src.Models.POI.CreatePointOfInterestDto' ...
+2023-05-09 16:18:23.942 -04:00 [DBG] Attempting to bind parameter 'newPOI' of type 'CityInfo.API.src.Models.POI.CreatePointOfInterestDto' using the name '' in request data ...
 2023-05-09 16:18:23.942 -04:00 [DBG] Rejected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.XmlDataContractSerializerInputFormatter' for content type 'application/json'.
 2023-05-09 16:18:23.942 -04:00 [DBG] Rejected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonPatchInputFormatter' for content type 'application/json'.
 2023-05-09 16:18:23.942 -04:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonInputFormatter' for content type 'application/json'.
 2023-05-09 16:18:23.945 -04:00 [DBG] Connection id "0HMQGPA55SH7O", Request id "0HMQGPA55SH7O:00000002": started reading request body.
 2023-05-09 16:18:23.945 -04:00 [DBG] Connection id "0HMQGPA55SH7O", Request id "0HMQGPA55SH7O:00000002": done reading request body.
-2023-05-09 16:18:24.026 -04:00 [DBG] Done attempting to bind parameter 'newPOI' of type 'CityInfo.API.Models.POI.CreatePointOfInterestDto'.
-2023-05-09 16:18:24.026 -04:00 [DBG] Done attempting to bind parameter 'newPOI' of type 'CityInfo.API.Models.POI.CreatePointOfInterestDto'.
-2023-05-09 16:18:24.026 -04:00 [DBG] Attempting to validate the bound parameter 'newPOI' of type 'CityInfo.API.Models.POI.CreatePointOfInterestDto' ...
-2023-05-09 16:18:24.030 -04:00 [DBG] Done attempting to validate the bound parameter 'newPOI' of type 'CityInfo.API.Models.POI.CreatePointOfInterestDto'.
+2023-05-09 16:18:24.026 -04:00 [DBG] Done attempting to bind parameter 'newPOI' of type 'CityInfo.API.src.Models.POI.CreatePointOfInterestDto'.
+2023-05-09 16:18:24.026 -04:00 [DBG] Done attempting to bind parameter 'newPOI' of type 'CityInfo.API.src.Models.POI.CreatePointOfInterestDto'.
+2023-05-09 16:18:24.026 -04:00 [DBG] Attempting to validate the bound parameter 'newPOI' of type 'CityInfo.API.src.Models.POI.CreatePointOfInterestDto' ...
+2023-05-09 16:18:24.030 -04:00 [DBG] Done attempting to validate the bound parameter 'newPOI' of type 'CityInfo.API.src.Models.POI.CreatePointOfInterestDto'.
 2023-05-09 16:18:24.031 -04:00 [INF] Added new point of interest Central Park to city NY
 2023-05-09 16:18:24.033 -04:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.XmlDataContractSerializerOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter"]
 2023-05-09 16:18:24.033 -04:00 [DBG] No information found on request to perform content negotiation.
 2023-05-09 16:18:24.033 -04:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
 2023-05-09 16:18:24.033 -04:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
 2023-05-09 16:18:24.035 -04:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.XmlDataContractSerializerOutputFormatter' and content type 'application/xml' to write the response.
-2023-05-09 16:18:24.036 -04:00 [INF] Executing CreatedAtRouteResult, writing value of type 'CityInfo.API.Models.POI.PointOfInterestDto'.
-2023-05-09 16:18:24.048 -04:00 [DBG] Found the endpoints ["CityInfo.API.Controllers.PointsOfInterestController.GetPOI (CityInfo.API)"] for address Microsoft.AspNetCore.Routing.RouteValuesAddress
-2023-05-09 16:18:24.052 -04:00 [DBG] Successfully processed template api/cities/{cityId}/poi/{poiId} for CityInfo.API.Controllers.PointsOfInterestController.GetPOI (CityInfo.API) resulting in /api/cities/0/poi/2 and 
-2023-05-09 16:18:24.053 -04:00 [DBG] Link generation succeeded for endpoints ["CityInfo.API.Controllers.PointsOfInterestController.GetPOI (CityInfo.API)"] with result /api/cities/0/poi/2
-2023-05-09 16:18:24.060 -04:00 [INF] Executed action CityInfo.API.Controllers.PointsOfInterestController.CreatePOI (CityInfo.API) in 119.1091ms
-2023-05-09 16:18:24.060 -04:00 [INF] Executed endpoint 'CityInfo.API.Controllers.PointsOfInterestController.CreatePOI (CityInfo.API)'
+2023-05-09 16:18:24.036 -04:00 [INF] Executing CreatedAtRouteResult, writing value of type 'CityInfo.API.src.Models.POI.PointOfInterestDto'.
+2023-05-09 16:18:24.048 -04:00 [DBG] Found the endpoints ["CityInfo.API.src.Controllers.PointsOfInterestController.GetPOI (CityInfo.API)"] for address Microsoft.AspNetCore.Routing.RouteValuesAddress
+2023-05-09 16:18:24.052 -04:00 [DBG] Successfully processed template api/cities/{cityId}/poi/{poiId} for CityInfo.API.src.Controllers.PointsOfInterestController.GetPOI (CityInfo.API) resulting in /api/cities/0/poi/2 and 
+2023-05-09 16:18:24.053 -04:00 [DBG] Link generation succeeded for endpoints ["CityInfo.API.src.Controllers.PointsOfInterestController.GetPOI (CityInfo.API)"] with result /api/cities/0/poi/2
+2023-05-09 16:18:24.060 -04:00 [INF] Executed action CityInfo.API.src.Controllers.PointsOfInterestController.CreatePOI (CityInfo.API) in 119.1091ms
+2023-05-09 16:18:24.060 -04:00 [INF] Executed endpoint 'CityInfo.API.src.Controllers.PointsOfInterestController.CreatePOI (CityInfo.API)'
 2023-05-09 16:18:24.060 -04:00 [DBG] Connection id "0HMQGPA55SH7O" completed keep alive response.
 2023-05-09 16:18:24.061 -04:00 [INF] Request finished HTTP/1.1 POST https://localhost:7054/api/cities/0/poi application/json 69 - 201 245 application/xml;+charset=utf-8 173.1129ms
 2023-05-09 16:18:31.524 -04:00 [INF] Request starting HTTP/1.1 DELETE https://localhost:7054/api/cities/0/poi/2 - -
 2023-05-09 16:18:31.526 -04:00 [DBG] 1 candidate(s) found for the request path '/api/cities/0/poi/2'
-2023-05-09 16:18:31.526 -04:00 [DBG] Endpoint 'CityInfo.API.Controllers.PointsOfInterestController.DeletePOI (CityInfo.API)' with route pattern 'api/cities/{cityId}/poi/{poiId}' is valid for the request path '/api/cities/0/poi/2'
-2023-05-09 16:18:31.526 -04:00 [DBG] Request matched endpoint 'CityInfo.API.Controllers.PointsOfInterestController.DeletePOI (CityInfo.API)'
+2023-05-09 16:18:31.526 -04:00 [DBG] Endpoint 'CityInfo.API.src.Controllers.PointsOfInterestController.DeletePOI (CityInfo.API)' with route pattern 'api/cities/{cityId}/poi/{poiId}' is valid for the request path '/api/cities/0/poi/2'
+2023-05-09 16:18:31.526 -04:00 [DBG] Request matched endpoint 'CityInfo.API.src.Controllers.PointsOfInterestController.DeletePOI (CityInfo.API)'
 2023-05-09 16:18:31.527 -04:00 [DBG] Static files was skipped as the request already matched an endpoint.
-2023-05-09 16:18:31.527 -04:00 [INF] Executing endpoint 'CityInfo.API.Controllers.PointsOfInterestController.DeletePOI (CityInfo.API)'
-2023-05-09 16:18:31.529 -04:00 [INF] Route matched with {action = "DeletePOI", controller = "PointsOfInterest"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult DeletePOI(Int32, Int32) on controller CityInfo.API.Controllers.PointsOfInterestController (CityInfo.API).
+2023-05-09 16:18:31.527 -04:00 [INF] Executing endpoint 'CityInfo.API.src.Controllers.PointsOfInterestController.DeletePOI (CityInfo.API)'
+2023-05-09 16:18:31.529 -04:00 [INF] Route matched with {action = "DeletePOI", controller = "PointsOfInterest"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult DeletePOI(Int32, Int32) on controller CityInfo.API.src.Controllers.PointsOfInterestController (CityInfo.API).
 2023-05-09 16:18:31.529 -04:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
 2023-05-09 16:18:31.529 -04:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
 2023-05-09 16:18:31.529 -04:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
 2023-05-09 16:18:31.529 -04:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
 2023-05-09 16:18:31.530 -04:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
-2023-05-09 16:18:31.530 -04:00 [DBG] Executing controller factory for controller CityInfo.API.Controllers.PointsOfInterestController (CityInfo.API)
-2023-05-09 16:18:31.530 -04:00 [DBG] Executed controller factory for controller CityInfo.API.Controllers.PointsOfInterestController (CityInfo.API)
+2023-05-09 16:18:31.530 -04:00 [DBG] Executing controller factory for controller CityInfo.API.src.Controllers.PointsOfInterestController (CityInfo.API)
+2023-05-09 16:18:31.530 -04:00 [DBG] Executed controller factory for controller CityInfo.API.src.Controllers.PointsOfInterestController (CityInfo.API)
 2023-05-09 16:18:31.530 -04:00 [DBG] Attempting to bind parameter 'cityId' of type 'System.Int32' ...
 2023-05-09 16:18:31.530 -04:00 [DBG] Attempting to bind parameter 'cityId' of type 'System.Int32' using the name 'cityId' in request data ...
 2023-05-09 16:18:31.531 -04:00 [DBG] Done attempting to bind parameter 'cityId' of type 'System.Int32'.
@@ -506,24 +506,24 @@ System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport
 2023-05-09 16:18:31.532 -04:00 [DBG] Attempting to validate the bound parameter 'poiId' of type 'System.Int32' ...
 2023-05-09 16:18:31.532 -04:00 [DBG] Done attempting to validate the bound parameter 'poiId' of type 'System.Int32'.
 2023-05-09 16:18:31.538 -04:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
-2023-05-09 16:18:31.539 -04:00 [INF] Executed action CityInfo.API.Controllers.PointsOfInterestController.DeletePOI (CityInfo.API) in 8.8926ms
-2023-05-09 16:18:31.539 -04:00 [INF] Executed endpoint 'CityInfo.API.Controllers.PointsOfInterestController.DeletePOI (CityInfo.API)'
+2023-05-09 16:18:31.539 -04:00 [INF] Executed action CityInfo.API.src.Controllers.PointsOfInterestController.DeletePOI (CityInfo.API) in 8.8926ms
+2023-05-09 16:18:31.539 -04:00 [INF] Executed endpoint 'CityInfo.API.src.Controllers.PointsOfInterestController.DeletePOI (CityInfo.API)'
 2023-05-09 16:18:31.539 -04:00 [DBG] Connection id "0HMQGPA55SH7O" completed keep alive response.
 2023-05-09 16:18:31.539 -04:00 [INF] Request finished HTTP/1.1 DELETE https://localhost:7054/api/cities/0/poi/2 - - - 204 - - 14.4820ms
 2023-05-09 16:18:51.673 -04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7054/api/cities/0/poi - -
 2023-05-09 16:18:51.673 -04:00 [DBG] 1 candidate(s) found for the request path '/api/cities/0/poi'
-2023-05-09 16:18:51.673 -04:00 [DBG] Endpoint 'CityInfo.API.Controllers.PointsOfInterestController.GetPOIs (CityInfo.API)' with route pattern 'api/cities/{cityId}/poi' is valid for the request path '/api/cities/0/poi'
-2023-05-09 16:18:51.673 -04:00 [DBG] Request matched endpoint 'CityInfo.API.Controllers.PointsOfInterestController.GetPOIs (CityInfo.API)'
+2023-05-09 16:18:51.673 -04:00 [DBG] Endpoint 'CityInfo.API.src.Controllers.PointsOfInterestController.GetPOIs (CityInfo.API)' with route pattern 'api/cities/{cityId}/poi' is valid for the request path '/api/cities/0/poi'
+2023-05-09 16:18:51.673 -04:00 [DBG] Request matched endpoint 'CityInfo.API.src.Controllers.PointsOfInterestController.GetPOIs (CityInfo.API)'
 2023-05-09 16:18:51.692 -04:00 [DBG] Static files was skipped as the request already matched an endpoint.
-2023-05-09 16:18:51.692 -04:00 [INF] Executing endpoint 'CityInfo.API.Controllers.PointsOfInterestController.GetPOIs (CityInfo.API)'
-2023-05-09 16:18:51.694 -04:00 [INF] Route matched with {action = "GetPOIs", controller = "PointsOfInterest"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[CityInfo.API.Models.POI.PointOfInterestDto]] GetPOIs(Int32) on controller CityInfo.API.Controllers.PointsOfInterestController (CityInfo.API).
+2023-05-09 16:18:51.692 -04:00 [INF] Executing endpoint 'CityInfo.API.src.Controllers.PointsOfInterestController.GetPOIs (CityInfo.API)'
+2023-05-09 16:18:51.694 -04:00 [INF] Route matched with {action = "GetPOIs", controller = "PointsOfInterest"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[CityInfo.API.src.Models.POI.PointOfInterestDto]] GetPOIs(Int32) on controller CityInfo.API.src.Controllers.PointsOfInterestController (CityInfo.API).
 2023-05-09 16:18:51.694 -04:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
 2023-05-09 16:18:51.694 -04:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
 2023-05-09 16:18:51.694 -04:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
 2023-05-09 16:18:51.694 -04:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
 2023-05-09 16:18:51.694 -04:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
-2023-05-09 16:18:51.695 -04:00 [DBG] Executing controller factory for controller CityInfo.API.Controllers.PointsOfInterestController (CityInfo.API)
-2023-05-09 16:18:51.695 -04:00 [DBG] Executed controller factory for controller CityInfo.API.Controllers.PointsOfInterestController (CityInfo.API)
+2023-05-09 16:18:51.695 -04:00 [DBG] Executing controller factory for controller CityInfo.API.src.Controllers.PointsOfInterestController (CityInfo.API)
+2023-05-09 16:18:51.695 -04:00 [DBG] Executed controller factory for controller CityInfo.API.src.Controllers.PointsOfInterestController (CityInfo.API)
 2023-05-09 16:18:51.695 -04:00 [DBG] Attempting to bind parameter 'cityId' of type 'System.Int32' ...
 2023-05-09 16:18:51.695 -04:00 [DBG] Attempting to bind parameter 'cityId' of type 'System.Int32' using the name 'cityId' in request data ...
 2023-05-09 16:18:51.696 -04:00 [DBG] Done attempting to bind parameter 'cityId' of type 'System.Int32'.
@@ -536,9 +536,9 @@ System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport
 2023-05-09 16:18:51.697 -04:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
 2023-05-09 16:18:51.697 -04:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
 2023-05-09 16:18:51.698 -04:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.XmlDataContractSerializerOutputFormatter' and content type 'application/xml' to write the response.
-2023-05-09 16:18:51.698 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[CityInfo.API.Models.POI.PointOfInterestDto, CityInfo.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
-2023-05-09 16:18:51.700 -04:00 [INF] Executed action CityInfo.API.Controllers.PointsOfInterestController.GetPOIs (CityInfo.API) in 5.1565ms
-2023-05-09 16:18:51.700 -04:00 [INF] Executed endpoint 'CityInfo.API.Controllers.PointsOfInterestController.GetPOIs (CityInfo.API)'
+2023-05-09 16:18:51.698 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[CityInfo.API.src.Models.POI.PointOfInterestDto, CityInfo.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-05-09 16:18:51.700 -04:00 [INF] Executed action CityInfo.API.src.Controllers.PointsOfInterestController.GetPOIs (CityInfo.API) in 5.1565ms
+2023-05-09 16:18:51.700 -04:00 [INF] Executed endpoint 'CityInfo.API.src.Controllers.PointsOfInterestController.GetPOIs (CityInfo.API)'
 2023-05-09 16:18:51.700 -04:00 [DBG] Connection id "0HMQGPA55SH7O" completed keep alive response.
 2023-05-09 16:18:51.700 -04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7054/api/cities/0/poi - - - 200 503 application/xml;+charset=utf-8 27.1750ms
 2023-05-09 16:21:02.613 -04:00 [DBG] Connection id "0HMQGPA55SH7O" disconnecting.
@@ -563,63 +563,63 @@ System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport
 2023-05-09 16:22:03.961 -04:00 [INF] Request starting HTTP/1.1 POST https://localhost:7054/api/cities/0/poi application/json 69
 2023-05-09 16:22:03.961 -04:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
 2023-05-09 16:22:03.962 -04:00 [DBG] 1 candidate(s) found for the request path '/api/cities/0/poi'
-2023-05-09 16:22:03.962 -04:00 [DBG] Endpoint 'CityInfo.API.Controllers.PointsOfInterestController.CreatePOI (CityInfo.API)' with route pattern 'api/cities/{cityId}/poi' is valid for the request path '/api/cities/0/poi'
-2023-05-09 16:22:03.962 -04:00 [DBG] Request matched endpoint 'CityInfo.API.Controllers.PointsOfInterestController.CreatePOI (CityInfo.API)'
+2023-05-09 16:22:03.962 -04:00 [DBG] Endpoint 'CityInfo.API.src.Controllers.PointsOfInterestController.CreatePOI (CityInfo.API)' with route pattern 'api/cities/{cityId}/poi' is valid for the request path '/api/cities/0/poi'
+2023-05-09 16:22:03.962 -04:00 [DBG] Request matched endpoint 'CityInfo.API.src.Controllers.PointsOfInterestController.CreatePOI (CityInfo.API)'
 2023-05-09 16:22:03.962 -04:00 [DBG] Static files was skipped as the request already matched an endpoint.
-2023-05-09 16:22:03.962 -04:00 [INF] Executing endpoint 'CityInfo.API.Controllers.PointsOfInterestController.CreatePOI (CityInfo.API)'
-2023-05-09 16:22:03.962 -04:00 [INF] Route matched with {action = "CreatePOI", controller = "PointsOfInterest"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[CityInfo.API.Models.POI.PointOfInterestDto] CreatePOI(Int32, CityInfo.API.Models.POI.CreatePointOfInterestDto) on controller CityInfo.API.Controllers.PointsOfInterestController (CityInfo.API).
+2023-05-09 16:22:03.962 -04:00 [INF] Executing endpoint 'CityInfo.API.src.Controllers.PointsOfInterestController.CreatePOI (CityInfo.API)'
+2023-05-09 16:22:03.962 -04:00 [INF] Route matched with {action = "CreatePOI", controller = "PointsOfInterest"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[CityInfo.API.src.Models.POI.PointOfInterestDto] CreatePOI(Int32, CityInfo.API.src.Models.POI.CreatePointOfInterestDto) on controller CityInfo.API.src.Controllers.PointsOfInterestController (CityInfo.API).
 2023-05-09 16:22:03.962 -04:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
 2023-05-09 16:22:03.962 -04:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
 2023-05-09 16:22:03.962 -04:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
 2023-05-09 16:22:03.962 -04:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
 2023-05-09 16:22:03.962 -04:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
-2023-05-09 16:22:03.962 -04:00 [DBG] Executing controller factory for controller CityInfo.API.Controllers.PointsOfInterestController (CityInfo.API)
-2023-05-09 16:22:03.962 -04:00 [DBG] Executed controller factory for controller CityInfo.API.Controllers.PointsOfInterestController (CityInfo.API)
+2023-05-09 16:22:03.962 -04:00 [DBG] Executing controller factory for controller CityInfo.API.src.Controllers.PointsOfInterestController (CityInfo.API)
+2023-05-09 16:22:03.962 -04:00 [DBG] Executed controller factory for controller CityInfo.API.src.Controllers.PointsOfInterestController (CityInfo.API)
 2023-05-09 16:22:03.962 -04:00 [DBG] Attempting to bind parameter 'cityId' of type 'System.Int32' ...
 2023-05-09 16:22:03.963 -04:00 [DBG] Attempting to bind parameter 'cityId' of type 'System.Int32' using the name 'cityId' in request data ...
 2023-05-09 16:22:03.963 -04:00 [DBG] Done attempting to bind parameter 'cityId' of type 'System.Int32'.
 2023-05-09 16:22:03.963 -04:00 [DBG] Done attempting to bind parameter 'cityId' of type 'System.Int32'.
 2023-05-09 16:22:03.963 -04:00 [DBG] Attempting to validate the bound parameter 'cityId' of type 'System.Int32' ...
 2023-05-09 16:22:03.963 -04:00 [DBG] Done attempting to validate the bound parameter 'cityId' of type 'System.Int32'.
-2023-05-09 16:22:03.963 -04:00 [DBG] Attempting to bind parameter 'newPOI' of type 'CityInfo.API.Models.POI.CreatePointOfInterestDto' ...
-2023-05-09 16:22:03.963 -04:00 [DBG] Attempting to bind parameter 'newPOI' of type 'CityInfo.API.Models.POI.CreatePointOfInterestDto' using the name '' in request data ...
+2023-05-09 16:22:03.963 -04:00 [DBG] Attempting to bind parameter 'newPOI' of type 'CityInfo.API.src.Models.POI.CreatePointOfInterestDto' ...
+2023-05-09 16:22:03.963 -04:00 [DBG] Attempting to bind parameter 'newPOI' of type 'CityInfo.API.src.Models.POI.CreatePointOfInterestDto' using the name '' in request data ...
 2023-05-09 16:22:03.963 -04:00 [DBG] Rejected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.XmlDataContractSerializerInputFormatter' for content type 'application/json'.
 2023-05-09 16:22:03.963 -04:00 [DBG] Rejected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonPatchInputFormatter' for content type 'application/json'.
 2023-05-09 16:22:03.963 -04:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonInputFormatter' for content type 'application/json'.
 2023-05-09 16:22:03.964 -04:00 [DBG] Connection id "0HMQGPA55SH7Q", Request id "0HMQGPA55SH7Q:00000002": started reading request body.
 2023-05-09 16:22:03.964 -04:00 [DBG] Connection id "0HMQGPA55SH7Q", Request id "0HMQGPA55SH7Q:00000002": done reading request body.
-2023-05-09 16:22:03.964 -04:00 [DBG] Done attempting to bind parameter 'newPOI' of type 'CityInfo.API.Models.POI.CreatePointOfInterestDto'.
-2023-05-09 16:22:03.964 -04:00 [DBG] Done attempting to bind parameter 'newPOI' of type 'CityInfo.API.Models.POI.CreatePointOfInterestDto'.
-2023-05-09 16:22:03.964 -04:00 [DBG] Attempting to validate the bound parameter 'newPOI' of type 'CityInfo.API.Models.POI.CreatePointOfInterestDto' ...
-2023-05-09 16:22:03.965 -04:00 [DBG] Done attempting to validate the bound parameter 'newPOI' of type 'CityInfo.API.Models.POI.CreatePointOfInterestDto'.
+2023-05-09 16:22:03.964 -04:00 [DBG] Done attempting to bind parameter 'newPOI' of type 'CityInfo.API.src.Models.POI.CreatePointOfInterestDto'.
+2023-05-09 16:22:03.964 -04:00 [DBG] Done attempting to bind parameter 'newPOI' of type 'CityInfo.API.src.Models.POI.CreatePointOfInterestDto'.
+2023-05-09 16:22:03.964 -04:00 [DBG] Attempting to validate the bound parameter 'newPOI' of type 'CityInfo.API.src.Models.POI.CreatePointOfInterestDto' ...
+2023-05-09 16:22:03.965 -04:00 [DBG] Done attempting to validate the bound parameter 'newPOI' of type 'CityInfo.API.src.Models.POI.CreatePointOfInterestDto'.
 2023-05-09 16:22:03.965 -04:00 [INF] Added new point of interest Central Park to city NY
 2023-05-09 16:22:03.965 -04:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.XmlDataContractSerializerOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter"]
 2023-05-09 16:22:03.965 -04:00 [DBG] No information found on request to perform content negotiation.
 2023-05-09 16:22:03.965 -04:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
 2023-05-09 16:22:03.965 -04:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
 2023-05-09 16:22:03.965 -04:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.XmlDataContractSerializerOutputFormatter' and content type 'application/xml' to write the response.
-2023-05-09 16:22:03.965 -04:00 [INF] Executing CreatedAtRouteResult, writing value of type 'CityInfo.API.Models.POI.PointOfInterestDto'.
-2023-05-09 16:22:03.965 -04:00 [DBG] Found the endpoints ["CityInfo.API.Controllers.PointsOfInterestController.GetPOI (CityInfo.API)"] for address Microsoft.AspNetCore.Routing.RouteValuesAddress
-2023-05-09 16:22:03.965 -04:00 [DBG] Successfully processed template api/cities/{cityId}/poi/{poiId} for CityInfo.API.Controllers.PointsOfInterestController.GetPOI (CityInfo.API) resulting in /api/cities/0/poi/2 and 
-2023-05-09 16:22:03.966 -04:00 [DBG] Link generation succeeded for endpoints ["CityInfo.API.Controllers.PointsOfInterestController.GetPOI (CityInfo.API)"] with result /api/cities/0/poi/2
-2023-05-09 16:22:03.966 -04:00 [INF] Executed action CityInfo.API.Controllers.PointsOfInterestController.CreatePOI (CityInfo.API) in 4.0726ms
-2023-05-09 16:22:03.967 -04:00 [INF] Executed endpoint 'CityInfo.API.Controllers.PointsOfInterestController.CreatePOI (CityInfo.API)'
+2023-05-09 16:22:03.965 -04:00 [INF] Executing CreatedAtRouteResult, writing value of type 'CityInfo.API.src.Models.POI.PointOfInterestDto'.
+2023-05-09 16:22:03.965 -04:00 [DBG] Found the endpoints ["CityInfo.API.src.Controllers.PointsOfInterestController.GetPOI (CityInfo.API)"] for address Microsoft.AspNetCore.Routing.RouteValuesAddress
+2023-05-09 16:22:03.965 -04:00 [DBG] Successfully processed template api/cities/{cityId}/poi/{poiId} for CityInfo.API.src.Controllers.PointsOfInterestController.GetPOI (CityInfo.API) resulting in /api/cities/0/poi/2 and 
+2023-05-09 16:22:03.966 -04:00 [DBG] Link generation succeeded for endpoints ["CityInfo.API.src.Controllers.PointsOfInterestController.GetPOI (CityInfo.API)"] with result /api/cities/0/poi/2
+2023-05-09 16:22:03.966 -04:00 [INF] Executed action CityInfo.API.src.Controllers.PointsOfInterestController.CreatePOI (CityInfo.API) in 4.0726ms
+2023-05-09 16:22:03.967 -04:00 [INF] Executed endpoint 'CityInfo.API.src.Controllers.PointsOfInterestController.CreatePOI (CityInfo.API)'
 2023-05-09 16:22:03.967 -04:00 [DBG] Connection id "0HMQGPA55SH7Q" completed keep alive response.
 2023-05-09 16:22:03.967 -04:00 [INF] Request finished HTTP/1.1 POST https://localhost:7054/api/cities/0/poi application/json 69 - 201 245 application/xml;+charset=utf-8 5.7378ms
 2023-05-09 16:22:07.029 -04:00 [INF] Request starting HTTP/1.1 DELETE https://localhost:7054/api/cities/0/poi/2 - -
 2023-05-09 16:22:07.029 -04:00 [DBG] 1 candidate(s) found for the request path '/api/cities/0/poi/2'
-2023-05-09 16:22:07.029 -04:00 [DBG] Endpoint 'CityInfo.API.Controllers.PointsOfInterestController.DeletePOI (CityInfo.API)' with route pattern 'api/cities/{cityId}/poi/{poiId}' is valid for the request path '/api/cities/0/poi/2'
-2023-05-09 16:22:07.029 -04:00 [DBG] Request matched endpoint 'CityInfo.API.Controllers.PointsOfInterestController.DeletePOI (CityInfo.API)'
+2023-05-09 16:22:07.029 -04:00 [DBG] Endpoint 'CityInfo.API.src.Controllers.PointsOfInterestController.DeletePOI (CityInfo.API)' with route pattern 'api/cities/{cityId}/poi/{poiId}' is valid for the request path '/api/cities/0/poi/2'
+2023-05-09 16:22:07.029 -04:00 [DBG] Request matched endpoint 'CityInfo.API.src.Controllers.PointsOfInterestController.DeletePOI (CityInfo.API)'
 2023-05-09 16:22:07.029 -04:00 [DBG] Static files was skipped as the request already matched an endpoint.
-2023-05-09 16:22:07.029 -04:00 [INF] Executing endpoint 'CityInfo.API.Controllers.PointsOfInterestController.DeletePOI (CityInfo.API)'
-2023-05-09 16:22:07.029 -04:00 [INF] Route matched with {action = "DeletePOI", controller = "PointsOfInterest"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult DeletePOI(Int32, Int32) on controller CityInfo.API.Controllers.PointsOfInterestController (CityInfo.API).
+2023-05-09 16:22:07.029 -04:00 [INF] Executing endpoint 'CityInfo.API.src.Controllers.PointsOfInterestController.DeletePOI (CityInfo.API)'
+2023-05-09 16:22:07.029 -04:00 [INF] Route matched with {action = "DeletePOI", controller = "PointsOfInterest"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult DeletePOI(Int32, Int32) on controller CityInfo.API.src.Controllers.PointsOfInterestController (CityInfo.API).
 2023-05-09 16:22:07.029 -04:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
 2023-05-09 16:22:07.029 -04:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
 2023-05-09 16:22:07.030 -04:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
 2023-05-09 16:22:07.030 -04:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
 2023-05-09 16:22:07.030 -04:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
-2023-05-09 16:22:07.030 -04:00 [DBG] Executing controller factory for controller CityInfo.API.Controllers.PointsOfInterestController (CityInfo.API)
-2023-05-09 16:22:07.030 -04:00 [DBG] Executed controller factory for controller CityInfo.API.Controllers.PointsOfInterestController (CityInfo.API)
+2023-05-09 16:22:07.030 -04:00 [DBG] Executing controller factory for controller CityInfo.API.src.Controllers.PointsOfInterestController (CityInfo.API)
+2023-05-09 16:22:07.030 -04:00 [DBG] Executed controller factory for controller CityInfo.API.src.Controllers.PointsOfInterestController (CityInfo.API)
 2023-05-09 16:22:07.030 -04:00 [DBG] Attempting to bind parameter 'cityId' of type 'System.Int32' ...
 2023-05-09 16:22:07.030 -04:00 [DBG] Attempting to bind parameter 'cityId' of type 'System.Int32' using the name 'cityId' in request data ...
 2023-05-09 16:22:07.030 -04:00 [DBG] Done attempting to bind parameter 'cityId' of type 'System.Int32'.
@@ -633,8 +633,8 @@ System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport
 2023-05-09 16:22:07.031 -04:00 [DBG] Attempting to validate the bound parameter 'poiId' of type 'System.Int32' ...
 2023-05-09 16:22:07.031 -04:00 [DBG] Done attempting to validate the bound parameter 'poiId' of type 'System.Int32'.
 2023-05-09 16:22:07.031 -04:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
-2023-05-09 16:22:07.031 -04:00 [INF] Executed action CityInfo.API.Controllers.PointsOfInterestController.DeletePOI (CityInfo.API) in 1.6842ms
-2023-05-09 16:22:07.031 -04:00 [INF] Executed endpoint 'CityInfo.API.Controllers.PointsOfInterestController.DeletePOI (CityInfo.API)'
+2023-05-09 16:22:07.031 -04:00 [INF] Executed action CityInfo.API.src.Controllers.PointsOfInterestController.DeletePOI (CityInfo.API) in 1.6842ms
+2023-05-09 16:22:07.031 -04:00 [INF] Executed endpoint 'CityInfo.API.src.Controllers.PointsOfInterestController.DeletePOI (CityInfo.API)'
 2023-05-09 16:22:07.032 -04:00 [DBG] Connection id "0HMQGPA55SH7Q" completed keep alive response.
 2023-05-09 16:22:07.032 -04:00 [INF] Request finished HTTP/1.1 DELETE https://localhost:7054/api/cities/0/poi/2 - - - 204 - - 3.1969ms
 2023-05-09 16:24:17.801 -04:00 [DBG] Connection id "0HMQGPA55SH7Q" disconnecting.
