@@ -1,18 +1,42 @@
 using CityInfo.API.src.Models.POI;
 
-namespace CityInfo.API.src.Models.City{
+namespace CityInfo.API.src.Models.City
+{
+    /// <summary>
+    /// Data transfer object for representing a city.
+    /// </summary>
+    public class CityDto
+    {
+        /// <summary>
+        /// Gets or sets the ID of the city.
+        /// </summary>
+        public int Id { get; set; }
 
-    public class CityDto{
+        /// <summary>
+        /// Gets or sets the name of the city.
+        /// </summary>
+        public string Name { get; set; } = string.Empty;
 
-        public int Id {get; set;}
-        public string Name{ get; set; }= string.Empty;
-        public string? Description{get;set;}
-        //Points of Interest
-        public int NumberOfPOIs {
-            get{
+        /// <summary>
+        /// Gets or sets the description of the city.
+        /// </summary>
+        public string? Description { get; set; }
+
+        /// <summary>
+        /// Gets the number of points of interest in the city.
+        /// </summary>
+        public int NumberOfPOIs
+        {
+            get
+            {
                 return this.POIs.Count;
-            }}
-        public ICollection<PointOfInterestDto> POIs {get; set;}
-        = new List<PointOfInterestDto>();
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the collection of points of interest in the city.
+        /// </summary>
+        public ICollection<PointOfInterestDto> POIs { get; set; }
+            = new List<PointOfInterestDto>();
     }
 }

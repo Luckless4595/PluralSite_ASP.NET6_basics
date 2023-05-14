@@ -1,14 +1,13 @@
 ﻿using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
 using Serilog;
 using Microsoft.IdentityModel.Tokens;
-using System;
-using System.IO;
 using System.Text;
+using System.Reflection;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.DependencyInjection;
+using Microsoft.OpenApi.Models;
+
+
 using CityInfo.API.src.Services.Implementations;
 using CityInfo.API.src.Services.Interfaces;
 using CityInfo.API.src.DbContexts;
@@ -32,8 +31,6 @@ if (useSerilog)
     builder.Logging.AddDebug();
 }
 
-// Redirect standard output stream back to the console
-Console.SetOut(new StreamWriter(Console.OpenStandardOutput()) { AutoFlush = true });
 
 // Authentication
 builder.Services.AddAuthentication("Bearer").AddJwtBearer(options =>
@@ -71,6 +68,13 @@ builder.Services.AddScoped<ICityInfoRepository, CityInfoRepository>();
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddSingleton<FileExtensionContentTypeProvider>();
 
+builder.Services.AddApiVersioning(setupAction =>
+{
+    setupAction.AssumeDefaultVersionWhenUnspecified = true;
+    setupAction.DefaultApiVersion = new Microsoft.AspNetCore.Mvc.ApiVersion(1,0);
+    setupAction.ReportApiVersions = true;
+});
+
 #if DEBUG
 builder.Services.AddTransient<IMailService, LocalMailService>();
 #else
@@ -87,12 +91,33 @@ builder.Services.AddControllers(options =>
 
 // Swagger/OpenAPI
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(setupAction=>
+{
+    var xmDocsFile = "Documentation.xml"; //  $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    var xmDocsFilePath = Path.Combine(Directory.GetCurrentDirectory(),xmDocsFile);//(AppContext.BaseDirectory, xmDocsFile);
+    setupAction.IncludeXmlComments(xmDocsFilePath);
+
+       setupAction.AddSecurityDefinition("CityInfoApiBearerAuth", new OpenApiSecurityScheme()
+    {
+        Type = SecuritySchemeType.Http,
+        Scheme = "Bearer",
+        Description = "Input a valid token to access this API"
+    });
+    setupAction.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference {
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "CityInfoApiBearerAuth" }
+            }, new List<string>() }
+    });
+});
 
 // Build the application
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 // Order matters when working with middleware
 
 if (app.Environment.IsDevelopment())

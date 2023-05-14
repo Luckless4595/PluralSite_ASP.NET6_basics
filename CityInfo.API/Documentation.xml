@@ -1,0 +1,296 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CityInfo.API</name>
+    </assembly>
+    <members>
+        <member name="T:CityInfo.API.src.Controllers.AuthenticationController">
+            <summary>
+            Controller for handling authentication operations.
+            </summary>
+        </member>
+        <member name="T:CityInfo.API.src.Controllers.AuthenticationController.AuthenticationRequestBody">
+            <summary>
+            Represents the request body for authentication.
+            </summary>
+        </member>
+        <member name="P:CityInfo.API.src.Controllers.AuthenticationController.AuthenticationRequestBody.UserName">
+            <summary>
+            Gets or sets the user name.
+            </summary>
+        </member>
+        <member name="P:CityInfo.API.src.Controllers.AuthenticationController.AuthenticationRequestBody.Password">
+            <summary>
+            Gets or sets the password.
+            </summary>
+        </member>
+        <member name="T:CityInfo.API.src.Controllers.AuthenticationController.CityInfoAPIUser">
+            <summary>
+            Represents the CityInfo API user.
+            </summary>
+        </member>
+        <member name="P:CityInfo.API.src.Controllers.AuthenticationController.CityInfoAPIUser.UserId">
+            <summary>
+            Gets or sets the user ID.
+            </summary>
+        </member>
+        <member name="P:CityInfo.API.src.Controllers.AuthenticationController.CityInfoAPIUser.UserName">
+            <summary>
+            Gets or sets the user name.
+            </summary>
+        </member>
+        <member name="P:CityInfo.API.src.Controllers.AuthenticationController.CityInfoAPIUser.FirstName">
+            <summary>
+            Gets or sets the first name.
+            </summary>
+        </member>
+        <member name="P:CityInfo.API.src.Controllers.AuthenticationController.CityInfoAPIUser.LastName">
+            <summary>
+            Gets or sets the last name.
+            </summary>
+        </member>
+        <member name="P:CityInfo.API.src.Controllers.AuthenticationController.CityInfoAPIUser.City">
+            <summary>
+            Gets or sets the city.
+            </summary>
+        </member>
+        <member name="M:CityInfo.API.src.Controllers.AuthenticationController.CityInfoAPIUser.#ctor(System.Int32,System.String,System.String,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CityInfo.API.src.Controllers.AuthenticationController.CityInfoAPIUser"/> class.
+            </summary>
+            <param name="userId">The user ID.</param>
+            <param name="userName">The user name.</param>
+            <param name="firstName">The first name.</param>
+            <param name="lastName">The last name.</param>
+            <param name="city">The city.</param>
+        </member>
+        <member name="M:CityInfo.API.src.Controllers.AuthenticationController.CityInfoAPIUser.#ctor(System.Int32,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CityInfo.API.src.Controllers.AuthenticationController.CityInfoAPIUser"/> class.
+            </summary>
+            <param name="userId">The user ID.</param>
+            <param name="userName">The user name.</param>
+        </member>
+        <member name="M:CityInfo.API.src.Controllers.AuthenticationController.#ctor(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Logging.ILogger{CityInfo.API.src.Controllers.AuthenticationController})">
+            <summary>
+            Initializes a new instance of the <see cref="T:CityInfo.API.src.Controllers.AuthenticationController"/> class.
+            </summary>
+            <param name="config">The configuration.</param>
+            <param name="logger">The logger.</param>
+        </member>
+        <member name="M:CityInfo.API.src.Controllers.AuthenticationController.Authenticate(CityInfo.API.src.Controllers.AuthenticationController.AuthenticationRequestBody)">
+            <summary>
+            Authenticates the user.
+            </summary>
+            <param name="auth">The authentication request body.</param>
+            <returns>The authentication result.</returns>
+        </member>
+        <member name="M:CityInfo.API.src.Controllers.AuthenticationController.ValidateCredentials(System.String,System.String)">
+            <summary>
+            Validates the user credentials.
+            </summary>
+            <param name="userName">The user name.</param>
+            <param name="password">The password.</param>
+            <returns>The authenticated user.</returns>
+        </member>
+        <member name="T:CityInfo.API.src.Controllers.CitiesController">
+            <summary>
+            Controller for managing cities.
+            </summary>
+        </member>
+        <member name="M:CityInfo.API.src.Controllers.CitiesController.#ctor(CityInfo.API.src.Services.Interfaces.ICityInfoRepository,AutoMapper.IMapper)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CityInfo.API.src.Controllers.CitiesController"/> class.
+            </summary>
+            <param name="citiesDataStoreIn">The city information repository.</param>
+            <param name="mapperIn">The mapper for mapping city entities to DTOs.</param>
+        </member>
+        <member name="M:CityInfo.API.src.Controllers.CitiesController.GetCities(System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            Retrieves a list of cities.
+            </summary>
+            <param name="cityNameFilter">Optional. Filters cities by name.</param>
+            <param name="searchByCityName">Optional. Searches cities by name.</param>
+            <param name="pageNumber">Optional. The page number to retrieve (default: 1).</param>
+            <param name="pageSize">Optional. The number of cities per page (default: 10).</param>
+            <returns>A list of cities without points of interest.</returns>
+        </member>
+        <member name="M:CityInfo.API.src.Controllers.CitiesController.GetCity(System.Int32,System.Boolean)">
+            <summary>
+            Retrieves a city by its ID.
+            </summary>
+            <param name="cityId">The ID of the city to retrieve.</param>
+            <param name="includePOI">Optional. Determines whether to include points of interest (default: false).</param>
+            <returns>The city information.</returns>
+        </member>
+        <member name="T:CityInfo.API.src.Controllers.FilesController">
+            <summary>
+            Controller for handling file operations.
+            </summary>
+        </member>
+        <member name="M:CityInfo.API.src.Controllers.FilesController.#ctor(Microsoft.AspNetCore.StaticFiles.FileExtensionContentTypeProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CityInfo.API.src.Controllers.FilesController"/> class.
+            </summary>
+            <param name="fectpIn">The file extension content type provider.</param>
+        </member>
+        <member name="M:CityInfo.API.src.Controllers.FilesController.GetFile(System.String)">
+            <summary>
+            Gets the file by its ID.
+            </summary>
+            <param name="fileId">The file ID.</param>
+            <returns>The file.</returns>
+        </member>
+        <member name="T:CityInfo.API.src.Controllers.PointsOfInterestController">
+            <summary>
+            Controller for handling points of interest operations.
+            </summary>
+        </member>
+        <member name="M:CityInfo.API.src.Controllers.PointsOfInterestController.#ctor(CityInfo.API.src.Services.Interfaces.IMailService,CityInfo.API.src.Services.Interfaces.ICityInfoRepository,AutoMapper.IMapper,Microsoft.Extensions.Logging.ILogger{CityInfo.API.src.Controllers.PointsOfInterestController})">
+            <summary>
+            Initializes a new instance of the <see cref="T:CityInfo.API.src.Controllers.PointsOfInterestController"/> class.
+            </summary>
+            <param name="mailServiceIn">The mail service.</param>
+            <param name="cityInfoRepositoryIn">The city info repository.</param>
+            <param name="mapperIn">The mapper.</param>
+            <param name="logger">The logger.</param>
+        </member>
+        <member name="M:CityInfo.API.src.Controllers.PointsOfInterestController.GetPOIs(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Gets the points of interest for a city.
+            </summary>
+            <param name="cityId">The city ID.</param>
+            <param name="pageNumber">The page number.</param>
+            <param name="pageSize">The page size.</param>
+            <returns>The list of points of interest.</returns>
+        </member>
+        <member name="M:CityInfo.API.src.Controllers.PointsOfInterestController.GetPOI(System.Int32,System.Int32)">
+            <summary>
+            Gets a specific point of interest for a city.
+            </summary>
+            <param name="cityId">The city ID.</param>
+            <param name="poiId">The point of interest ID.</param>
+            <returns>The point of interest.</returns>
+        </member>
+        <member name="M:CityInfo.API.src.Controllers.PointsOfInterestController.CreatePOI(System.Int32,CityInfo.API.src.Models.POI.CreatePointOfInterestDto)">
+            <summary>
+            Creates a new point of interest for a city.
+            </summary>
+            <param name="cityId">The ID of the city.</param>
+            <param name="newPOI">The data for the new point of interest.</param>
+            <returns>The created point of interest.</returns>
+        </member>
+        <member name="M:CityInfo.API.src.Controllers.PointsOfInterestController.FullyUpdatePOI(System.Int32,System.Int32,CityInfo.API.src.Models.POI.UpdatePointOfInterestDto)">
+            <summary>
+            Fully updates a point of interest for a city.
+            </summary>
+            <param name="cityId">The ID of the city.</param>
+            <param name="poiId">The ID of the point of interest.</param>
+            <param name="inputPOI">The updated data for the point of interest.</param>
+            <returns>The updated point of interest.</returns>
+        </member>
+        <member name="M:CityInfo.API.src.Controllers.PointsOfInterestController.PartiallyUpdatePOI(System.Int32,System.Int32,Microsoft.AspNetCore.JsonPatch.JsonPatchDocument{CityInfo.API.src.Models.POI.UpdatePointOfInterestDto})">
+            <summary>
+            Partially updates a point of interest for a city.
+            </summary>
+            <param name="cityId">The ID of the city.</param>
+            <param name="poiId">The ID of the point of interest.</param>
+            <param name="poiPatchDocument">The JSON patch document containing the updates.</param>
+            <returns>The patched point of interest.</returns>
+        </member>
+        <member name="M:CityInfo.API.src.Controllers.PointsOfInterestController.DeletePOI(System.Int32,System.Int32)">
+            <summary>
+            Deletes a point of interest from a city.
+            </summary>
+            <param name="cityId">The ID of the city.</param>
+            <param name="poiId">The ID of the point of interest to delete.</param>
+            <returns>No content.</returns>
+        </member>
+        <member name="T:CityInfo.API.src.Migrations.CityInfoDBInitialMigration">
+            <inheritdoc />
+        </member>
+        <member name="M:CityInfo.API.src.Migrations.CityInfoDBInitialMigration.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CityInfo.API.src.Migrations.CityInfoDBInitialMigration.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CityInfo.API.src.Migrations.CityInfoDBInitialMigration.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:CityInfo.API.src.Migrations.UpdatePOIWithDescription">
+            <inheritdoc />
+        </member>
+        <member name="M:CityInfo.API.src.Migrations.UpdatePOIWithDescription.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CityInfo.API.src.Migrations.UpdatePOIWithDescription.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CityInfo.API.src.Migrations.UpdatePOIWithDescription.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:CityInfo.API.src.Migrations.InitialDataSeed">
+            <inheritdoc />
+        </member>
+        <member name="M:CityInfo.API.src.Migrations.InitialDataSeed.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CityInfo.API.src.Migrations.InitialDataSeed.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CityInfo.API.src.Migrations.InitialDataSeed.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:CityInfo.API.src.Models.City.CityDto">
+            <summary>
+            Data transfer object for representing a city.
+            </summary>
+        </member>
+        <member name="P:CityInfo.API.src.Models.City.CityDto.Id">
+            <summary>
+            Gets or sets the ID of the city.
+            </summary>
+        </member>
+        <member name="P:CityInfo.API.src.Models.City.CityDto.Name">
+            <summary>
+            Gets or sets the name of the city.
+            </summary>
+        </member>
+        <member name="P:CityInfo.API.src.Models.City.CityDto.Description">
+            <summary>
+            Gets or sets the description of the city.
+            </summary>
+        </member>
+        <member name="P:CityInfo.API.src.Models.City.CityDto.NumberOfPOIs">
+            <summary>
+            Gets the number of points of interest in the city.
+            </summary>
+        </member>
+        <member name="P:CityInfo.API.src.Models.City.CityDto.POIs">
+            <summary>
+            Gets or sets the collection of points of interest in the city.
+            </summary>
+        </member>
+        <member name="T:CityInfo.API.src.Models.City.CityWithoutPOIDto">
+            <summary>
+            Data transfer object for representing a city without points of interest.
+            </summary>
+        </member>
+        <member name="P:CityInfo.API.src.Models.City.CityWithoutPOIDto.Id">
+            <summary>
+            Gets or sets the ID of the city.
+            </summary>
+        </member>
+        <member name="P:CityInfo.API.src.Models.City.CityWithoutPOIDto.Name">
+            <summary>
+            Gets or sets the name of the city.
+            </summary>
+        </member>
+        <member name="P:CityInfo.API.src.Models.City.CityWithoutPOIDto.Description">
+            <summary>
+            Gets or sets the description of the city.
+            </summary>
+        </member>
+    </members>
+</doc>
